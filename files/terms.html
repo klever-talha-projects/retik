@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="icon" href="assets\favicon.ico">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="description" content="Retik">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+      <link href="main.css" rel="stylesheet">
+      <title>Retik Finance Presale</title>
+      <style>
+         .steps-tag{
+         -webkit-text-fill-color: #0000;
+         background: linear-gradient(180deg, rgb(255, 148, 255) 20.63%, rgb(109, 216, 212) 75.15%);
+         background-clip: text;
+         -webkit-background-clip: text;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="App">
+         <div class="bg-black-100 text-white-100 font-poppins" style="background-image: url(assets/bg.png); background-repeat: no-repeat;
+            background-position: center top; background-size: cover;">
+            <div class="blur-effect invisible" onclick="removeWalletsOption()"></div>
+            <div class="wallets invisible">
+               <div id="metamask" onclick="connectMetamask()"><img src="assets/metamask.svg"></div>
+               <div id="walletConnect" onclick="connectWalletConect()"><img src="assets/walletconnect.svg"></div>
+               <div id="trustwallet" onclick="connectTrustWallet()"><img src="assets/trust-wallet.svg"></div>
+            </div>
+            <div class="bg-top lg:block hidden">
+               <div class="lg:px-12 px-5 container mx-auto relative z-20">
+                  <header>
+                     <div class="lg:flex hidden items-center justify-between font-poppins text-white-100 h-24">
+                        <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="Logo">
+                        </a>
+                        <nav>
+                           <ul class="text-md flex justify-center gap-8 items-center">
+                              <li>
+                                 <a href="white-paper"
+                                    class="font-semibold">Whitepaper</a>
+                              </li>
+                              <li>
+                                 <a href="win-33k"
+                                    class="font-semibold">Win $333K</a>
+                              </li>
+                              <li>
+                                 <a href="stages.html" class="font-semibold">Stages</a>
+                              </li>
+                              <li>
+                                 <a href="how-to-buy.html" class="font-semibold">How
+                                 to buy</a>
+                              </li>
+                              <li>
+                                 <a href="contact.html"
+                                    class="font-semibold">Contact Us</a>
+                              </li>
+                           </ul>
+                        </nav>
+                        <div class="gtranslate-wrapper">
+                           <div class="gtranslate_wrapper"></div>
+                        </div>
+                        <div>
+                           <button
+                              class="connectButton-1 px-8 py-2 rounded-2xl btn-gradient text-black-100 font-semibold text-lg"
+                              onclick="showWalletsOption()">Connect
+                           Wallet</button>
+                        </div>
+                     </div>
+                     <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                        <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2">
+                        <img src="assets/logo.png" alt="Logo">
+                        </a>
+                        <button class="nav cursor-pointer">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                           </svg>
+                        </button>
+                     </div>
+                  </header>
+               </div>
+            </div>
+            <div class="lg:space-y-0 space-y-6 relative z-20 px-5 container mx-auto lg:hidden block">
+               <header>
+                  <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                     <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2"
+                        style= "align-items: center;">
+                     <img src="assets/logo.png" alt="Logo">
+                     </a>
+                     <div class="gtranslate-wrapper" style="margin-left: 20px;">
+                        <div class="gtranslate_wrapper"></div>
+                     </div>
+                     <button class="nav cursor-pointer toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                           stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                           <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                        </svg>
+                     </button>
+                  </div>
+                  <div
+                     class="sidebar close fixed top-0 bottom-0 left-0 p-2 w-3/4 overflow-y-auto font-poppins z-20 backdrop-blur-lg transition-all duration-75">
+                     <div class="p-2.5"><a href="/"><img src="assets/logo.png" alt="Logo"></a></div>
+                     <div class="gap-y-6 flex flex-col items-start mt-8"><button class="px-2.5 font-medium"><a
+                        href="whitepapers.html">Whitepaper</a></button><button class="px-2.5 font-medium"><a
+                        href="win-333k.html">Win
+                        $333K</a></button><button class="px-2.5 font-medium"><a href="stages.html">Stages</a></button><button class="px-2.5 font-medium"><a href="how-to-buy.html">How to
+                        buy</a></button><button class="px-2.5 font-medium"><a href="contact.html">Contact
+                        Us</a></button><button
+                           class="connectButton-1 px-8 text-black-100 p-3 btn-gradient rounded-lg text-left"
+                           onclick="showWalletsOption()">Connect
+                        Wallet</button>
+                     </div>
+                  </div>
+               </header>
+            </div>
+            <div style="width: 100vw; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 30px 0;">
+               <div class="text-center space-y-6 lg:py-20 py-6">
+                  <p class="text-gradient-1 lg:text-5xl text-8xl font-bold">RETIK LIMITED</p>
+               </div>
+            </div>
+            <div class="space-y-6">
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Beachmont, Kingstown, Saint Vincent and the Grenadines <br>
+                  Registration Number: 3178 <br><br>
+                  You should read these Terms because they contain our legal commitments to you and a number of DOs and DON'Ts which you need to be aware of when you use our Services. Please read these
+                  Terms carefully to make sure you understand them. By using our Services, you are automatically
+                  deemed to agree to accept and be legally bound by these Terms. For the avoidance of doubt if you do
+                  not agree with the Terms, you should not proceed to access or use our Services. <br><br>
+                  You should also read our Privacy Policy. The Privacy Policy explains how we use your personal data. <br><br>
+                  If you think that there is a mistake in these terms or have any queries, please contact us to discuss. <br><br>
+                  If we have to contact you, we will do so by writing to you at the email address you have provided to us. It
+                  is therefore very important that you confirm you have provided a legitimate email address that is used by
+                  you personally and by proceeding with use of our Services you warrant that you have done so. We will
+                  only contact you have given explicit consent for us to do so. The only other time you will receive emails,
+                  is where you have registered to receive our newsletter and updates.  <br><br>
+                  When we use the words "writing" or "written" in these terms, this includes emails. <br>
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Changes to Terms
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  We can update and change these Terms from time to time and the most current version of these Terms
+                  will be posted onto the website and relevant app and you may be invited to review and accept the
+                  revised Terms in order to continue using the Services. We suggest all users regularly check the terms
+                  on the website and in-app where any changes will be posted. You can print and save a copy of these
+                  Terms for your future reference. <br><br>
+                  We may require you to update software to be able to use the Services, provided that the Services will
+                  continue to match the description of it that we provided to you before.
+                  <br><br>
+                  The associated software may be upgraded to reflect changes in an operating system. 
+                  <br><br>
+                  By continuing to use the Services you will be deemed to have accepted the Terms as varied from time to
+                  time. <br><br>
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Using our service / buying Coins
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  To use our service, you will need to have a virtual wallet<br><br>
+                  We draw your attention that wallets are third parties and advise you to read their terms of use.  <br><br>
+                  Security is important to Renq and you therefore agree not to share your wallet access with any other user or third party, or knowingly carry out any activity which enables a third party to access or use
+                  your account. If we believe, acting in our discretion, that your account is used inappropriately, we
+                  reserve the right to suspend or terminate or cease to support your account without liability. <br><br>
+                  We cannot check the identities of people using our Services and will not be liable if your wallet
+                  connection or account is used by someone else. If you become aware of any unauthorised use of your
+                  login, you should notify us immediately here and subject should read ‘Security Breach’ though
+                  please note that we may need to verify your identity and validate ownership of the account. Please be
+                  alert for other websites and services which may pretend to be us or to be associated with us. If in doubt, please contact us at: <strong>support@retik.com</strong>
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Removing Data
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  If you would like us to delete any data, we may hold on you, please contact us by emailing at: <strong>support@retik.com</strong> <br><br>
+                  Whereas we do not require personal information or identifiable information upon signing up to use our
+                  service, we may (if you have provided an email address to us, or given us permission to contact you in
+                  another way) still hold details for you, therefore, If you wish for your data to be removed, you must
+                  specify this when emailing your request for your data is removed. If you do not request deletion of your
+                  data, we will hold this information as outlined in our Privacy Policy.
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Rules of Use
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  You undertake and agree to adhere to and abide by the following rules ("the Rules"). You agree that you will not post, distribute, or otherwise make available or transmit any data, text, message, graphic or computer file that we believe:<br><br>
+                  • is a personal attack on other individuals;<br>
+                  • bullies, stalks or otherwise harasses any other user of our Services;<br>
+                  • is vulgar, obscene, or sexually explicit (language or images);<br>
+                  • is offensive, sexist, racist or discriminatory in any way;<br>
+                  • is a form of cheating;<br>
+                  • encourages or advocates illegal activity or the discussion of illegal activities with the intent to commit them;<br>
+                  • infringes and/or violates any right of a third party including but not limited to: (a) copyright, patent, trademark, or other proprietary rights; (b) right of privacy (specifically, you must not distribute another person's personal information of any kind without their express permission) or publicity; (c) any confidentiality obligation;<br>
+                  • contains a virus or other harmful component, or otherwise tampers with, impairs or damages our Services or otherwise interferes with any person or entity's use or enjoyment of the Services;<br>
+                  • engages in antisocial, disruptive, or destructive acts, including "flaming," "spamming," "flooding," "trolling," and "griefing";<br>
+                  • promotes and/or generates money for yourself and/or any third-party business activity;<br>
+                  • impersonates any person or entity or misrepresents your identity or affiliation with any person or entity;<br>
+                  • deletes any legal notices, disclaimers, or proprietary notices such as copyright or trademarks, or modify any logos that you do not own or have express permission to modify;<br>
+                  • does not generally pertain to the designated topic or theme of the Services.
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Violation of Rules
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  If you believe that another user is violating these Rules, please let us know by emailing at: <strong><a href="">support@retik.com</a></strong> <br><br>'
+                  However, we cannot and do not guarantee that other users are or will be complying with these Rules,
+                  and we will not be responsible for any other user's lack of compliance. You and other users are
+                  responsible for your own actions.' <br><br>
+                  We also reserve the right to comply with any order or otherwise cooperate with law enforcement
+                  officials regarding the identification of any user alleged to be using our Services in violation of the law. <br><br>
+                  All of the content and information contained in the Services are owned or licensed by us and are
+                  protected by intellectual property rights. Examples include but are not limited to; source and object
+                  code, trademarks, logos, graphics, photographs, videos, animations, copyrightable gameplay and texts. In particular, any names, title, logos and designs that contain Renq are exclusively owned by us. 
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Service Interruption
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Renq do not guarantee that the Services will always be available or be uninterrupted, timely, secure or free from bugs, viruses, errors or omissions. For example, there may be times when the
+                  Services are unavailable due to maintenance or technical problems. We may also change, suspend or
+                  discontinue certain Services without giving you prior notice. <br><br>
+                  Whilst we shall use reasonable endeavours to provide the Services if and to the extent that we are
+                  prevented from performing any or all of our Services due to an event which is beyond our reasonable
+                  control we shall not be deemed to be in breach of the Terms, or otherwise liable, for any nonperformance of our obligations under these Terms. <br><br>
+                  We do not exclude or limit in any way our liability to you where it would be unlawful to do so. This
+                  includes liability for death or personal injury caused by our negligence or the negligence of our
+                  employees, agents or subcontractors or for fraud or fraudulent misrepresentation. <br><br>
+                  We will take reasonable steps to ensure that our Services are free from viruses and other
+                  malicious software, but we also recommend you use applicable anti-virus software as relevant. <br><br>
+                  If we provide an app, and you choose to voluntary download this app for your personal use, you will be
+                  asked to agree to the relevant app store terms which will apply in addition to these Terms. We suggest
+                  that you read these app store terms carefully. <br><br>
+                  If you download a Service onto your smartphone or tablet, it may offer push notification features. You
+                  may accept or refuse these and can subsequently turn these off by visiting the settings menu on your device
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Third Parties
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  On some pages you may see links to third party websites, advertising services provided by third
+                  parties. These links are provided by third parties and not by us. We do not endorse any third-party
+                  website, however, in order for users to purchase Tokens, we supply links to our trusted third-party
+                  providers to enable you to do purchase. Subject to applicable law or regulation, we are not responsible
+                  or liable for anything that happens to you or your data when you visit these third-party websites or use
+                  third party content. If you visit any third-party website, please be aware that it may have its own terms
+                  of use, licence agreement and privacy policy which you will need to be aware of. <br><br>
+                  On some pages you may see services provided by third parties. We do not control any of the
+                  content once you have left the Renqs website and entered a Third-Party website. Please
+                  report any service provider that you find offensive or inappropriate and we will cooperate with you
+                  and collaborate with the third-party to investigate the matter. <br><br>
+                  If you visit any third-party website, please be aware that it may have its own terms of use, licence
+                  agreement and privacy policy which you will need to be aware of and abide by. We accept no
+                  responsibility for bringing these third-party terms to your attention.
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Agreeing to Terms
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  By using our Services, you agree to accept and be legally bound by these Terms. If you do not
+                  agree with the Terms, you should not access or use our Services. We will do our best to resolve any
+                  disputes over these Terms. <br><br>
+                  If you wish to make a complaint about how we process your Information, please contact us at <strong>support@retik.com</strong>
+                  and we will endeavour to deal with your complaint as soon as possible. <br><br>
+                  We may need further information from them to verify you and will contact you to request further information if needed. We aim to respond to complaints within 30 days; however, this may be delayed if you have not provided us with all relevant information.
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Services made available to you
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  The Services are made available for personal and not commercial use. We do permit promotional references to our Services (for example reviews via social media and in blogs) but we do reserve the
+                  right to ask you to remove such content or refrain from further action to our discretion. You warrant and
+                  undertake that you shall not do or authorise any act or thing which will in any way materially alter,
+                  harm, misuse or bring into disrepute, impair or materially adversely affect us and/or our rights and
+                  interests or the rights and interests of any of our commercial partners. <br><br>
+                  You cannot assign, sub-license or otherwise transfer any or all of your rights or obligations under these
+                  Terms to any other person.<br><br>
+                  If any part of these Terms is or becomes invalid, illegal or unenforceable, it shall be amended to the
+                  minimum extent necessary to make it valid, legal and enforceable. If that part cannot be amended, it
+                  will be deleted. The amendment or deletion of any part of these Terms shall not affect the validity and
+                  enforceability of the rest of the Terms. <br><br>
+                  If we do not enforce any right, we have against you, this does not prevent us from enforcing this right at
+                  a later date. A person who is not a party to these Terms does not have any rights under them.
+                  <br><br>
+                  These Terms supersede and take precedence over any other purported terms between you and us. <br><br>
+                  These Terms and our relationship with you are governed by The Jurisdictions of the United
+                  Kingdom which comprise of three legal jurisdictions of the United Kingdom of Great Britain
+                  and Northern Ireland, namely: England & Wales, Scotland, and Northern Ireland Law and The
+                  Law of the Cayman Islands. <br><br>
+                  For customer support and business queries, please email <strong>support@retik.com</strong>
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Children
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Our services are not available for use by children and are intended for persons over the age of 18
+                  years old and 21 years old in some jurisdictions. Please refer to your country laws in accordance with
+                  age appropriate guidance. <br><br>
+                  To comply with the current ‘UK Data Protection Act’ for Children, specifically the Age Appropriate
+                  Design Code (also known as the Children’s Act), risks have been assessed. More information can be
+                  found https://ico.org.uk/for-organisations/childrens-code-hub/<br><br>
+                  If you help someone who is under 18 or 21 years old in some jurisdictions, to register for or otherwise
+                  use any Services you assume full liability for any consequences and that, under no circumstances
+                  including, but not limited to, negligence, neither<br><br>
+                  We nor any third-party content provider nor their respective agents shall be liable for any direct, indirect,
+                  incidental, special or consequential damages arising out of such use.
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Content and IP Rights
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  All of the content and information contained in the Services are owned or licensed by us and are
+                  protected by intellectual property rights. Examples include but are not limited to; source and object
+                  code, trademarks, logos, graphics, photographs, videos, animations, copyrightable gameplay and texts. In particular, any names, title, logos and designs that contain Renq are exclusively owned
+                  by us.<br><br>
+                  You are not allowed to use the Services or any of the content or information they contain, or may
+                  contain, inany way unless expressly allowed under these Terms or expresslypermitted by us. You may
+                  not reverse engineer, decompile, disassemble or modify any Services in any way.
+                  <br><br>
+                  You agree that:<br><br>
+                  (a) you will not copy any of the software provided as part of the Services<br>
+                  (b) you will not rent, lease, sub-license, loan, translate, merge, adapt, vary, alter or modify, the whole or any part of the software nor permit the software or any part of it to be combined with, or become incorporated in, any other programs<br>
+                  (c) you will comply with the rules contained in this document
+                  <br><br>
+                  <strong>We are not responsible for the following types of loss or damage which may arise:</strong> <br><br>
+                  • unauthorised persons who have gained access to your account (including, without limitation, minors or unauthorised third parties);<br>
+                  • loss or liability incurred by you as a result of accidentally making a purchase through your wallet connection;<br>
+                  • any loss which is indirect or a side effect of the main loss or damage and which we and you could not anticipate nor expect to happen when you started using the app or website, for instance if you lose revenue or salary, profit, opportunity, or reputation;<br>
+                  • any loss or damage if purchased Items are not provided to you are interrupted or suspended because of events beyond our control, such as an act of God, accident, fire, lockout, strike, or other official or unofficial labour dispute, civil commotion, or other act or event beyond our reasonable control. <br>
+                  •Users are advised to use due diligence when communicating or responding to any social media platform accounts in the name of Renq. We urge users to take precaution when divulging information and to check the validity of the source. If in any doubt contact <strong>support@retrik.com</strong><br>
+                  • We make every effort to inform our users via our social media platforms of any persons/companies or
+                  potential scams, that may be impersonating us. 
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Additional important information and terms 
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  • You are also responsible for ensuring that all persons who access our site or app through your internet / smartphone, tablet connection are aware of these terms of use and other applicable terms and conditions, and that they comply with them.<br><br>
+                  • It is your responsibility to determine whether your access and use of our site is in line with all legal and regulatory obligations that are applicable to you.<br><br>
+                  • Information on our website, app, or within these Terms is not intended as advice. The content on our site and app is provided for general information only, and personal use. It is not intended to amount to advice on which you should rely. You must obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content on our site.<br><br>
+                  • Investments may fluctuate and may be at risk of loss. You are encouraged to seek financial advice from a regulated advisor before making any financial decisions.<br><br>
+                  • Although we make reasonable efforts to update the information on our site, we make no representations, warranties, or guarantees, whether express or implied, that the content on our site is accurate, complete, or up to date. Neither do we offer financial advice.<br><br>
+                  • You are responsible for configuring your information technology, computer programs, and platform to access our site. You should use your own virus protection software.<br><br>
+                  • You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs, or other material that is malicious or technologically harmful. You must not attempt to gain unauthorized access to our site, the server on which our site is stored, or any server, computer, or database connected to our site. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack.<br><br>
+                  • By breaching this provision, you would commit a criminal offense under the relevant state/country law. We will report any such breach to the relevant law enforcement authorities, and we will cooperate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately.
+               </p>
+               <br><br><br>
+            </div>
+            <footer class="container text-white-100 mx-auto lg:px-8 px-5 font-poppins">
+               <hr class="hr">
+               <div class="lg:flex justify-between items-center py-16 gap-6 lg:space-y-0 space-y-8"
+                  style="flex-direction: column;">
+                  <div>
+                     <img src="assets/logo.png" alt="logo" class="lg:block flex mx-auto">
+                  </div>
+                  <div class="lg:space-y-8 space-y-6">
+                     <div class="text-center opacity-60">
+                        <p>2023© Retik LLC | All Rights Reserved</p>
+                        <p>Beachmont, Kingstown, Reg no: 3178 , Saint Vincent and the Grenadines,
+                           support@retik.com
+                        </p>
+                     </div>
+                     <ul class="text-md flex flex-wrap justify-center lg:gap-8 gap-6 items-center">
+                        <li>
+                           <a href="index.html" class="font-semibold">Home</a>
+                        </li>
+                        <li>
+                           <a href="whitepaper.html"
+                              class="font-semibold">Whitepaper</a>
+                        </li>
+                        <li>
+                           <a href="win-333k.html" class="font-semibold">Win
+                           $333K</a>
+                        </li>
+                        <li>
+                           <a href="stages.html" class="font-semibold">Stages</a>
+                        </li>
+                        <li>
+                           <a href="how-to-buy.html" class="font-semibold">How to
+                           buy</a>
+                        </li>
+                        <li>
+                           <a href="contact.html" class="font-semibold">Contact
+                           Us</a>
+                        </li>
+                        <li>
+                           <a href="privacy-policy.html" class="font-semibold">Privacy Policy
+                           </a>
+                        <li>
+                           <a href="terms.html" class="font-semibold">Terms & conditions
+                           </a>
+                        </li>
+                        </li>
+                        <li>
+                           <a href="cookies.html" class="font-semibold">Cookies
+                           </a>
+                        </li>
+                     </ul>
+                     <div class="text-center opacity-60">
+                        <p>Disclaimer: Cryptocurrency may be unregulated in your jurisdiction. The value of
+                           cryptocurrencies may
+                           fluctuate.
+                        </p>
+                        <p>Profits may be subject to capital gains or other taxes applicable in your
+                           jurisdiction
+                        </p>
+                     </div>
+                  </div>
+                  <div class="flex items-center justify-center gap-x-6">
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFCSURBVHgB7ZbhbYMwEIXPnaDdgA2aERiBDcII3SDZoOkEtBN0BHeDtBO4G5ANXs+yI5Br8Nmx8otPekKA7ec7HWeINjZuBEBjRSXwxEfKxM5hHVgjJox9FozrUwsNrD3lGZ+xjH336jc2pBa7LvQiNB8gQ7N2q9H7dF05JIwbofHo17VqpObw9/3C2A5yDFKFyAOOK5P7+QL+XkpPKeAKaEQ6Cs36hJxOYm4rc4//6b+VNvRSEXPDl4bq86SUuswfPEQGfVB9vkPjJfMT65cqm4tHwn2/BvXY5Zjbim/hqjlV+Sk05QL3KdVAHvXMvEbqT1SK34BGGQYFx3NsE/Y0yulmBqU/FIFxmxn9WWqsQiOautszq6O8bvfGOsYaigi4k8ogD41I706hVjbRkovcZqChKQMXry/WD+u9ONKNjXvyB43wWYEulqZ4AAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFjSURBVHgB7ZXhcYMwDIVFrwOwQRmBDcoGZQQ2aDaAEdggbNB0AroB3cDtBGQDVT7ExefGWDYhlx98d+8uwRbPkmUMsLOzAYhYkHrSSPqArSGTlHRgU5sX2AI2rTlLFyncEqO0PoY55hlWwBlUpDdScWXKmWRn+QtrTQWlbUnqyvMDxCAsrV5QRTo6xosQw6WutRlIGU5VceFvNpSV1qTluHphjvKZSrt2Ri+u5Nh3z9zTknGPYfSkjGNzwfzGZSwJNmmNWL3Pku0plzJvBS9QaHQsGyuUkYFnz3N0n9HefEGg8Qgh4NR8HRucrDF9GgaU00MMOH00RuvZEcNoIQbOUlPw/wzD+ddsTxLzJEn0BfEFl8ujhnB+IMac+SS98u8CwjhTAt8Qi1Hq0iqnQv8Zj2s2awG20XyR+I5cXLNZ5o1lnBpjuik7h3kFa8HL2e7QcTVaC5zJ4V7g9JVUbNzAziPxB7wS+4o5Kp2OAAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGcSURBVHgB7ZbRcYMwDEBFrwNkg3qEdINsUjJBsgFsEDYgG7QbwAZ0A7IBdAJVKspV5cDIOXzNR96dQs6SLVkIywD/SAIRQMQtPVh6kkuSJJ9Tdk+wIuT0QNLS3wOJkwAyHiNJIRa0eElSkGwmdI7kTHLS46ukXRb9ovTmM3oOiCUl6cmugEAHHD2nsMG/cErLmTk7kkrsChmrprLjc5yhn53epQqyk+CYo+iPJLnVcYnLbGSXJ3F4zchpHCAOGfywOM7QgNie1VAhwXTaRjmvlhw7tPOi5hTy7JS+UetyUD/v3/edZ2Bnzz9UxRd68IHC1a+LSh8ybyS1dzX8LRQLvEsn8/j9v8vuc9GnouOxFpbAcNprAKN1nHLcTNmMJ2zwNlocKnyr1uJ3nOHwfTvLrkOKzQfvtER1DmieISJUgK8+/apdLZS7dG4/+D3gQgOZc36AdQg5qMyNJARbAGSYYhx2U/7GaXcQBwcG5zXEoTZZ4dAMWlwHbjhHuEeCbq84NIZxr2b20svjgcMtZYocbiC0sfD1p58Zf2DmG3O084Y++QoWAAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGsSURBVHgB7VbRccIwDFV6/S8jpBM0nYCwQUZIJ4ANCBOUTgCdoGwAnYBskGxQOoH7RBRwjWO7cOkPvLuHk0iWbFmyILrh2hCFKiqlBhjS/aQoWnXoZBh2YAmdHV0CdghOwbVqsAXnDv2l6LS6ORh36UcOQ2MMhby+gUvspsb3BM/MGHwQ+TdYgjV0SnHIc4cgR2yO7zMKgeyW8SG7T8FX8Ev5UYELXoCwjcQkxHFsMXQuFmJDycIHPue56g+F7uvO4n9K/WHYKVHN2faNpPVn7jyj/pF1OX9yz6MNuHLIl6LjwmnoVVNSKiRZlD0pM00+d9g5zXrlP++BoV9psu0fN7I/dz3sCf0fTpzHngmHEpQQ6/oJR057H1OA83vtgy/ZJqq5s7lb5Rb5GnJOxkP3c+DBdB6C7EJ5i5h/9LCb9y53qWewpvOxERulTag7fzdkfC4pWuEjxhfy12+LneiOMHdETV2byfzJP7/6udSyebfXIPfilbYoWz9nvZKOu8ypSbzYsDfDogqyQS6QylWfLsh9Yev7W6MivEb0v0UFBUIdb7hKnlO64Yarxg+gcPe0drZTaAAAAABJRU5ErkJggg=="
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFvSURBVHgB7ZbtTcMwEIbPiAHCBGQENsAjdIRsgjcITBCYgBHcDVomcDZoNjjOqqMexbEvjaP2Rx/pVaTc2a+dnD8A7lwBlUtAxIoeDemZVIGMgfRD2iqlepiLNyV943I6Uj3HuCY5LIcTDwDLGo9YiXGDZXgnfZ692+TMLRaA9cf5M/vHiP8L5PHV/EXqWZtXUs0nMbtvwaT856wi7XyRmlzjJeaG5WlSG6TZe7OGuWU5sfXfsrgtbb4J8bdEjgk5TWnzKsRdIseFnFpirmLmsUHRHq1ScWneGPc8gBA8VXifSNuHXMlylZsT4+70kcgZYyLzf0z/TtyxnNhyMizuJP98jrmHLydfVE1Qxd63qQ6WmHs6jByPYTA215i3iVX7AWQ3li2ciq8maUGbgYr9aTKKhU61qa8GKfC4Z6+Fhhy4zuw7kIDHy+MOy2ExcgznBuHXs8PLOSBb/+dk7+1hEBrYLUVIT9pTdQ9w55b4BYApChIfShDdAAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </div>
+      </div>
+      </div>
+      <script>
+         // mobile-menu
+         var sidebar = document.querySelector(".sidebar")
+         var toggle = document.querySelector(".toggle")
+         
+         toggle.addEventListener("click", function () {
+             console.log("Toggle button clicked");
+             if (sidebar.classList.contains("close")) {
+                 sidebar.classList.remove("close");
+             } else {
+                 sidebar.classList.add("close");
+             }
+         })
+      </script>
+      <script>
+         window.gtranslateSettings = {
+             "default_language": "en",
+             "languages": ["en", "fr", "de", "it", "es", "nl", "pt", "zh-CN", "tr", "ar", "ko", "zh-TW", "ja",
+                 "ru", "hi", "pl", "cs", "hu", "id", "bg", "th", "ro", "vi", "sk"
+             ],
+             "wrapper_selector": ".gtranslate_wrapper",
+             "flag_size": 24,
+             "switcher_horizontal_position": "inline",
+             "flag_style": "3d",
+             "alt_flags": {
+                 "en": "usa"
+             },
+             "switcher_text_color": "#f7f7f7",
+             "switcher_arrow_color": "#f2f2f2",
+             "switcher_border_color": "#161616",
+             "switcher_background_color": "#303030",
+             "switcher_background_shadow_color": "#474747",
+             "switcher_background_hover_color": "#3a3a3a",
+             "dropdown_text_color": "#eaeaea",
+             "dropdown_hover_color": "#748393",
+             "dropdown_background_color": "#474747"
+         }
+      </script>
+      <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.1/web3.min.js"
+         integrity="sha512-16bHUyyjvvIblMY4r09krdSjrJU4GgPPIk0VgiCJW/SPt2s2YYZ4ypsaTid+KiwvrQ6+aijt7Gu4LtQT4msbzQ=="
+         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="index.js"></script>
+   </body>
+</html>

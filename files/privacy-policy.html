@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="icon" href="assets\favicon.ico">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="description" content="Retik">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+      <link href="main.css" rel="stylesheet">
+      <title>Retik Finance Presale</title>
+      <style>
+         .steps-tag{
+         -webkit-text-fill-color: #0000;
+         background: linear-gradient(180deg, rgb(255, 148, 255) 20.63%, rgb(109, 216, 212) 75.15%);
+         background-clip: text;
+         -webkit-background-clip: text;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="App">
+         <div class="bg-black-100 text-white-100 font-poppins" style="background-image: url(assets/bg.png); background-repeat: no-repeat;
+            background-position: center top; background-size: cover;">
+            <div class="blur-effect invisible" onclick="removeWalletsOption()"></div>
+            <div class="wallets invisible">
+               <div id="metamask" onclick="connectMetamask()"><img src="assets/metamask.svg"></div>
+               <div id="walletConnect" onclick="connectWalletConect()"><img src="assets/walletconnect.svg"></div>
+               <div id="trustwallet" onclick="connectTrustWallet()"><img src="assets/trust-wallet.svg"></div>
+            </div>
+            <div class="bg-top lg:block hidden">
+               <div class="lg:px-12 px-5 container mx-auto relative z-20">
+                  <header>
+                     <div class="lg:flex hidden items-center justify-between font-poppins text-white-100 h-24">
+                        <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="Logo">
+                        </a>
+                        <nav>
+                           <ul class="text-md flex justify-center gap-8 items-center">
+                              <li>
+                                 <a href="white-paper"
+                                    class="font-semibold">Whitepaper</a>
+                              </li>
+                              <li>
+                                 <a href="win-33k"
+                                    class="font-semibold">Win $333K</a>
+                              </li>
+                              <li>
+                                 <a href="stages.html" class="font-semibold">Stages</a>
+                              </li>
+                              <li>
+                                 <a href="how-to-buy.html" class="font-semibold">How
+                                 to buy</a>
+                              </li>
+                              <li>
+                                 <a href="contact.html"
+                                    class="font-semibold">Contact Us</a>
+                              </li>
+                           </ul>
+                        </nav>
+                        <div class="gtranslate-wrapper">
+                           <div class="gtranslate_wrapper"></div>
+                        </div>
+                        <div>
+                           <button
+                              class="connectButton-1 px-8 py-2 rounded-2xl btn-gradient text-black-100 font-semibold text-lg"
+                              onclick="showWalletsOption()">Connect
+                           Wallet</button>
+                        </div>
+                     </div>
+                     <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                        <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2">
+                        <img src="assets/logo.png" alt="Logo">
+                        </a>
+                        <button class="nav cursor-pointer">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                           </svg>
+                        </button>
+                     </div>
+                  </header>
+               </div>
+            </div>
+            <div class="lg:space-y-0 space-y-6 relative z-20 px-5 container mx-auto lg:hidden block">
+               <header>
+                  <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                     <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2"
+                        style= "align-items: center;">
+                     <img src="assets/logo.png" alt="Logo">
+                     </a>
+                     <div class="gtranslate-wrapper" style="margin-left: 20px;">
+                        <div class="gtranslate_wrapper"></div>
+                     </div>
+                     <button class="nav cursor-pointer toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                           stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                           <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                        </svg>
+                     </button>
+                  </div>
+                  <div
+                     class="sidebar close fixed top-0 bottom-0 left-0 p-2 w-3/4 overflow-y-auto font-poppins z-20 backdrop-blur-lg transition-all duration-75">
+                     <div class="p-2.5"><a href="/"><img src="assets/logo.png" alt="Logo"></a></div>
+                     <div class="gap-y-6 flex flex-col items-start mt-8"><button class="px-2.5 font-medium"><a
+                        href="whitepapers.html">Whitepaper</a></button><button class="px-2.5 font-medium"><a
+                        href="win-333k.html">Win
+                        $333K</a></button><button class="px-2.5 font-medium"><a href="stages.html">Stages</a></button><button class="px-2.5 font-medium"><a href="how-to-buy.html">How to
+                        buy</a></button><button class="px-2.5 font-medium"><a href="contact.html">Contact
+                        Us</a></button><button
+                           class="connectButton-1 px-8 text-black-100 p-3 btn-gradient rounded-lg text-left"
+                           onclick="showWalletsOption()">Connect
+                        Wallet</button>
+                     </div>
+                  </div>
+               </header>
+            </div>
+            <div style="width: 100vw; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 30px 0;">
+               <div class="text-center space-y-6 lg:py-20 py-6">
+                  <p class="text-gradient-1 lg:text-5xl text-8xl font-bold">Privacy Policy</p>
+               </div>
+            </div>
+            <div class="space-y-6">
+               <p class="lg:w-9/12 flex mx-auto text-center px-5" >This privacy policy ("Policy") informs you of your choices and our practices in relation to your Information (as defined below). For the purposes of this Policy, "we", "us" and "our" refers to "Retik Limited" Registration Number: 3178 with its office located at Beachmont, Kingstown, Saint Vincent and the Grenadines3</p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  Children</span>
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Our services are not available for use by children and are intended for persons over the <strong> age of 18 years old and 21 years</strong> old in some jurisdictions. Please refer to your country laws in accordance with age appropriate guidance.<br><br>
+                  To comply with the current 'UK Data Protection Act' for Children, specifically the Age Appropriate Design Code (also known as the Children's Act), risks have been assessed. More information can be found <strong>https://ico.org.uk/for- organisations/childrens-code-hub/</strong><br><br>
+                  This policy will explain areas of our app or website that may affect your privacy and personal details, how we process, collect, manage and store those details and how your rights. <br><br>
+                  For the purpose of this Policy, "Information" means any information relating to an identified or identifiable individual. This includes Information relating to your use of: (a) our mobile app ("Mobile App" the "Service"); (b) www.Retik.com and any other dedicated websites which link to this policy ("Website"). When you use the App or you accept our rules and policies which set out how we handle your Information, and you understand we may collect, process, use and store your Information as described in this Policy. "Payment" refers to deposits made using tokens via your virtual wallet. <br><br>
+                  <strong>If you do not agree with this Policy, you must not use our app or website. If you change your mind in the future, you must stop using our app or website, and you may exercise your rights in relation to your Information as set out in this Policy.</strong> <br><br>
+                  This Privacy Policy does not apply to information that you may submit to third-party websites or mobile applications that may link to the Websites or be linked to on the Websites. We are not responsible for the actions or privacy practices of third-party websites and applications; please consult those websites and applications directly to understand their privacy practices.
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  1. PERSONAL INFORMATION WE COLLECT</span>
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  We may collect and use the following Information about you: <br><br>
+                  <strong>• Information you provide to us:</strong> We receive and store information provided to us or given to us in any other way, including your: name, mailing address, phone number, email address, picture, date of birth, payment information, registration information, social media and messaging platform handle, optional biographic and demographic information, processional and licensure information, information for wallets you create or connect via our Websites, survey responses, and any other information that you voluntarily provide. This includes information that you share with us on third-party websites and platforms. <br><br>
+                  <strong>• Information collected via our customer support channels,</strong> for example, when you contact us via email, you may provide us with (a) your full name, email and (b) any information you choose to provide to allow us to assist you. This information is not used or shared for any purpose other than to assist with your reason for contact. <br><br>
+                  <strong>• Information you provide when using the app or website:</strong> You are only required to submit personal information, should you choose to opt into marketing emails, such as newsletters and updates. <br><br>
+                  <strong>• Information provided:</strong> It is the responsibility of the you, the 'user' to ensure your details are accurate and up to date and, where possible, to only provide such information as is necessary when you contact us. <br><br>
+                  <strong>Information we automatically collect or is generated about you when you, register for newsletters or updates or connect to our app or website:</strong><br><br>
+                  <strong>• Identifiers,</strong> such as your name, email address, IP address, device and app ID, unique ID, location data and device information (such as model, brand and operating system).
+                  <strong>• Cookies:</strong> we use cookies and other similar technologies (e.g. web beacons, log files, and scripts) ("Cookies") to enhance your experience when using our services. Cookies are small files which, when placed on your device, enable us to provide certain features and functionality. You have the option to permit installation of such Cookies or subsequently disable them. You may accept all cookies or instruct the device or web browser to provide notice at the time of installation of cookies or refuse to accept all cookies by adjusting the relevant cookie retention function in your device. However, in the event of your refusal to install cookies, the Game may be unable to operate as designed. For more information about our Cookies policy, click here. <br><br>
+                  <strong>• Information regarding your use of the website or app,</strong> such as date and time stamps of events, interactions with our teams. <br><br>
+                  <strong>• Location based data - Using an app:</strong> is collected within the app and can only be collected if you, the 'user' has your location services activated. When the app is installed it will ask for permission to allow the app to access your location service, you can accept or deny. You can also go into your settings on your phone and disable this at any time. Website: When you visit our Websites or interact with our online services, we may receive information about your location and your device, including a unique identifier for your device. Location information allows us to provide location-based services, such as advertising and other personalised content. <br><br>
+                  <i>Our Websites may use "cookies," (please refer to our Cookies Policy) tagging and other tracking technologies to help enable us to enhance or personalise your online experience. This information includes computer and connection information such as statistics on your page views, traffic to and from our Websites, referral URL, ad data, your IP address, device identifiers, transaction history, and your web log information.</i><br><br>
+                  <strong>Information received from third parties:</strong><br><br>
+                  Information from Social Media: When you interact with us or our Websites or on a social media
+                  platform, we may collect the personal information that you make available to us, including your
+                  account ID, username, and other information included in your posts. If you choose to log into your
+                  account with or through a social networking service, we and that service may share certain
+                  information about you and your activities. When you give us permission, we may also collect
+                  information from your social media account on your behalf. <br><br>
+                  <strong>• Analytics information:</strong> We integrate certain analytic software, Google Analytics, a third-party
+                  analytics provider. They provide reports that help us optimize our features. This information may
+                  include user activity but is not identifiable information. <br><br>
+                  <strong>• Information from mobile measurement partners:</strong> We receive information from third parties to
+                  allow us to track performance and to detect fraud. This includes IP address, location, and in some
+                  circumstances transaction information. <br><br>
+                  <strong>• Third-Party Terms and Policies:</strong> When connecting your virtual wallet to our app or website to
+                  login, third-party terms or policies may apply. It remains the responsibility of the user to ensure you have read and agree to their terms. <br><br>
+                  <i>We do not collect any Special Categories of Personal Data about you (this includes details about your race or
+                  ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union
+                  membership, information about your health, and genetic and biometric data). Nor do we collect any information
+                  about criminal convictions and offenses.</i> <br><br> 
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  2. HOW WE USE YOUR PERSONAL INFORMATION</span>
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  We will only use your personal data (such as name, email address, or telephone number if provided to us)
+                  when the law allows us to. Most commonly, we will use your personal data in the following circumstances:<br><br>
+                  a) Where we need to perform the contract, we are about to enter into or have entered into with you.<br><br>
+                  b) Where it is necessary for our legitimate interests (or those of a third party) and your interests and
+                  fundamental rights do not override those interests.<br><br>
+                  c) Where we need to comply with a legal obligation.<br><br>
+                  d) Or, where you have opted in to receive any marketing material.<br><br>
+                  Certain purposes that either 'constitute' a legitimate interest or 'should be regarded as' a legitimate interest.
+                  These are: fraud prevention; network and information security; and indicating possible criminal acts or threats to
+                  public security.<br><br>
+                  Some processing is necessary because it is in our or a third party’s legitimate interests, such as those of
+                  visitors, members, or partners.<br><br>
+                  We may collect information in a way that does not directly identify you; we may collect information you have
+                  shared with us and we may use and share such information as necessary for our business purposes and as
+                  permitted by applicable law.<br><br> 
+                  <strong>The Lawful Bases we rely on and our legitimate interests</strong> <br><br>
+                  Provide you with the service. More in particular, we will use Information to perform our contractual
+                  obligation towards you to allow you to connect to our services via your virtual wallet. The
+                  Information we process when doing so may include a unique identifier which does not identify you
+                  personally.
+                  <br><br>
+                  Improve and monitor use. To improve our service for our customers. When doing so, we may
+                  collect information such as a unique identifier which will allow us to analyze information about your
+                  device such as battery, Wi-Fi strength, device manufacturer, model, and operating system.
+                  <br><br>
+                  Provide you with support and respond to your requests or complaints. If you reach out to us
+                  for support, we will use your Information to respond and resolve your queries and complaints,
+                  facilitate support. When doing so, we perform our contractual obligation towards you.
+                  <br><br>
+                  Conduct analytics. To analyze interactions and (a) create anonymized and aggregated data; (b)
+                  create segments of users who show particular characteristics or interests; and (c) conduct predictive
+                  analytics about your interests.
+                  <br><br>
+                  Provide you with advertising. We will present you with newsletters, advertising updates, and/or
+                  offers. Where it is required, we will only do so where we have your consent. In situations where your
+                  consent is not required, or where we provide contextual advertising, we do so on the basis of our
+                  legitimate interests. If you no longer want to receive targeted advertising, please see our Cookie
+                  Policy which explains how you can opt out and change your browser and device settings.
+                  <br><br>
+                  Prevent fraud, defend Retik against legal claims or disputes, enforce our terms and comply with our legal obligations. To detect fraud or any other user behavior which prejudices the
+                  integrity of our services, (2) taking steps to remedy aforementioned fraud and behavior, (3)
+                  defending ourselves against legal claims or disputes, and (4) enforcing our terms and policies. When
+                  doing so, we will process the Information relevant in such a case, including information you provide
+                  us, information we automatically collect about you, and information which is provided to us by third
+                  parties.                     
+               </p>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  <strong>YOUR CHOICES ABOUT HOW INFORMATION ABOUT YOU IS USED AND SHARED</strong><br><br>
+                  In many instances, you have choices about the information you provide and how we use that information.<br><br>
+                  <strong>Marketing Emails:</strong> By providing us with an e-mail address, you acknowledge that we may use your e-mail
+                  address to communicate with you. You can opt-out of receiving promotional and other marketing emails from
+                  us by using the “unsubscribe” feature in our marketing e-mails.<br><br>
+                  <strong>Financial Incentives:</strong> We may run promotions from time to time and ask you to share personal information
+                  with us. We will always give you clear notice about these types of programs when you sign up, and participation
+                  is always voluntary. If you change your mind, you will be able to opt out, and if you do not participate, you will
+                  still be able to use our services. To enter any such promotion, you will be asked to supply information about
+                  yourself, including personal data such as name, email address, or other information. This information is supplied
+                  by you on a voluntary basis. If you do not wish to provide personal information, you should not use the
+                  promotion.
+               </p>
+               <h3 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  3. WHO WE SHARE YOUR PERSONAL INFORMATION WITH:</span>
+               </h3>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  <strong>Vendors and service providers, we rely on for the provision of the service, for example:</strong><br><br>
+                  <strong>• Cloud service providers</strong> who rely on for data storage, being AWS (Amazon Web Server)<br>
+                  <strong>• Analytics providers.</strong> We work with a number of analytics, segmentation and mobile<br>
+                  measurement service providers who help us understand our userbase. This includes Apple,<br>
+                  Google, AWS (Amazon Web Server). <br>
+                  <strong>• Advertising partners.</strong> We may include an ad-supported service. Subject to your settings, we provide
+                  certain Information to advertisers who will use them to serve you with ads within the app or website,
+                  and we measure who sees and clicks on their ads. We also share advertising identifiers, along with
+                  the interests or other characteristics of a device or the person using it, to help partners decide whether
+                  to serve an ad to that device or to enable them to conduct marketing, brand analysis, personalize
+                  advertising, or similar activities. For more information on how to limit or opt-out from personalized
+                  advertisement, please see our Cookie Policy<br>
+                  <strong>• Partner Exchanges:</strong> These processors are responsible for the processing of your Information and
+                  may use your Information for their own purposes in accordance with their privacy policies, please
+                  refer to their individual policies.<br>
+                  <strong>• Law enforcement agencies,</strong> public authorities or other judicial bodies and organisations. We
+                  disclose Information if we are legally required to do so, or if we have a good faith belief that such use
+                  is reasonably necessary to comply with a legal obligation, process or request; enforce our terms of
+                  service and other agreements, policies, and standards, including investigation of any potential violation
+                  thereof; detect, prevent or otherwise address security, fraud or technical issues; or protect the rights,
+                  property or safety of us, our users, a third party or the public as required or permitted by law (including
+                  exchanging information with other companies and organisations for the purposes of fraud protection).<br>
+                  <strong>• Change of corporate ownership.</strong> If we are involved in a merger, acquisition, bankruptcy, reorganisation, partnership, asset sale or other transaction, we may disclose your Information as part
+                  of that transaction. <br><br>
+                  <strong><i>Third Party Privacy Practices</i></strong><br><br>
+                  If you access any service through a third-party platform such as Apple or Google <strong> (“Third Party Services”), you
+                  mustunderstand</strong> that those ThirdPartyServices may collect other information about you (including information
+                  you share with them directly or about your use of the app or website) in accordance with their own terms and
+                  privacy policies. The privacy practices described in thisPolicydonot apply to Third PartyServices. Any links
+                  to Third Party Services <strong> do not imply that we endorse or have reviewed the Third-PartyServices. </strong><br><br>
+                  <strong>Security</strong><br><br>
+                  Although we have in place security measures to maintain the privacy and integrity of your Information,
+                  unfortunately, the transmission of Information via the internet is not completely secure. We may also take extra
+                  steps to protect your Information and minimise the Information we process.
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  4. WHERE WE PROCESS YOUR PERSONAL INFORMATION</span>
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Your Information will be processed by our employees and service providers, Apple, Google, AWS (Amazon Web Services) and Mailchimp. We take steps to ensure all transfers are protected by adequate safeguards When you download the app via Google Play or Apple, you will need to read their Terms and Policies which
+                  are independent of Retik’s Terms and Policies. We may share with Google, Apple, AWS (Amazon Web Services) data we have collected from your device in order to track user experience, such as app or
+                  website crashes. This information does not include identifiable or personal information. <br><br>
+                  It is unlikely, however, should we need to transfer your personal data out of the Marshall Islands, we ensure a
+                  similar degree of protection is afforded to it by ensuring at least one of the following safeguards is
+                  implemented: <br><br>
+                  We will only transfer your data to countries that have been deemed to provide an adequate level of protection
+                  for personal data. <br><br>
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  5. HOW LONG WE STORE YOUR INFORMATION</span>
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Your Information, provided to us, by you, will be stored for up to 6 years. When deleting Information, we
+                  willtake measures to make the Information irrecoverable or irreproducible, and electronic files which contain
+                  Information will be deleted permanently.
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  6. YOUR RIGHTSN</span>
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Under certain circumstances, you have rights under data protection laws in relation to your personal data. These
+                  rights are: <br><br>
+                  • The right to request access to your personal data <br>
+                  • The right to request correction of your personal data <br>
+                  • The right to request erasure of your personal data<br>
+                  • The right to object to processing of your personal data<br>
+                  • The right to request restriction of processing your personal data<br>
+                  • The right to request transfer of your personal data<br>
+                  • The right to withdraw consent<br>
+                  You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However,
+                  we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive. Alternatively, we
+                  could refuse to comply with your request in these circumstances.<br><br>
+                  We may need to request specific information from you to help us confirm your identity and ensure your right
+                  personal data is not disclosed to any person who has no right to receive it.<br><br>
+                  We try to respond to all legitimate requests within one month. Occasionally, it could take us longer than a
+                  month if your request is particularly complex or you have made a number of requests. In this case, we will
+                  notify you and keep you updated.<br><br>
+                  If you are based in the EEA, Switzerland or are a legal resident of California in the U.S., you have certain rights
+                  in relation to your Information. For Californian residents, please refer to Addendum 1 – California Privacy
+                  Rights. For Brazilian residents, please refer to Addendum 2 – Brazil Privacy Rights. For EEA and
+                  Switzerland based, you will find more information below on when which rights can apply.<br><br>
+                  • Access. You have the right to access Information, and to receive an explanation of how we use it and who
+                  we share it with. This right is not absolute. For example, we cannot reveal trade secrets or give you
+                  Information about other individuals.<br>
+                  • Erasure. You have the right to request deletion of your Information. We may need to retain some of your
+                  Information where there are valid grounds for us to do so under data protection laws. For example, for the
+                  defense of legal claims, respect freedom of expression, or where we have an overriding legitimate interest
+                  to do so, but we will let you know when this is the case. Note that where the Information is held by a third
+                  party data controller, such as an advertising partner or a payment processor, we will use reasonable steps to
+                  inform them of your request, but we recommend you contact them directly in accordance with their own
+                  privacy policies to ensure your personal data is erased.<br>
+                  • Objection and withdrawal of consent: You have the right to (i) withdraw your consent where you
+                  previously provided such consent; or (ii) object to our processing of your Information where we process
+                  such Information on the basis of our legitimate interests (see How we use your personal information).
+                  You may exercise this right as follows:<br><br>
+                  - To stop receiving marketing emails: please follow the unsubscribe mechanism at the bottom of each
+                  email communication.<br>
+                  - To stop our cookies being placed: please refer to our Cookie Policy.<br>
+                  - To stop receiving push notifications: please change your device or browser settings.<br><br>
+                  • Portability. You have the right to receive a copy of Information we process on the basis of consent or
+                  contract in a structured, commonly used and machine-readable format, or to request that such Information is
+                  transferred to a third party.<br><br>
+                  • Correction. You have the right to correct any Information held about you that is inaccurate.<br>
+                  • Restriction. You have a right in certain circumstances to stop us processing Information other than for
+                  storage purposes. <br><br>
+                  <strong>ADDENDUM 1 – CALIFORNIA PRIVACY RIGHTS
+                  </strong><br><br>
+                  <strong>The terms of this Addendum apply to residents of California under the California Consumer Privacy
+                  Act of 2018 and its implementing regulations, as amended or superseded from time to time (“CCPA”).
+                  For the purposes of this addendum, Personal Information means information that identifies, relates to,
+                  describes, is reasonably capable of being associated with, or could reasonably be linked, directly or
+                  indirectly, with a particular consumer or household, or as otherwise defined by the CCPA. Personal
+                  Information does not include information that is: lawfully made available from government records,
+                  deidentified or aggregated, or otherwise excluded from the scope of the CCPA.</strong> <br><br>
+                  <strong><i>Collection and Disclosure of Personal Information
+                  </i></strong><br><br>
+                  Over the course of 12 months, through your use of our app and / or website, we may collect and disclose the following categories of Personal Information from or about you:<br><br>
+                  • Identifiers, including name, email address, IP address, device identifiers, game user ID. This information is collected directly from you or your device. If you have registered through a third-party account (Apple or Google), we may have also collected from those third-party services your third-party ID.<br>
+                  • Internet or other electronic network activity information, including your use of features. This information is collected from our selected third-party analytics providers and advertising partners.<br>
+                  • Geolocation data. This information is collected directly from you or your device and from third party services when you register through them.<br>
+                  • Commercial information, including records of products or services purchased, obtained, or considered, your Apple ID number for Apple, your postcode and state for Google. This information is collected directly from you or your device, and from our payment processors.<br><br>
+                  <i>We collect personal information for the following purposes:</i><br><br>
+                  • To operate and administer the services;<br>
+                  • To improve the services;<br>
+                  • To communicate with you;<br>
+                  • For security and verification purposes, including to prevent and detect fraudulent activity;<br>
+                  • To address and remediate technical issues and bugs.<br><br>
+                  <i>We may disclose personal information to the following types of entities:</i><br><br>
+                  • Other companies that provide services on our behalf who are prohibited by contract from retaining, using, or disclosing personal information for any purpose other than for providing the services to us;<br>
+                  • Regulators, judicial authorities and law enforcement agencies;<br>
+                  • Entities that acquire all or substantially all of our business. <br><br>
+                  <strong>ADDENDUM 2 – BRAZIL PRIVACY RIGHTS</strong><br><br>
+                  <strong>The terms of this Addendum apply to residents of Brazil under the Lei Geral de Proteção de Dados (Lei
+                  nº 13.709, de 14 de agosto de 2018) and its implementing regulations, as amended or superseded from
+                  time to time (“LGPD”). For the purposes of this Addendum 2, Personal Information has the meaning as
+                  defined in the LGPD.</strong><br><br>
+                  <strong>Categories of Personal Information collected and processed</strong> <br><br>
+                  To find out what categories of your Personal Information are collected and processed, see
+                  <strong> “Personal Information We Collect” [link] in the main portion of the Privacy Policy.</strong><br><br>
+                  <strong>How we use your Personal Information</strong><br><br>
+                  To find out how we process and use your Personal Information, including on what grounds, see “How We
+                  <strong>Use Your Personal Information” in the main portion of the Privacy Policy.</strong><br><br>
+                  <strong>Your rights under the LGPD</strong><br><br>
+                  The LGPD provides residents of Brazil with certain legal rights; these rights are not absolute and are subject
+                  to exemptions. In particular, you have the right to:<br>
+                  • Ask whether we hold personal information about you and request copies of such personal information and
+                  information about how it is processed.<br>
+                  • Restrict the processing of your personal information that is not being processed in compliance with the LGPD.<br>
+                  • Obtain information on the possibility of refusing consent and the consequences of doing so.<br>
+                  • Obtain information about the third parties with whom we share your personal information.<br>
+                  • Obtain the deletion of your personal information being processed if the processing was based upon your
+                  consent, unless one or more exceptions provided for in Art. 16 of the LGPD apply.<br>
+                  • Revoke your consent at any time.<br>
+                  • Oppose a processing activity in cases where the processing is not carried out in compliance with the
+                  provisions of the law.<br><br>
+                  <strong>To exercise your rights, please email us at support@Retik.com</strong><br><br>
+                  <strong>Subject should say ‘I have a data related question connected to my account’
+                  </strong><br><br>
+                  <strong>• Access.</strong> You have the right to access Information, and to receive an explanation of how we use it
+                  and who we share it with. This right is not absolute. For example, we cannot reveal trade secrets, or
+                  give you Information about other individuals.<br>
+                  <strong>• Erasure.</strong> You have the right to request deletion of your Information. We may need to retain some
+                  of your Information where there are valid grounds for us to do so under data protection laws. For
+                  example, for the defence of legal claims, respect freedom of expression, or where we have an
+                  overriding legitimate interest to do so, but we will let you know when this is the case.<br>
+                  • Note that where the Information is held by a third party data controller, such as a payment
+                  processor, we will use reasonable steps to inform them of your request, but we recommend you
+                  contact them directly in accordance with their own privacy policies to ensure your personal data
+                  is erased.<br>
+                  <strong>• Objection and withdrawal of consent.</strong> You have the right to (i) withdraw your consent where you
+                  previously provided such consent; or (ii) object to our processing of your Information where we
+                  process such Information on the basis of our legitimate interests (see above under How we use your
+                  personal information). You may exercise this right as follows:<br>
+                  - To stop receiving personalized advertising: please withdraw your consent in the in-app Settings.
+                  You can also find more information in our Cookie Policy.<br>
+                  - To stop our cookies being placed: please refer to our Cookie Policy.<br>
+                  <strong>• Portability.</strong> You have the right to receive a copy of Information we process on the basis of consent or
+                  contract in a structured, commonly used and machine-readable format, or to request that such
+                  Information is transferred to a third party. <br>
+                  <strong>Correction:</strong>You have the right to correct any Information held about you that is inaccurate. <br>
+                  <strong>Resriction:</strong>You have a right in certain circumstances to stop us processing Information other than for storage purposes
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  7. CONTACT & COMPLAINTS
+               </h4>
+               </span>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Questions, comments and requests regarding this Policy. These should be addressed to <br><br>
+                  You can also send a letter to the Data Protection Officer at Ile Du Port, Mahe, Seychelles.
+                  Registration Number: 236483 <br><br>
+                  If you wish to make a complaint about how we process your Information, please contact us at <strong><a href="mailto:support@retik.com"></a>support@retik.com</strong> and we will endeavour to deal with your complaint as soon as possible. This is without prejudice to your right to launch a claim with a data protection authority. <br><br>
+                  We may need further information from them to verify you and will contact you to request further
+                  information if needed. We aim to respond to complaints within 30 days; however, this may be delayed if you
+                  have not provided us with all relevant information. <br><br>
+               </p>
+               <h4 class="lg:text-2xl lg:w-9/12 text-2xl font-bold mx-auto px-5">
+                  8. CHANGES
+               </h4>
+               <p class="lg:w-9/12 mx-auto px-5">
+                  Any updates or changes to this Policy will be published here.
+               </p>
+               <br><br><br>
+            </div>
+            <footer class="container text-white-100 mx-auto lg:px-8 px-5 font-poppins">
+               <hr class="hr">
+               <div class="lg:flex justify-between items-center py-16 gap-6 lg:space-y-0 space-y-8"
+                  style="flex-direction: column;">
+                  <div>
+                     <img src="assets/logo.png" alt="logo" class="lg:block flex mx-auto">
+                  </div>
+                  <div class="lg:space-y-8 space-y-6">
+                     <div class="text-center opacity-60">
+                        <p>2023© Retik LLC | All Rights Reserved</p>
+                        <p>Beachmont, Kingstown, Reg no: 3178 , Saint Vincent and the Grenadines,
+                           support@retik.com
+                        </p>
+                     </div>
+                     <ul class="text-md flex flex-wrap justify-center lg:gap-8 gap-6 items-center">
+                        <li>
+                           <a href="index.html" class="font-semibold">Home</a>
+                        </li>
+                        <li>
+                           <a href="whitepaper.html"
+                              class="font-semibold">Whitepaper</a>
+                        </li>
+                        <li>
+                           <a href="win-333k.html" class="font-semibold">Win
+                           $333K</a>
+                        </li>
+                        <li>
+                           <a href="stages.html" class="font-semibold">Stages</a>
+                        </li>
+                        <li>
+                           <a href="how-to-buy.html" class="font-semibold">How to
+                           buy</a>
+                        </li>
+                        <li>
+                           <a href="contact.html" class="font-semibold">Contact
+                           Us</a>
+                        </li>
+                        <li>
+                           <a href="privacy-policy.html" class="font-semibold">Privacy Policy
+                           </a>
+                        <li>
+                           <a href="terms.html" class="font-semibold">Terms & conditions
+                           </a>
+                        </li>
+                        </li>
+                        <li>
+                           <a href="cookies.html" class="font-semibold">Cookies
+                           </a>
+                        </li>
+                     </ul>
+                     <div class="text-center opacity-60">
+                        <p>Disclaimer: Cryptocurrency may be unregulated in your jurisdiction. The value of
+                           cryptocurrencies may
+                           fluctuate.
+                        </p>
+                        <p>Profits may be subject to capital gains or other taxes applicable in your
+                           jurisdiction
+                        </p>
+                     </div>
+                  </div>
+                  <div class="flex items-center justify-center gap-x-6">
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFCSURBVHgB7ZbhbYMwEIXPnaDdgA2aERiBDcII3SDZoOkEtBN0BHeDtBO4G5ANXs+yI5Br8Nmx8otPekKA7ec7HWeINjZuBEBjRSXwxEfKxM5hHVgjJox9FozrUwsNrD3lGZ+xjH336jc2pBa7LvQiNB8gQ7N2q9H7dF05JIwbofHo17VqpObw9/3C2A5yDFKFyAOOK5P7+QL+XkpPKeAKaEQ6Cs36hJxOYm4rc4//6b+VNvRSEXPDl4bq86SUuswfPEQGfVB9vkPjJfMT65cqm4tHwn2/BvXY5Zjbim/hqjlV+Sk05QL3KdVAHvXMvEbqT1SK34BGGQYFx3NsE/Y0yulmBqU/FIFxmxn9WWqsQiOautszq6O8bvfGOsYaigi4k8ogD41I706hVjbRkovcZqChKQMXry/WD+u9ONKNjXvyB43wWYEulqZ4AAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFjSURBVHgB7ZXhcYMwDIVFrwOwQRmBDcoGZQQ2aDaAEdggbNB0AroB3cDtBGQDVT7ExefGWDYhlx98d+8uwRbPkmUMsLOzAYhYkHrSSPqArSGTlHRgU5sX2AI2rTlLFyncEqO0PoY55hlWwBlUpDdScWXKmWRn+QtrTQWlbUnqyvMDxCAsrV5QRTo6xosQw6WutRlIGU5VceFvNpSV1qTluHphjvKZSrt2Ri+u5Nh3z9zTknGPYfSkjGNzwfzGZSwJNmmNWL3Pku0plzJvBS9QaHQsGyuUkYFnz3N0n9HefEGg8Qgh4NR8HRucrDF9GgaU00MMOH00RuvZEcNoIQbOUlPw/wzD+ddsTxLzJEn0BfEFl8ujhnB+IMac+SS98u8CwjhTAt8Qi1Hq0iqnQv8Zj2s2awG20XyR+I5cXLNZ5o1lnBpjuik7h3kFa8HL2e7QcTVaC5zJ4V7g9JVUbNzAziPxB7wS+4o5Kp2OAAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGcSURBVHgB7ZbRcYMwDEBFrwNkg3qEdINsUjJBsgFsEDYgG7QbwAZ0A7IBdAJVKspV5cDIOXzNR96dQs6SLVkIywD/SAIRQMQtPVh6kkuSJJ9Tdk+wIuT0QNLS3wOJkwAyHiNJIRa0eElSkGwmdI7kTHLS46ukXRb9ovTmM3oOiCUl6cmugEAHHD2nsMG/cErLmTk7kkrsChmrprLjc5yhn53epQqyk+CYo+iPJLnVcYnLbGSXJ3F4zchpHCAOGfywOM7QgNie1VAhwXTaRjmvlhw7tPOi5hTy7JS+UetyUD/v3/edZ2Bnzz9UxRd68IHC1a+LSh8ybyS1dzX8LRQLvEsn8/j9v8vuc9GnouOxFpbAcNprAKN1nHLcTNmMJ2zwNlocKnyr1uJ3nOHwfTvLrkOKzQfvtER1DmieISJUgK8+/apdLZS7dG4/+D3gQgOZc36AdQg5qMyNJARbAGSYYhx2U/7GaXcQBwcG5zXEoTZZ4dAMWlwHbjhHuEeCbq84NIZxr2b20svjgcMtZYocbiC0sfD1p58Zf2DmG3O084Y++QoWAAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGsSURBVHgB7VbRccIwDFV6/S8jpBM0nYCwQUZIJ4ANCBOUTgCdoGwAnYBskGxQOoH7RBRwjWO7cOkPvLuHk0iWbFmyILrh2hCFKiqlBhjS/aQoWnXoZBh2YAmdHV0CdghOwbVqsAXnDv2l6LS6ORh36UcOQ2MMhby+gUvspsb3BM/MGHwQ+TdYgjV0SnHIc4cgR2yO7zMKgeyW8SG7T8FX8Ev5UYELXoCwjcQkxHFsMXQuFmJDycIHPue56g+F7uvO4n9K/WHYKVHN2faNpPVn7jyj/pF1OX9yz6MNuHLIl6LjwmnoVVNSKiRZlD0pM00+d9g5zXrlP++BoV9psu0fN7I/dz3sCf0fTpzHngmHEpQQ6/oJR057H1OA83vtgy/ZJqq5s7lb5Rb5GnJOxkP3c+DBdB6C7EJ5i5h/9LCb9y53qWewpvOxERulTag7fzdkfC4pWuEjxhfy12+LneiOMHdETV2byfzJP7/6udSyebfXIPfilbYoWz9nvZKOu8ypSbzYsDfDogqyQS6QylWfLsh9Yev7W6MivEb0v0UFBUIdb7hKnlO64Yarxg+gcPe0drZTaAAAAABJRU5ErkJggg=="
+                        alt="logo">
+                     </a>
+                     <a href="https://deploy-billioner.vercel.app/">
+                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFvSURBVHgB7ZbtTcMwEIbPiAHCBGQENsAjdIRsgjcITBCYgBHcDVomcDZoNjjOqqMexbEvjaP2Rx/pVaTc2a+dnD8A7lwBlUtAxIoeDemZVIGMgfRD2iqlepiLNyV943I6Uj3HuCY5LIcTDwDLGo9YiXGDZXgnfZ692+TMLRaA9cf5M/vHiP8L5PHV/EXqWZtXUs0nMbtvwaT856wi7XyRmlzjJeaG5WlSG6TZe7OGuWU5sfXfsrgtbb4J8bdEjgk5TWnzKsRdIseFnFpirmLmsUHRHq1ScWneGPc8gBA8VXifSNuHXMlylZsT4+70kcgZYyLzf0z/TtyxnNhyMizuJP98jrmHLydfVE1Qxd63qQ6WmHs6jByPYTA215i3iVX7AWQ3li2ciq8maUGbgYr9aTKKhU61qa8GKfC4Z6+Fhhy4zuw7kIDHy+MOy2ExcgznBuHXs8PLOSBb/+dk7+1hEBrYLUVIT9pTdQ9w55b4BYApChIfShDdAAAAAElFTkSuQmCC"
+                        alt="logo">
+                     </a>
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </div>
+      </div>
+      </div>
+      <script>
+         // mobile-menu
+         var sidebar = document.querySelector(".sidebar")
+         var toggle = document.querySelector(".toggle")
+         
+         toggle.addEventListener("click", function () {
+             console.log("Toggle button clicked");
+             if (sidebar.classList.contains("close")) {
+                 sidebar.classList.remove("close");
+             } else {
+                 sidebar.classList.add("close");
+             }
+         })
+      </script>
+      <script>
+         window.gtranslateSettings = {
+             "default_language": "en",
+             "languages": ["en", "fr", "de", "it", "es", "nl", "pt", "zh-CN", "tr", "ar", "ko", "zh-TW", "ja",
+                 "ru", "hi", "pl", "cs", "hu", "id", "bg", "th", "ro", "vi", "sk"
+             ],
+             "wrapper_selector": ".gtranslate_wrapper",
+             "flag_size": 24,
+             "switcher_horizontal_position": "inline",
+             "flag_style": "3d",
+             "alt_flags": {
+                 "en": "usa"
+             },
+             "switcher_text_color": "#f7f7f7",
+             "switcher_arrow_color": "#f2f2f2",
+             "switcher_border_color": "#161616",
+             "switcher_background_color": "#303030",
+             "switcher_background_shadow_color": "#474747",
+             "switcher_background_hover_color": "#3a3a3a",
+             "dropdown_text_color": "#eaeaea",
+             "dropdown_hover_color": "#748393",
+             "dropdown_background_color": "#474747"
+         }
+      </script>
+      <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.1/web3.min.js"
+         integrity="sha512-16bHUyyjvvIblMY4r09krdSjrJU4GgPPIk0VgiCJW/SPt2s2YYZ4ypsaTid+KiwvrQ6+aijt7Gu4LtQT4msbzQ=="
+         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="index.js"></script>
+   </body>
+</html>

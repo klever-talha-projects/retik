@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="assets\favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Retik">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link href="main.css" rel="stylesheet">
+  <title>Retik Finance Presale</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
+
+    header h1 {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    header p {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .hexa {
+      border: 0px;
+      float: left;
+      text-align: center;
+      height: 35px;
+      width: 60px;
+      font-size: 22px;
+      background: #f0f0f0;
+      color: #3c3c3c;
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .hexa:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 15px solid #f0f0f0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      top: -15px;
+    }
+
+    .hexa:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 15px solid #f0f0f0;
+      bottom: -15px;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 0;
+      width: 100%;
+      margin-top: 20px;
+      list-style-type: none;
+    }
+
+    .timeline:before {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      content: ' ';
+      display: none;
+      width: 2px;
+      height: 100%;
+      margin-left: -1px;
+      background: rgb(213, 213, 213);
+      background: -moz-linear-gradient(top, rgba(213, 213, 213, 0) 0%, rgb(213, 213, 213) 8%, rgb(213, 213, 213) 92%, rgba(213, 213, 213, 0) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 87, 153, 1)), color-stop(100%, rgba(125, 185, 232, 1)));
+      background: -webkit-linear-gradient(top, rgba(213, 213, 213, 0) 0%, rgb(213, 213, 213) 8%, rgb(213, 213, 213) 92%, rgba(213, 213, 213, 0) 100%);
+      background: -o-linear-gradient(top, rgba(213, 213, 213, 0) 0%, rgb(213, 213, 213) 8%, rgb(213, 213, 213) 92%, rgba(213, 213, 213, 0) 100%);
+      background: -ms-linear-gradient(top, rgba(213, 213, 213, 0) 0%, rgb(213, 213, 213) 8%, rgb(213, 213, 213) 92%, rgba(213, 213, 213, 0) 100%);
+      background: linear-gradient(to bottom, rgba(213, 213, 213, 0) 0%, rgb(213, 213, 213) 8%, rgb(213, 213, 213) 92%, rgba(213, 213, 213, 0) 100%);
+      z-index: 5;
+    }
+
+    .timeline li {
+      padding: 2.5em 0;
+    }
+
+    .time-wrapper:before{
+      position: absolute;
+      left: 50%;
+      top: -360%;
+      content: ' ';
+      display: block;
+      width: 2px;
+      height: 200%;
+      margin-left: -1px;
+      background: linear-gradient(to bottom, rgba(213, 213, 213, 0) 0%, rgb(213, 213, 213) 80%, rgb(213, 213, 213) 60%, rgba(213, 213, 213, 0) 100%);
+      z-index: 4;
+    }
+
+    .timeline .hexa {
+      width: 16px;
+      height: 10px;
+      position: absolute;
+      background: #e292f9;
+      z-index: 18;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      top: -30px;
+      margin-top: 0;
+    }
+
+    .timeline .hexa:before {
+      border-bottom: 4px solid #e292f9;
+      border-left-width: 8px;
+      border-right-width: 8px;
+      top: -4px;
+    }
+
+    .timeline .hexa:after {
+      border-left-width: 8px;
+      border-right-width: 8px;
+      border-top: 4px solid #e292f9;
+      bottom: -4px;
+    }
+
+    .direction-l,
+    .direction-r {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .flag-wrapper {
+      text-align: center;
+      position: relative;
+    }
+
+    .flag {
+      position: relative;
+      display: inline;
+      background: rgb(255, 255, 255);
+      font-weight: 600;
+      z-index: 15;
+      padding: 6px 10px;
+      text-align: left;
+      border-radius: 5px;
+      color: #333333;
+    }
+
+    .direction-l .flag:after,
+    .direction-r .flag:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -15px;
+      height: 0;
+      width: 0;
+      margin-left: -8px;
+      border: solid transparent;
+      border-bottom-color: rgb(255, 255, 255);
+      border-width: 8px;
+      pointer-events: none;
+    }
+
+    .direction-l .flag {
+      -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .direction-r .flag {
+      -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .time-wrapper {
+      display: block;
+      position: relative;
+      margin: 4px 0 0 0;
+      z-index: 14;
+      line-height: 1em;
+      vertical-align: middle;
+      color: #fff;
+    }
+
+    .direction-l .time-wrapper {
+      float: none;
+    }
+
+    .direction-r .time-wrapper {
+      float: none;
+    }
+
+    .time {
+      background: linear-gradient(273.16deg, rgb(255, 148, 255) 20.63%, rgb(109, 216, 212) 75.15%);
+      ;
+      display: inline-block;
+      padding: 8px;
+    }
+
+    .desc {
+      position: relative;
+      margin: 1em 0 0 0;
+      padding: 1em;
+      -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+      -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+      z-index: 15;
+    }
+
+    .direction-l .desc,
+    .direction-r .desc {
+      position: relative;
+      margin: 1em 1em 0 1em;
+      padding: 1em;
+      z-index: 15;
+    }
+
+    @media(min-width: 768px) {
+      .timeline {
+        width: 660px;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+
+      .timeline:before{
+        display: block;
+      }
+      .time-wrapper:before{
+        display: none;
+      }
+
+      .timeline li {
+      padding: 2em 0;
+    }
+
+      .timeline li:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+
+      .timeline .hexa {
+        left: -28px;
+        right: auto;
+        top: 8px;
+      }
+
+      .timeline .direction-l .hexa {
+        left: auto;
+        right: -28px;
+      }
+
+      .direction-l {
+        position: relative;
+        width: 310px;
+        float: left;
+        text-align: right;
+      }
+
+      .direction-r {
+        position: relative;
+        width: 310px;
+        float: right;
+        text-align: left;
+      }
+
+      .flag-wrapper {
+        display: inline-block;
+      }
+
+      .flag {
+        font-size: 18px;
+      }
+
+      .direction-l .flag:after {
+        left: auto;
+        right: -16px;
+        top: 50%;
+        margin-top: -8px;
+        border: solid transparent;
+        border-left-color: rgb(254, 254, 254);
+        border-width: 8px;
+      }
+
+      .direction-r .flag:after {
+        top: 50%;
+        margin-top: -8px;
+        border: solid transparent;
+        border-right-color: rgb(254, 254, 254);
+        border-width: 8px;
+        left: -8px;
+      }
+
+      .time-wrapper {
+        display: inline;
+        vertical-align: middle;
+        margin: 0;
+      }
+
+      .direction-l .time-wrapper {
+        float: left;
+      }
+
+      .direction-r .time-wrapper {
+        float: right;
+      }
+
+      .time {
+        padding: 5px 10px;
+      }
+
+      .direction-r .desc {
+        margin: 1em 0 0 0.75em;
+      }
+    }
+
+    @media(min-width: 992px) {
+      .timeline {
+        width: 800px;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+
+      .direction-l {
+        position: relative;
+        width: 380px;
+        float: left;
+        text-align: right;
+      }
+
+      .direction-r {
+        position: relative;
+        width: 380px;
+        float: right;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="App">
+    <div class="bg-black-100 text-white-100 font-poppins" style="background-image: url(assets/bg.png); background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;">
+      <div class="blur-effect invisible" onclick="removeWalletsOption()"></div>
+      <div class="wallets invisible">
+        <div id="metamask" onclick="connectMetamask()"><img src="assets/metamask.svg"></div>
+        <div id="walletConnect" onclick="connectWalletConect()"><img src="assets/walletconnect.svg"></div>
+        <div id="trustwallet" onclick="connectTrustWallet()"><img src="assets/trust-wallet.svg"></div>
+      </div>
+      <div class="bg-top lg:block hidden">
+        <div class="lg:px-12 px-5 container mx-auto relative z-20">
+          <header>
+            <div class="lg:flex hidden items-center justify-between font-poppins text-white-100 h-24">
+              <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Logo">
+              </a>
+              <nav>
+                <ul class="text-md flex justify-center gap-8 items-center">
+                  <li>
+                    <a href="white-paper" class="font-semibold">Whitepaper</a>
+                  </li>
+                  <li>
+                    <a href="win-33k" class="font-semibold">Win $333K</a>
+                  </li>
+                  <li>
+                    <a href="stages.html" class="font-semibold">Stages</a>
+                  </li>
+                  <li>
+                    <a href="how-to-buy.html" class="font-semibold">How
+                      to buy</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="font-semibold">Contact Us</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="gtranslate-wrapper">
+                <div class="gtranslate_wrapper"></div>
+              </div>
+              <div>
+                <button class="connectButton-1 px-8 py-2 rounded-2xl btn-gradient text-black-100 font-semibold text-lg"
+                  onclick="showWalletsOption()">Connect
+                  Wallet</button>
+
+              </div>
+            </div>
+            <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+              <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2">
+                <img src="assets/logo.png" alt="Logo">
+              </a>
+              <button class="nav cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </header>
+        </div>
+      </div>
+      <div class="lg:space-y-0 space-y-6 relative z-20 px-5 container mx-auto lg:hidden block">
+        <header>
+          <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+            <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2"
+              style="display: flex; align-items: center;">
+              <img src="assets/logo.png" alt="Logo">
+            </a>
+            <div class="gtranslate-wrapper" style="margin-left: 20px;">
+              <div class="gtranslate_wrapper"></div>
+            </div>
+            <button class="nav cursor-pointer toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+                </path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="sidebar close fixed top-0 bottom-0 left-0 p-2 w-3/4 overflow-y-auto font-poppins z-20 backdrop-blur-lg transition-all duration-75">
+            <div class="p-2.5"><a href="/"><img src="assets/logo.png" alt="Logo"></a></div>
+            <div class="gap-y-6 flex flex-col items-start mt-8"><button class="px-2.5 font-medium"><a
+                  href="whitepapers.html">Whitepaper</a></button><button class="px-2.5 font-medium"><a
+                  href="win-333k.html">Win
+                  $333K</a></button><button class="px-2.5 font-medium"><a href="stages.html">Stages</a></button><button
+                class="px-2.5 font-medium"><a href="how-to-buy.html">How to
+                  buy</a></button><button class="px-2.5 font-medium"><a href="contact.html">Contact
+                  Us</a></button><button
+                class="connectButton-1 px-8 text-black-100 p-3 btn-gradient rounded-lg text-left"
+                onclick="showWalletsOption()">Connect
+                Wallet</button>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div
+        style="width: 100vw; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 60px 0;">
+        <div class="text-center space-y-6 lg:py-20 py-6" style="padding-bottom: 30px;">
+          <p class="text-gradient-1 lg:text-5xl text-8xl font-bold" style="line-height: 1.3;">Retik Presale Stages</p>
+        </div>
+
+        <ul class="timeline">
+          <!-- Item 1 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-1</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 15,000,000 <br>
+                Price per Token: $0.03 <br>
+                Total Raise Stage 1: $450,000</div>
+            </div>
+          </li>
+
+          <!-- Item 2 -->
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-2</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 25,000,000</br>
+                Price per Token: $0.04</br>
+                Raise Stage 2: $1,000,000</div>
+            </div>
+          </li>
+
+          <!-- Item 3 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-3</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.05</br>
+                Raise Stage 3: $2,250,000</div>
+            </div>
+          </li>
+
+          <!-- Item 4 -->
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-4</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.06</br>
+                Raise Stage 4: $2,700,000</div>
+            </div>
+          </li>
+
+          <!-- Item 5 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-5</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.07</br>
+                Raise Stage 5: $3,150,000</div>
+            </div>
+          </li>
+
+          <!-- Item 6 -->
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-6</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.08</br>
+                Raise Stage 6: $3,600,000</div>
+            </div>
+          </li>
+
+          <!-- Item 7 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-7</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.09</br>
+                Raise Stage 7: $4,050,000</div>
+            </div>
+          </li>
+
+          <!-- Item 8 -->
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-8</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.1</br>
+                Raise Stage 8: $4,500,000</div>
+            </div>
+          </li>
+
+          <!-- Item 9 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-9</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.11</br>
+                Raise Stage 10: $4,950,000</div>
+            </div>
+          </li>
+
+          <!-- Item 10 -->
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="hexa"></span>
+                <span class="flag">Token Preslae Stage-10</span>
+                <span class="time-wrapper"><span class="time">UPCOMMING</span></span>
+              </div>
+              <div class="desc">Tokens To Sell: 45,000,000</br>
+                Price per Token: $0.12</br>
+                Raise Stage 10: $5,400,000</div>
+            </div>
+          </li>
+        </ul>
+        <header class="text-center space-y-6 lg:py-20 py-6">
+          <h1 class="text-gradient-1 lg:text-3xl text-3xl font-bold">Total Tokens: 400,000,000 <br>
+            Total Raise: $32,050,000 (32.05m)</h1>
+        </header>
+      </div>
+
+      <footer class="container text-white-100 mx-auto lg:px-8 px-5 font-poppins">
+        <hr class="hr">
+        <div class="lg:flex justify-between items-center py-16 gap-6 lg:space-y-0 space-y-8"
+           style="flex-direction: column;">
+           <div>
+              <img src="assets/logo.png" alt="logo" class="lg:block flex mx-auto">
+           </div>
+           <div class="lg:space-y-8 space-y-6">
+              <div class="text-center opacity-60">
+                 <p>2023© Retik LLC | All Rights Reserved</p>
+                 <p>Beachmont, Kingstown, Reg no: 3178 , Saint Vincent and the Grenadines,
+                    support@retik.com
+                 </p>
+              </div>
+              <ul class="text-md flex flex-wrap justify-center lg:gap-8 gap-6 items-center">
+                 <li>
+                    <a href="index.html" class="font-semibold">Home</a>
+                 </li>
+                 <li>
+                    <a href="whitepaper.html"
+                       class="font-semibold">Whitepaper</a>
+                 </li>
+                 <li>
+                    <a href="win-333k.html" class="font-semibold">Win
+                    $333K</a>
+                 </li>
+                 <li>
+                    <a href="stages.html" class="font-semibold">Stages</a>
+                 </li>
+                 <li>
+                    <a href="how-to-buy.html" class="font-semibold">How to
+                    buy</a>
+                 </li>
+                 <li>
+                    <a href="contact.html" class="font-semibold">Contact
+                    Us</a>
+                 </li>
+                 <li>
+                    <a href="privacy-policy.html" class="font-semibold">Privacy Policy
+                    </a>
+                 <li>
+                    <a href="terms.html" class="font-semibold">Terms & conditions
+                    </a>
+                 </li>
+                 </li>
+                 <li>
+                    <a href="cookies.html" class="font-semibold">Cookies
+                    </a>
+                 </li>
+              </ul>
+              <div class="text-center opacity-60">
+                 <p>Disclaimer: Cryptocurrency may be unregulated in your jurisdiction. The value of
+                    cryptocurrencies may
+                    fluctuate.
+                 </p>
+                 <p>Profits may be subject to capital gains or other taxes applicable in your
+                    jurisdiction
+                 </p>
+              </div>
+           </div>
+           <div class="flex items-center justify-center gap-x-6">
+              <a href="https://deploy-billioner.vercel.app/">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFCSURBVHgB7ZbhbYMwEIXPnaDdgA2aERiBDcII3SDZoOkEtBN0BHeDtBO4G5ANXs+yI5Br8Nmx8otPekKA7ec7HWeINjZuBEBjRSXwxEfKxM5hHVgjJox9FozrUwsNrD3lGZ+xjH336jc2pBa7LvQiNB8gQ7N2q9H7dF05JIwbofHo17VqpObw9/3C2A5yDFKFyAOOK5P7+QL+XkpPKeAKaEQ6Cs36hJxOYm4rc4//6b+VNvRSEXPDl4bq86SUuswfPEQGfVB9vkPjJfMT65cqm4tHwn2/BvXY5Zjbim/hqjlV+Sk05QL3KdVAHvXMvEbqT1SK34BGGQYFx3NsE/Y0yulmBqU/FIFxmxn9WWqsQiOautszq6O8bvfGOsYaigi4k8ogD41I706hVjbRkovcZqChKQMXry/WD+u9ONKNjXvyB43wWYEulqZ4AAAAAElFTkSuQmCC"
+                 alt="logo">
+              </a>
+              <a href="https://deploy-billioner.vercel.app/">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFjSURBVHgB7ZXhcYMwDIVFrwOwQRmBDcoGZQQ2aDaAEdggbNB0AroB3cDtBGQDVT7ExefGWDYhlx98d+8uwRbPkmUMsLOzAYhYkHrSSPqArSGTlHRgU5sX2AI2rTlLFyncEqO0PoY55hlWwBlUpDdScWXKmWRn+QtrTQWlbUnqyvMDxCAsrV5QRTo6xosQw6WutRlIGU5VceFvNpSV1qTluHphjvKZSrt2Ri+u5Nh3z9zTknGPYfSkjGNzwfzGZSwJNmmNWL3Pku0plzJvBS9QaHQsGyuUkYFnz3N0n9HefEGg8Qgh4NR8HRucrDF9GgaU00MMOH00RuvZEcNoIQbOUlPw/wzD+ddsTxLzJEn0BfEFl8ujhnB+IMac+SS98u8CwjhTAt8Qi1Hq0iqnQv8Zj2s2awG20XyR+I5cXLNZ5o1lnBpjuik7h3kFa8HL2e7QcTVaC5zJ4V7g9JVUbNzAziPxB7wS+4o5Kp2OAAAAAElFTkSuQmCC"
+                 alt="logo">
+              </a>
+              <a href="https://deploy-billioner.vercel.app/">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGcSURBVHgB7ZbRcYMwDEBFrwNkg3qEdINsUjJBsgFsEDYgG7QbwAZ0A7IBdAJVKspV5cDIOXzNR96dQs6SLVkIywD/SAIRQMQtPVh6kkuSJJ9Tdk+wIuT0QNLS3wOJkwAyHiNJIRa0eElSkGwmdI7kTHLS46ukXRb9ovTmM3oOiCUl6cmugEAHHD2nsMG/cErLmTk7kkrsChmrprLjc5yhn53epQqyk+CYo+iPJLnVcYnLbGSXJ3F4zchpHCAOGfywOM7QgNie1VAhwXTaRjmvlhw7tPOi5hTy7JS+UetyUD/v3/edZ2Bnzz9UxRd68IHC1a+LSh8ybyS1dzX8LRQLvEsn8/j9v8vuc9GnouOxFpbAcNprAKN1nHLcTNmMJ2zwNlocKnyr1uJ3nOHwfTvLrkOKzQfvtER1DmieISJUgK8+/apdLZS7dG4/+D3gQgOZc36AdQg5qMyNJARbAGSYYhx2U/7GaXcQBwcG5zXEoTZZ4dAMWlwHbjhHuEeCbq84NIZxr2b20svjgcMtZYocbiC0sfD1p58Zf2DmG3O084Y++QoWAAAAAElFTkSuQmCC"
+                 alt="logo">
+              </a>
+              <a href="https://deploy-billioner.vercel.app/">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGsSURBVHgB7VbRccIwDFV6/S8jpBM0nYCwQUZIJ4ANCBOUTgCdoGwAnYBskGxQOoH7RBRwjWO7cOkPvLuHk0iWbFmyILrh2hCFKiqlBhjS/aQoWnXoZBh2YAmdHV0CdghOwbVqsAXnDv2l6LS6ORh36UcOQ2MMhby+gUvspsb3BM/MGHwQ+TdYgjV0SnHIc4cgR2yO7zMKgeyW8SG7T8FX8Ev5UYELXoCwjcQkxHFsMXQuFmJDycIHPue56g+F7uvO4n9K/WHYKVHN2faNpPVn7jyj/pF1OX9yz6MNuHLIl6LjwmnoVVNSKiRZlD0pM00+d9g5zXrlP++BoV9psu0fN7I/dz3sCf0fTpzHngmHEpQQ6/oJR057H1OA83vtgy/ZJqq5s7lb5Rb5GnJOxkP3c+DBdB6C7EJ5i5h/9LCb9y53qWewpvOxERulTag7fzdkfC4pWuEjxhfy12+LneiOMHdETV2byfzJP7/6udSyebfXIPfilbYoWz9nvZKOu8ypSbzYsDfDogqyQS6QylWfLsh9Yev7W6MivEb0v0UFBUIdb7hKnlO64Yarxg+gcPe0drZTaAAAAABJRU5ErkJggg=="
+                 alt="logo">
+              </a>
+              <a href="https://deploy-billioner.vercel.app/">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFvSURBVHgB7ZbtTcMwEIbPiAHCBGQENsAjdIRsgjcITBCYgBHcDVomcDZoNjjOqqMexbEvjaP2Rx/pVaTc2a+dnD8A7lwBlUtAxIoeDemZVIGMgfRD2iqlepiLNyV943I6Uj3HuCY5LIcTDwDLGo9YiXGDZXgnfZ692+TMLRaA9cf5M/vHiP8L5PHV/EXqWZtXUs0nMbtvwaT856wi7XyRmlzjJeaG5WlSG6TZe7OGuWU5sfXfsrgtbb4J8bdEjgk5TWnzKsRdIseFnFpirmLmsUHRHq1ScWneGPc8gBA8VXifSNuHXMlylZsT4+70kcgZYyLzf0z/TtyxnNhyMizuJP98jrmHLydfVE1Qxd63qQ6WmHs6jByPYTA215i3iVX7AWQ3li2ciq8maUGbgYr9aTKKhU61qa8GKfC4Z6+Fhhy4zuw7kIDHy+MOy2ExcgznBuHXs8PLOSBb/+dk7+1hEBrYLUVIT9pTdQ9w55b4BYApChIfShDdAAAAAElFTkSuQmCC"
+                 alt="logo">
+              </a>
+           </div>
+        </div>
+     </footer>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script>
+    // mobile-menu
+    var sidebar = document.querySelector(".sidebar")
+    var toggle = document.querySelector(".toggle")
+
+    toggle.addEventListener("click", function () {
+      console.log("Toggle button clicked");
+      if (sidebar.classList.contains("close")) {
+        sidebar.classList.remove("close");
+      } else {
+        sidebar.classList.add("close");
+      }
+    })
+
+    //GOOGLE TRANSLATE
+    window.gtranslateSettings = {
+      "default_language": "en",
+      "languages": ["en", "fr", "de", "it", "es", "nl", "pt", "zh-CN", "tr", "ar", "ko", "zh-TW", "ja",
+        "ru", "hi", "pl", "cs", "hu", "id", "bg", "th", "ro", "vi", "sk"
+      ],
+      "wrapper_selector": ".gtranslate_wrapper",
+      "flag_size": 24,
+      "switcher_horizontal_position": "inline",
+      "flag_style": "3d",
+      "alt_flags": {
+        "en": "usa"
+      },
+      "switcher_text_color": "#f7f7f7",
+      "switcher_arrow_color": "#f2f2f2",
+      "switcher_border_color": "#161616",
+      "switcher_background_color": "#303030",
+      "switcher_background_shadow_color": "#474747",
+      "switcher_background_hover_color": "#3a3a3a",
+      "dropdown_text_color": "#eaeaea",
+      "dropdown_hover_color": "#748393",
+      "dropdown_background_color": "#474747"
+    }
+  </script>
+
+  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.1/web3.min.js"
+    integrity="sha512-16bHUyyjvvIblMY4r09krdSjrJU4GgPPIk0VgiCJW/SPt2s2YYZ4ypsaTid+KiwvrQ6+aijt7Gu4LtQT4msbzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+
+    //Checking current stage
+    const presaleContractAddress = '0xf5F9f7F2b812D7a34545124c051766343a745056'; // presale contract address
+    const web3Provider = 'https://goerli.infura.io/v3/d7ef37f9c55947588866bd8e578bf417'; // Infura project ID
+    const abi = [{ "inputs": [{ "internalType": "address", "name": "_oracle", "type": "address" }, { "internalType": "address", "name": "_usdt", "type": "address" }, { "internalType": "address", "name": "_usdc", "type": "address" }, { "internalType": "address", "name": "_SaleToken", "type": "address" }, { "internalType": "uint256", "name": "_MinTokenTobuy", "type": "uint256" }], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "uint256", "name": "_id", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_totalTokens", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_startTime", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_endTime", "type": "uint256" }], "name": "PresaleCreated", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "uint256", "name": "id", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "PresalePaused", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "prevValue", "type": "address" }, { "indexed": true, "internalType": "address", "name": "newValue", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "PresaleTokenAddressUpdated", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "uint256", "name": "id", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "PresaleUnpaused", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "bytes32", "name": "key", "type": "bytes32" }, { "indexed": false, "internalType": "uint256", "name": "prevValue", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "newValue", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "PresaleUpdated", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "user", "type": "address" }, { "indexed": true, "internalType": "uint256", "name": "id", "type": "uint256" }, { "indexed": true, "internalType": "address", "name": "purchaseToken", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokensBought", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amountPaid", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "TokensBought", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "user", "type": "address" }, { "indexed": true, "internalType": "uint256", "name": "id", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "TokensClaimed", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "_oracle", "type": "address" }], "name": "ChangeOracleAddress", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_token", "type": "address" }], "name": "ChangeTokenToSell", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "ETH_MULTIPLIER", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }], "name": "EditMinTokenToBuy", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "bool", "name": "_status", "type": "bool" }], "name": "ExcludeAccouctFromMinBuy", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "MinTokenTobuy", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "SaleToken", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "USDCInterface", "outputs": [{ "internalType": "contract IERC20Metadata", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "USDTInterface", "outputs": [{ "internalType": "contract IERC20Metadata", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "USDT_MULTIPLIER", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "WithdrawContractFunds", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_token", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "WithdrawTokens", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "bool", "name": "_value", "type": "bool" }], "name": "blackListUser", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "blockStamp", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "buyWithEth", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "payable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "usdcAmount", "type": "uint256" }], "name": "buyWithUSDC", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "usdAmount", "type": "uint256" }], "name": "buyWithUSDT", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_oldAddress", "type": "address" }, { "internalType": "address", "name": "_newWallet", "type": "address" }], "name": "changeClaimAddress", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_wallet", "type": "address" }], "name": "changeFundWallet", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_newAddress", "type": "address" }], "name": "changeUSDCToken", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_newAddress", "type": "address" }], "name": "changeUSDTToken", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }], "name": "claimAmount", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "user", "type": "address" }, { "internalType": "uint256", "name": "_id", "type": "uint256" }], "name": "claimableAmount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_price", "type": "uint256" }, { "internalType": "uint256", "name": "_nextStagePrice", "type": "uint256" }, { "internalType": "uint256", "name": "_tokensToSell", "type": "uint256" }, { "internalType": "uint256", "name": "_UsdtHardcap", "type": "uint256" }], "name": "createPresale", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "currentSale", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "bool", "name": "_status", "type": "bool" }], "name": "enableClaim", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "ethBuyHelper", "outputs": [{ "internalType": "uint256", "name": "ethAmount", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "ethToTokens", "outputs": [{ "internalType": "uint256", "name": "_tokens", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "fundReceiver", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getLatestPrice", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "isBlackList", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "isExcludeMinToken", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "isExist", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "overalllRaised", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }], "name": "pausePresale", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "name": "paused", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "name": "presale", "outputs": [{ "internalType": "uint256", "name": "startTime", "type": "uint256" }, { "internalType": "uint256", "name": "endTime", "type": "uint256" }, { "internalType": "uint256", "name": "price", "type": "uint256" }, { "internalType": "uint256", "name": "nextStagePrice", "type": "uint256" }, { "internalType": "uint256", "name": "Sold", "type": "uint256" }, { "internalType": "uint256", "name": "tokensToSell", "type": "uint256" }, { "internalType": "uint256", "name": "UsdtHardcap", "type": "uint256" }, { "internalType": "uint256", "name": "amountRaised", "type": "uint256" }, { "internalType": "bool", "name": "Active", "type": "bool" }, { "internalType": "bool", "name": "isEnableClaim", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "presaleId", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "renounceOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }], "name": "setPresaleStage", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256[]", "name": "_id", "type": "uint256[]" }, { "internalType": "uint256[]", "name": "vestingStartTime", "type": "uint256[]" }, { "internalType": "uint256[]", "name": "_initialClaimPercent", "type": "uint256[]" }, { "internalType": "uint256[]", "name": "_vestingTime", "type": "uint256[]" }, { "internalType": "uint256[]", "name": "_vestingPercentage", "type": "uint256[]" }], "name": "setPresaleVesting", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }], "name": "unPausePresale", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "uniqueBuyers", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "uint256", "name": "_price", "type": "uint256" }, { "internalType": "uint256", "name": "_nextStagePrice", "type": "uint256" }, { "internalType": "uint256", "name": "_tokensToSell", "type": "uint256" }, { "internalType": "uint256", "name": "_Hardcap", "type": "uint256" }, { "internalType": "bool", "name": "isclaimAble", "type": "bool" }], "name": "updatePresale", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "uint256", "name": "_vestingStartTime", "type": "uint256" }, { "internalType": "uint256", "name": "_initialClaimPercent", "type": "uint256" }, { "internalType": "uint256", "name": "_vestingTime", "type": "uint256" }, { "internalType": "uint256", "name": "_vestingPercentage", "type": "uint256" }], "name": "updatePresaleVesting", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "usdtBuyHelper", "outputs": [{ "internalType": "uint256", "name": "usdPrice", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "usdtToTokens", "outputs": [{ "internalType": "uint256", "name": "_tokens", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "name": "userClaimData", "outputs": [{ "internalType": "uint256", "name": "claimAt", "type": "uint256" }, { "internalType": "uint256", "name": "claimAbleAmount", "type": "uint256" }, { "internalType": "uint256", "name": "claimedVestingAmount", "type": "uint256" }, { "internalType": "uint256", "name": "claimedAmount", "type": "uint256" }, { "internalType": "uint256", "name": "claimCount", "type": "uint256" }, { "internalType": "uint256", "name": "activePercentAmount", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "name": "vesting", "outputs": [{ "internalType": "uint256", "name": "vestingStartTime", "type": "uint256" }, { "internalType": "uint256", "name": "initialClaimPercent", "type": "uint256" }, { "internalType": "uint256", "name": "vestingTime", "type": "uint256" }, { "internalType": "uint256", "name": "vestingPercentage", "type": "uint256" }, { "internalType": "uint256", "name": "totalClaimCycles", "type": "uint256" }], "stateMutability": "view", "type": "function" }]
+
+    web3 = new Web3(new Web3.providers.HttpProvider(web3Provider))
+
+    window.addEventListener('load', async () => {
+
+      let presaleContract = new web3.eth.Contract(abi, presaleContractAddress);
+      let currentStage = Number(await presaleContract.methods.currentSale().call());
+      document.querySelectorAll('.time')[currentStage - 1].innerText = "ACTIVE";
+
+    })
+  </script>
+</body>
+
+</html>
