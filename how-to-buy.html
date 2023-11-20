@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="assets\favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Retik">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="main.css" rel="stylesheet">
+    <title>Retik Finance Presale</title>
+    <style>
+       .steps-tag{
+        -webkit-text-fill-color: #0000;
+    background: linear-gradient(180deg, rgb(255, 148, 255) 20.63%, rgb(109, 216, 212) 75.15%);
+    background-clip: text;
+    -webkit-background-clip: text;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="App">
+        <div class="bg-black-100 text-white-100 font-poppins" style="background-image: url(assets/bg.png); background-repeat: no-repeat;
+         background-position: center top; background-size: cover;">
+            <div class="blur-effect invisible" onclick="removeWalletsOption()"></div>
+            <div class="wallets invisible">
+                <div id="metamask" onclick="connectMetamask()"><img src="assets/metamask.svg"></div>
+                <div id="walletConnect" onclick="connectWalletConect()"><img src="assets/walletconnect.svg"></div>
+                <div id="trustwallet" onclick="connectTrustWallet()"><img src="assets/trust-wallet.svg"></div>
+            </div>
+            <div class="bg-top lg:block hidden">
+                <div class="lg:px-12 px-5 container mx-auto relative z-20">
+                    <header>
+                      <div class="lg:flex hidden items-center justify-between font-poppins text-white-100 h-24">
+                        <a href="index.html" class="logo">
+                            <img src="assets/logo.png" alt="Logo">
+                        </a>
+                        <nav>
+                            <ul class="text-md flex justify-center gap-8 items-center">
+                                <li>
+                                    <a href="white-paper"
+                                        class="font-semibold">Whitepaper</a>
+                                </li>
+                                <li>
+                                    <a href="win-33k"
+                                        class="font-semibold">Win $333K</a>
+                                </li>
+                                <li>
+                                    <a href="stages.html" class="font-semibold">Stages</a>
+                                </li>
+                                <li>
+                                    <a href="how-to-buy.html" class="font-semibold">How
+                                        to buy</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html"
+                                        class="font-semibold">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="gtranslate-wrapper">
+                            <div class="gtranslate_wrapper"></div>
+                        </div>
+                        <div>
+                            <button
+                                class="connectButton-1 px-8 py-2 rounded-2xl btn-gradient text-black-100 font-semibold text-lg"
+                                onclick="showWalletsOption()">Connect
+                                Wallet</button>
+
+                        </div>
+                    </div>
+                        <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                            <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2">
+                                <img src="assets/logo.png" alt="Logo">
+                            </a>
+                            <button class="nav cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <div class="lg:space-y-0 space-y-6 relative z-20 px-5 container mx-auto lg:hidden block">
+                <header>
+                    <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                        <a href="https://deploy-billioner.vercel.app/" class="logo w-1/2"
+                            style= "align-items: center;">
+                            <img src="assets/logo.png" alt="Logo">
+                        </a>
+                        <div class="gtranslate-wrapper" style="margin-left: 20px;">
+                            <div class="gtranslate_wrapper"></div>
+                        </div>
+                        <button class="nav cursor-pointer toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        class="sidebar close fixed top-0 bottom-0 left-0 p-2 w-3/4 overflow-y-auto font-poppins z-20 backdrop-blur-lg transition-all duration-75">
+                        <div class="p-2.5"><a href="/"><img src="assets/logo.png" alt="Logo"></a></div>
+                        <div class="gap-y-6 flex flex-col items-start mt-8"><button class="px-2.5 font-medium"><a
+                          href="whitepapers.html">Whitepaper</a></button><button class="px-2.5 font-medium"><a
+                          href="win-333k.html">Win
+                          $333K</a></button><button class="px-2.5 font-medium"><a href="stages.html">Stages</a></button><button class="px-2.5 font-medium"><a href="how-to-buy.html">How to
+                          buy</a></button><button class="px-2.5 font-medium"><a href="contact.html">Contact
+                          Us</a></button><button
+                      class="connectButton-1 px-8 text-black-100 p-3 btn-gradient rounded-lg text-left"
+                      onclick="showWalletsOption()">Connect
+                      Wallet</button>
+              </div>
+                    </div>
+                </header>
+            </div>
+            
+            <div style="width: 100vw; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 30px 0;">
+                <div class="text-center space-y-6 lg:py-20 py-6">
+                    <p class="text-gradient-1 lg:text-5xl text-8xl font-bold">How to Buy Retik Presale</p>
+                </div>
+              </div>
+              <div class="container lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                <div class="lg:flex hidden justify-center items-center gap-x-24">
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="space-y-2">
+                            <p class="steps-tag text-2xl font-semibold">Step-1</p>
+                            <h2 class="lg:text-4xl text-2xl font-bold">
+                                Prepare Your Wallet
+                            </h2>
+                        </div>
+                        <p class="opacity-90 lg:text-lg">Before you can participate in the Retik presale, ensure that you have Ethereum (ETH), Tether (USDT), or USD Coin (USDC) in your wallet. You will need one of these cryptocurrencies to make your purchase.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="assets/screenshot-1.png" alt="about">
+                    </div>
+                </div>
+                <div class="lg:hidden flex space-y-8" style="flex-direction: column; justify-content: center; align-items: center;">
+                <p class="steps-tag text-2xl font-semibold">Step-1</p>
+                    <h2 class="lg:text-4xl text-2xl font-bold" style="margin-top: 0;">
+                        Prepare Your Wallet
+                    </h2>
+                    
+                    <p class="opacity-90 lg:text-lg" style="text-align: center;">Before you can participate in the Retik presale, ensure that you have Ethereum (ETH), Tether (USDT), or USD Coin (USDC) in your wallet. You will need one of these cryptocurrencies to make your purchase.</p>
+                        <img src="assets/screenshot-1.png" alt="about" style="width: 80%;">
+                </div>
+            </div>
+              <div class="container lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                <div class="lg:flex hidden justify-center items-center gap-x-24">
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="space-y-2">
+                            <p class="steps-tag text-2xl font-semibold">Step-2</p>
+                            <h2 class="lg:text-4xl text-2xl font-bold">
+                                Connect to the DApp
+                            </h2>
+                        </div>
+                        <p class="opacity-90 lg:text-lg">Open your preferred web browser and visit the Retik presale website. <br>
+                            Click on the "Connect Wallet" button. <br>
+                            Make sure that you have selected the Ethereum (ETH) chain.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="assets/screenshot-2.png" alt="about">
+                    </div>
+                </div>
+                <div class="lg:hidden flex space-y-8" style="
+            
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+                <p class="steps-tag text-2xl font-semibold">Step-2</p>
+                    <h2 class="lg:text-4xl text-2xl font-bold" style="margin-top: 0;">
+                        Connect to the DApp
+                    </h2>
+                    
+                    <p class="opacity-90 lg:text-lg" style="text-align: center;">Open your preferred web browser and visit the Retik presale website. <br>
+                        Click on the "Connect Wallet" button. <br>
+                        Make sure that you have selected the Ethereum (ETH) chain.</p>
+                        <img src="assets/screenshot-2.png" alt="about" style="width: 80%;">
+                </div>
+            </div>
+              <div class="container lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                <div class="lg:flex hidden justify-center items-center gap-x-24">
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="space-y-2">
+                            <p class="steps-tag text-2xl font-semibold">Step-3</p>
+                            <h2 class="lg:text-4xl text-2xl font-bold">
+                                Choose Payment Option
+                            </h2>
+                        </div>
+                        <p class="opacity-90 lg:text-lg">On the Retik dashboard, select your preferred payment option by clicking the appropriate option button (ETH, USDT, or USDC).
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="assets/screenshot-3.png" alt="about">
+                    </div>
+                </div>
+                <div class="lg:hidden flex space-y-8" style="
+            
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+                <p class="steps-tag text-2xl font-semibold">Step-3</p>
+                    <h2 class="lg:text-4xl text-2xl font-bold" style="margin-top: 0;"> 
+                        Choose Payment Option
+                    </h2>
+                    
+                    <p class="opacity-90 lg:text-lg" style="text-align: center;">On the Retik dashboard, select your preferred payment option by clicking the appropriate option button (ETH, USDT, or USDC).</p>
+                        <img src="assets/screenshot-3.png" alt="about" style="width: 80%;">
+                </div>
+            </div>
+            <div class="container lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                <div class="lg:flex hidden justify-center items-center gap-x-24">
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="space-y-2">
+                            <p class="steps-tag text-2xl font-semibold">Step-4</p>
+                            <h2 class="lg:text-4xl text-2xl font-bold">
+                                Enter Purchase Amount
+                            </h2>
+                        </div>
+                        <p class="opacity-90 lg:text-lg">Enter the amount of ETH, USDT, or USDC you want to invest in the Retik presale. <br>
+                            The dashboard will display how many Retik tokens you will receive for the selected amount. <br> 
+                            Confirm your selection. <br>
+                            Click the "Buy" button to proceed.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="assets/screenshot-4.png" alt="about">
+                    </div>
+                </div>
+                <div class="lg:hidden flex space-y-8" style="
+            
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+                <p class="steps-tag text-2xl font-semibold">Step-4</p>
+                    <h2 class="lg:text-4xl text-2xl font-bold" style="margin-top: 0;">
+                        Enter Purchase Amount
+                    </h2>
+                    
+                    <p class="opacity-90 lg:text-lg" style="text-align: center;">Enter the amount of ETH, USDT, or USDC you want to invest in the Retik presale. <br>
+                        The dashboard will display how many Retik tokens you will receive for the selected amount. <br>
+                        Confirm your selection. <br>
+                        Click the "Buy" button to proceed.</p>
+                        <img src="assets/screenshot-4.png" alt="about" style="width: 80%;">
+                </div>
+            </div>
+            <div class="container lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                <div class="lg:flex hidden justify-center items-center gap-x-24">
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="space-y-2">
+                            <p class="steps-tag text-2xl font-semibold">Step-5</p>
+                            <h2 class="lg:text-4xl text-2xl font-bold">
+                                Verify and Confirm Transaction
+                            </h2>
+                        </div>
+                        <p class="opacity-90 lg:text-lg">Your wallet, e.g., Metamask, will display the transaction details. <br>
+                            Verify that the transaction details are correct, including the amount and recipient address. <br>
+                            Confirm the transaction within your wallet. <br>
+                            Wait for the transaction to be confirmed on the Ethereum network. This may take some time, depending on network congestion.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="assets/screenshot-5.png" alt="about">
+                    </div>
+                </div>
+                <div class="lg:hidden flex space-y-8" style=" flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+                <p class="steps-tag text-2xl font-semibold">Step-5</p>
+                    <h2 class="lg:text-4xl text-2xl font-bold" style="margin-top: 0; text-align: center;;">Verify and Confirm Transaction</h2>
+                    <p class="opacity-90 lg:text-lg" style="text-align: center;">Your wallet, e.g., Metamask, will display the transaction details. <br>
+                        Verify that the transaction details are correct, including the amount and recipient address. <br>
+                        Confirm the transaction within your wallet. <br>
+                        Wait for the transaction to be confirmed on the Ethereum network. This may take some time, depending on network congestion.</p>
+                        <img src="assets/screenshot-5.png" alt="about" style="width: 80%;">
+                </div>
+            </div>
+            <div class="container lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                <div class="lg:flex hidden justify-center items-center gap-x-24">
+                    <div class="lg:w-1/2 space-y-8">
+                        <div class="space-y-2">
+                            <p class="steps-tag text-2xl font-semibold">Step-6</p>
+                            <h2 class="lg:text-4xl text-2xl font-bold">
+                                 Check Your Holdings
+                            </h2>
+                        </div>
+                        <p class="opacity-90 lg:text-lg">Once the transaction is confirmed, return to the Retik dashboard. <br>
+                            Your holdings of Retik tokens will be displayed on the dashboard, reflecting the amount you purchased during the presale.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="assets/screenshot-6.png" alt="about">
+                    </div>
+                </div>
+                <div class="lg:hidden flex space-y-8" style="
+            
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+                <p class="steps-tag text-2xl font-semibold">Step-6</p>
+                    <h2 class="lg:text-4xl text-2xl font-bold" style="margin-top: 0;">
+                         Check Your Holdings
+                    </h2>
+                    
+                    <p class="opacity-90 lg:text-lg" style="text-align: center;">Once the transaction is confirmed, return to the Retik dashboard. <br>
+                        Your holdings of Retik tokens will be displayed on the dashboard, reflecting the amount you purchased during the presale.</p>
+                        <img src="assets/screenshot-6.png" alt="about" style="width: 80%;">
+                </div>
+            </div>
+              
+
+            <footer class="container text-white-100 mx-auto lg:px-8 px-5 font-poppins">
+                <hr class="hr">
+                <div class="lg:flex justify-between items-center py-16 gap-6 lg:space-y-0 space-y-8"
+                   style="flex-direction: column;">
+                   <div>
+                      <img src="assets/logo.png" alt="logo" class="lg:block flex mx-auto">
+                   </div>
+                   <div class="lg:space-y-8 space-y-6">
+                      <div class="text-center opacity-60">
+                         <p>2023© Retik LLC | All Rights Reserved</p>
+                         <p>Beachmont, Kingstown, Reg no: 3178 , Saint Vincent and the Grenadines,
+                            support@retik.com
+                         </p>
+                      </div>
+                      <ul class="text-md flex flex-wrap justify-center lg:gap-8 gap-6 items-center">
+                         <li>
+                            <a href="index.html" class="font-semibold">Home</a>
+                         </li>
+                         <li>
+                            <a href="whitepaper.html"
+                               class="font-semibold">Whitepaper</a>
+                         </li>
+                         <li>
+                            <a href="win-333k.html" class="font-semibold">Win
+                            $333K</a>
+                         </li>
+                         <li>
+                            <a href="stages.html" class="font-semibold">Stages</a>
+                         </li>
+                         <li>
+                            <a href="how-to-buy.html" class="font-semibold">How to
+                            buy</a>
+                         </li>
+                         <li>
+                            <a href="contact.html" class="font-semibold">Contact
+                            Us</a>
+                         </li>
+                         <li>
+                            <a href="privacy-policy.html" class="font-semibold">Privacy Policy
+                            </a>
+                         <li>
+                            <a href="terms.html" class="font-semibold">Terms & conditions
+                            </a>
+                         </li>
+                         </li>
+                         <li>
+                            <a href="cookies.html" class="font-semibold">Cookies
+                            </a>
+                         </li>
+                      </ul>
+                      <div class="text-center opacity-60">
+                         <p>Disclaimer: Cryptocurrency may be unregulated in your jurisdiction. The value of
+                            cryptocurrencies may
+                            fluctuate.
+                         </p>
+                         <p>Profits may be subject to capital gains or other taxes applicable in your
+                            jurisdiction
+                         </p>
+                      </div>
+                   </div>
+                   <div class="flex items-center justify-center gap-x-6">
+                      <a href="https://deploy-billioner.vercel.app/">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFCSURBVHgB7ZbhbYMwEIXPnaDdgA2aERiBDcII3SDZoOkEtBN0BHeDtBO4G5ANXs+yI5Br8Nmx8otPekKA7ec7HWeINjZuBEBjRSXwxEfKxM5hHVgjJox9FozrUwsNrD3lGZ+xjH336jc2pBa7LvQiNB8gQ7N2q9H7dF05JIwbofHo17VqpObw9/3C2A5yDFKFyAOOK5P7+QL+XkpPKeAKaEQ6Cs36hJxOYm4rc4//6b+VNvRSEXPDl4bq86SUuswfPEQGfVB9vkPjJfMT65cqm4tHwn2/BvXY5Zjbim/hqjlV+Sk05QL3KdVAHvXMvEbqT1SK34BGGQYFx3NsE/Y0yulmBqU/FIFxmxn9WWqsQiOautszq6O8bvfGOsYaigi4k8ogD41I706hVjbRkovcZqChKQMXry/WD+u9ONKNjXvyB43wWYEulqZ4AAAAAElFTkSuQmCC"
+                         alt="logo">
+                      </a>
+                      <a href="https://deploy-billioner.vercel.app/">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFjSURBVHgB7ZXhcYMwDIVFrwOwQRmBDcoGZQQ2aDaAEdggbNB0AroB3cDtBGQDVT7ExefGWDYhlx98d+8uwRbPkmUMsLOzAYhYkHrSSPqArSGTlHRgU5sX2AI2rTlLFyncEqO0PoY55hlWwBlUpDdScWXKmWRn+QtrTQWlbUnqyvMDxCAsrV5QRTo6xosQw6WutRlIGU5VceFvNpSV1qTluHphjvKZSrt2Ri+u5Nh3z9zTknGPYfSkjGNzwfzGZSwJNmmNWL3Pku0plzJvBS9QaHQsGyuUkYFnz3N0n9HefEGg8Qgh4NR8HRucrDF9GgaU00MMOH00RuvZEcNoIQbOUlPw/wzD+ddsTxLzJEn0BfEFl8ujhnB+IMac+SS98u8CwjhTAt8Qi1Hq0iqnQv8Zj2s2awG20XyR+I5cXLNZ5o1lnBpjuik7h3kFa8HL2e7QcTVaC5zJ4V7g9JVUbNzAziPxB7wS+4o5Kp2OAAAAAElFTkSuQmCC"
+                         alt="logo">
+                      </a>
+                      <a href="https://deploy-billioner.vercel.app/">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGcSURBVHgB7ZbRcYMwDEBFrwNkg3qEdINsUjJBsgFsEDYgG7QbwAZ0A7IBdAJVKspV5cDIOXzNR96dQs6SLVkIywD/SAIRQMQtPVh6kkuSJJ9Tdk+wIuT0QNLS3wOJkwAyHiNJIRa0eElSkGwmdI7kTHLS46ukXRb9ovTmM3oOiCUl6cmugEAHHD2nsMG/cErLmTk7kkrsChmrprLjc5yhn53epQqyk+CYo+iPJLnVcYnLbGSXJ3F4zchpHCAOGfywOM7QgNie1VAhwXTaRjmvlhw7tPOi5hTy7JS+UetyUD/v3/edZ2Bnzz9UxRd68IHC1a+LSh8ybyS1dzX8LRQLvEsn8/j9v8vuc9GnouOxFpbAcNprAKN1nHLcTNmMJ2zwNlocKnyr1uJ3nOHwfTvLrkOKzQfvtER1DmieISJUgK8+/apdLZS7dG4/+D3gQgOZc36AdQg5qMyNJARbAGSYYhx2U/7GaXcQBwcG5zXEoTZZ4dAMWlwHbjhHuEeCbq84NIZxr2b20svjgcMtZYocbiC0sfD1p58Zf2DmG3O084Y++QoWAAAAAElFTkSuQmCC"
+                         alt="logo">
+                      </a>
+                      <a href="https://deploy-billioner.vercel.app/">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGsSURBVHgB7VbRccIwDFV6/S8jpBM0nYCwQUZIJ4ANCBOUTgCdoGwAnYBskGxQOoH7RBRwjWO7cOkPvLuHk0iWbFmyILrh2hCFKiqlBhjS/aQoWnXoZBh2YAmdHV0CdghOwbVqsAXnDv2l6LS6ORh36UcOQ2MMhby+gUvspsb3BM/MGHwQ+TdYgjV0SnHIc4cgR2yO7zMKgeyW8SG7T8FX8Ev5UYELXoCwjcQkxHFsMXQuFmJDycIHPue56g+F7uvO4n9K/WHYKVHN2faNpPVn7jyj/pF1OX9yz6MNuHLIl6LjwmnoVVNSKiRZlD0pM00+d9g5zXrlP++BoV9psu0fN7I/dz3sCf0fTpzHngmHEpQQ6/oJR057H1OA83vtgy/ZJqq5s7lb5Rb5GnJOxkP3c+DBdB6C7EJ5i5h/9LCb9y53qWewpvOxERulTag7fzdkfC4pWuEjxhfy12+LneiOMHdETV2byfzJP7/6udSyebfXIPfilbYoWz9nvZKOu8ypSbzYsDfDogqyQS6QylWfLsh9Yev7W6MivEb0v0UFBUIdb7hKnlO64Yarxg+gcPe0drZTaAAAAABJRU5ErkJggg=="
+                         alt="logo">
+                      </a>
+                      <a href="https://deploy-billioner.vercel.app/">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFvSURBVHgB7ZbtTcMwEIbPiAHCBGQENsAjdIRsgjcITBCYgBHcDVomcDZoNjjOqqMexbEvjaP2Rx/pVaTc2a+dnD8A7lwBlUtAxIoeDemZVIGMgfRD2iqlepiLNyV943I6Uj3HuCY5LIcTDwDLGo9YiXGDZXgnfZ692+TMLRaA9cf5M/vHiP8L5PHV/EXqWZtXUs0nMbtvwaT856wi7XyRmlzjJeaG5WlSG6TZe7OGuWU5sfXfsrgtbb4J8bdEjgk5TWnzKsRdIseFnFpirmLmsUHRHq1ScWneGPc8gBA8VXifSNuHXMlylZsT4+70kcgZYyLzf0z/TtyxnNhyMizuJP98jrmHLydfVE1Qxd63qQ6WmHs6jByPYTA215i3iVX7AWQ3li2ciq8maUGbgYr9aTKKhU61qa8GKfC4Z6+Fhhy4zuw7kIDHy+MOy2ExcgznBuHXs8PLOSBb/+dk7+1hEBrYLUVIT9pTdQ9w55b4BYApChIfShDdAAAAAElFTkSuQmCC"
+                         alt="logo">
+                      </a>
+                   </div>
+                </div>
+             </footer>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    // mobile-menu
+    var sidebar = document.querySelector(".sidebar")
+    var toggle = document.querySelector(".toggle")
+
+    toggle.addEventListener("click", function () {
+        console.log("Toggle button clicked");
+        if (sidebar.classList.contains("close")) {
+            sidebar.classList.remove("close");
+        } else {
+            sidebar.classList.add("close");
+        }
+    })
+</script>
+<script>
+  window.gtranslateSettings = {
+      "default_language": "en",
+      "languages": ["en", "fr", "de", "it", "es", "nl", "pt", "zh-CN", "tr", "ar", "ko", "zh-TW", "ja",
+          "ru", "hi", "pl", "cs", "hu", "id", "bg", "th", "ro", "vi", "sk"
+      ],
+      "wrapper_selector": ".gtranslate_wrapper",
+      "flag_size": 24,
+      "switcher_horizontal_position": "inline",
+      "flag_style": "3d",
+      "alt_flags": {
+          "en": "usa"
+      },
+      "switcher_text_color": "#f7f7f7",
+      "switcher_arrow_color": "#f2f2f2",
+      "switcher_border_color": "#161616",
+      "switcher_background_color": "#303030",
+      "switcher_background_shadow_color": "#474747",
+      "switcher_background_hover_color": "#3a3a3a",
+      "dropdown_text_color": "#eaeaea",
+      "dropdown_hover_color": "#748393",
+      "dropdown_background_color": "#474747"
+  }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.1/web3.min.js"
+  integrity="sha512-16bHUyyjvvIblMY4r09krdSjrJU4GgPPIk0VgiCJW/SPt2s2YYZ4ypsaTid+KiwvrQ6+aijt7Gu4LtQT4msbzQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="index.js"></script>
+</body>
+</html>

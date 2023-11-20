@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="assets/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Retik">
+    <link rel="stylesheet" href="assets/font-awesome.css">
+    <title>Retik Finance Presale</title>
+    <link href="main.css" rel="stylesheet">
+    <style>
+        @keyframes react-spinners-MoonLoader-moon {
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);;
+            }
+        }
+    </style>
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="800" data-aos-delay="0">
+    <div id="root">
+        <div class="App">
+            <div class="alert">
+                <img src="assets/error.svg" class="alert-icon">
+                <p>Alert! dfgdf fggdf dfgsdfg dfgdfgdf</p>
+                <svg class="close-alert" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+            </div>
+            <div class="blur-effect invisible" onclick="removeWalletsOption()"></div>
+            <div class="bg-black-100 text-white-100 font-poppins">
+                <span class="loader invisible">
+                    <span></span>
+                    <span></span>
+                </span>
+                <div class="bg-top lg:block hidden">
+                    <img src="assets/bg_top.png" alt="vector" class="absolute right-0 top-0 lg:block hidden">
+                    <div class="lg:px-12 px-5 container mx-auto relative z-20">
+                        <header>
+                            <div class="lg:flex hidden items-center justify-between font-poppins text-white-100 h-24">
+                                <a href="index.html" class="logo">
+                                    <img src="assets/logo.png" alt="Logo">
+                                </a>
+                                <nav>
+                                    <ul class="text-md flex justify-center gap-8 items-center">
+                                        <li>
+                                            <a href="white-paper" class="font-semibold">Whitepaper</a>
+                                        </li>
+                                        <li>
+                                            <a href="win-33k" class="font-semibold">Win $333K</a>
+                                        </li>
+                                        <li>
+                                            <a href="stages.html" class="font-semibold">Stages</a>
+                                        </li>
+                                        <li>
+                                            <a href="how-to-buy.html" class="font-semibold">How
+                                                to buy</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html" class="font-semibold">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="gtranslate-wrapper">
+                                    <div class="gtranslate_wrapper"></div>
+                                </div>
+                                <div>
+                                    <button
+                                        class="connectButton-1 px-8 py-2 rounded-2xl btn-gradient text-black-100 font-semibold text-lg">Connect Wallet</button>
+
+                                </div>
+                            </div>
+                            <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                                <a href="index.html" class="logo w-1/2">
+                                    <img src="assets/logo.png" alt="Logo">
+                                </a>
+                                <button class="nav cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </header>
+                        <div class="lg:flex hidden justify-between items-center lg:py-20 py-8 gap-x-12">
+                            <div class="space-y-5 lg:w-1/2">
+                                <div class="flex lg:gap-x-4 gap-x-2 items-center">
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARpSURBVHgB7VddaBxVFP7OvTObbGyjqEEpCq1BGv+gVH1QKVYfFAoqhSYFkWhRrIoiFlITbdNBxba0aqVE+mLjD8HS+BBLWytaLT4Uig8hEPAx0gcREUnI/3Znjufcmdldm+5P56Ev7WGHu3vn3vt957vnnHsXuGZXuxEy2sBrvEzbNnkWWsDd+2kWGcxDBvuyj2/Kgc9YmW+IIEwmpHsDMlgmAjZE3nroEPk8IoaQuICMVpfA1z28NiJsjwp4ZcsBmtS+vDyRIBsoOCDt/7byVFBYm4P/5gzw6tMBzdVa39R6+fl2Xh0aHibDm3N57O/sZFueyGSSBSrRT+9YaPfhDZGExfXA4C8BN2ciMNDDt1riEfHwjhiEX9h0J7449jK3pBOtquAUiCmcfp/b4TWdkHcdrp+4q8niw6MB5y6bwHLGNDEPOy8diOCBnyvcjIOhQbNxWxAv4Ikc3we8kkM+KWNWl8gBM4jwQ1dAhWo4ddNw6G3eZw2/LtHWBGKyjhD9JKQet2BNAiX4RwzIqxJgkr6/ixE6Hw3o11rrN1QHvnknDHzQLlXCUsk7SEOxtyWV4pYwKWM2PrSTztRb26ABW8iZPaLAIRvvtwv5FFwBKSUlX+Tzl4loSyPgaksUOLKD74oibHOeJQBJ2yzYT1hQmxIhzQIqv0+ll4z5TciOlZRJvDQWk/f0Us/FeEvqwIVi8RafvBeN81C9ZfWLKV5MQDlWwZQXT+JACSmJB+V5wCnjXIxrhKii1bI+AQ+Jdw409pLSnKeEUExOa0HJS+lXwIrxDplsMsdUibalBMgLZW7RxCU2TjUqyW2s6pHKrySc1+lv3Q5aZLBzOy1Srk4wLzZEYDGHsXyR1rFOZC3xvrSKHLYZmAPi/iojLy2Lx8YBUAqihcIYjIRE+ySOQo0NjuIYKRiauRSBhtLw7Fucn23FWVFiTRr5okRBMJ732WyyhjZaFwNaJ0iOCez5fRT9XcMU1lu7bhqeCqZunGvFYUrB46coHLb+HNmjy5meFUJflfZfdk2I9K65Hy+hAaupwMm+6Ta/edmAlOROrxxMUyLse+v67cfpuNGAb6AcBkXqZ8ppy9MSQ58uzOODe7OU4u8CXiGnzoimlAK7XDeIiuA31vfbzy4eryT8JhzyCF0VFVG44pO5efRVI1H1PtAqcSOxNuWqni6oOcfUvX6XGeKAzaiPJ/1kC4Vc4e536cfxgLspj+ukc4Nx8eji4fy3smXVcKrGwGMB/SMH+WYBPxd7Q31/juOIvjvHWMHMx0LCcSY+Lqt8pP3qZYsvChBOSLZIKqN/cA4Hg4Ciyyag9nBA/4oKT8nub31kJ+2tjGpr4hIXF6ey3b6N5uUGpQHYfXgWu2uBq2W6FY/t5dsQ8oSw95IDaryjj+5DBst0KVVL7gVIj+is1tBxfCmLDycuHUZZLbMCznskVVHyAxktEwG9lUZ6+lXcjq4oAbV07ym+B2S2zFMndvNKuazJt2b5k4KovZfOI4P9B7KUYoGiPRe7AAAAAElFTkSuQmCC"
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAS2SURBVHgB7VZraFxFFP7OzL27CUmTNr5Qax+0FsVCQUVERKwK/dGCtJKIAcUfUlpEUJomMdH2YvBBI/pHCAW10BS1iRTRFrRSKopVQn9IqCAaaYuUtkrUpkmax+49nrm7c3fuZh9RhP7Jgd2ZOzPnnO88Z4AFWqCrTIT/kQ618fWUxgpNmcWKMZ7yvTMngAtBQCGqAQgC9uRgBv+Bjgvv2Cy2gbidCLcoWVMiWcYxTXR4JoOuja/SWXP2RMBNocIWpHHw/g66HAPY285vM2eHtvV6H+Jf0L6Aa5bMok8pftoIs8qJ8mO0RiOasIc5fFgAPSqb7z6wi56LPbB3K/vUwL+QwmJC9rFn9vjH5gvgs5f4RSZ+TeWVEzljDCAB5iQxNpJ3xT+aqT1v9pBtQr1WaNJAoyb9SX8Hb29uZl1N+acBXytu7xShOZdHP2cOJNbFC3/6CkdE1/sqTK03uREBqBMeJ271IvSdzavR/8EOUVCBeAZb5HyDFpMKyjgaDXqdH3Nyo/UmBu+W8ad7d3kHkPcOaqcwKYtjEWMOsQDiJ3SaTw928QsD3XxzKQBahWuspXm+nEK4nqAYjHxnJVw7zgyjw8qIk/BAJ+8Xm550XUeFmJ5Tivplenh6Bqea38AYEfEXu7lXeNoSMS6Oe1Lexbu76UbDOwfA/na+3df4lsBLVFECOYkVijWnRcCIuOhnEXOHyHpIOVZTztUxmNycohDI9m93datlrhc98/deOy+S5KjRGq3SMgblYL2r2BFopqtE2CppNBtiYAllhQQkEwbAKjcV8EdxGCMAfoha5fNXKhTXAr+bRCyhPPbGHMVF1hfAc8II6QMjJQHUnMUobsUFObwmKaDIOisMebdKDAogONkDSoBSSv1QDCCqgpZByirmfdpRkKxhx9LEHpWod5vxFJdkbk4Zqf/vSwIwFDaqPonrl1aoLiqvaA5XCUdW6/xZbeMd83F8XptzCuemFYbKAmjppEtZn1qE4Yj8ZiNGBaepULLB5DqbtS4BxvWOBSHbB9ftpImyAAxtDuhvfXnsKQnH88qUmutuG0sqJJhVrBJA7OiGhTK1UukoQV7xgm5seFNq+xFivqFMKZbJci5UCRCDoJwXPl/eST+WAqCKF0LMvCW5UCuuTLkuV86o4ribfYqVu21ZF7J/dFahG2VoDoANQfqUFM92Yb6knZvNnSczn524z80N+e65bScNzxuAofUBfaxCahVPfC1Cp60iZYXDiXlstY2/cydwODAxiT5UIKq0aZ5aKQ/3pYGtkhetKhfSZKOx7ke+9VJs1VE/g9alXTRaSUfZRwcHrP5K4R6J5esid5NR7rg1drPJAZ1fc5rVsfFJbFr9Mo2jCtFAwKnrIK+haWT9NOoE0U2UwoNyKbWIdetid8LGnuKsp6jVFnJCPmaFvyc7gd6VAU1hHhSF4JtXMq0e6Xbp28vl3q+TEvSL74RCX6e5bz9xmIzHRXnX0jYMuff9vAAYOhnwstALWzSpx82Va98F9tJRCWsj+RlZOy9Kh0LGRyuv4BBVeP9XBWBJ3mw03IMVWS97pw+9lqL7H9fIA8S8GycFx0XN+FWUfje1CMNrn60e5wWqRP8AFG5MKDg7AU0AAAAASUVORK5CYII="
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASRSURBVHgB7VZxaFVlFP+dc+97vk2duhIKQsr9MyJY6kqzTA2JRqJBlFKIS2QimiGSTVnbXSA0pIKECv/pH5OYQRQa/tXIIpm2ZWLSLIK0kqBpSr439979Tufed+99975Ne7jNv/bB5Xvf9717fr9zfuec7wKTY3LcxtHjSKbbkXR8jzDBQ0Ftne41hCZLsJZIMgTT/niHfcQ7tzFBw3GEH2MsNAabCfIcAxlSd3UGk/WyThND4LMumZ7J4WkFeg1GHiQfMAQuhpwYf4T/HzcCh53cXMtknuUsWlikjhlUDu7N/qZrzowLgS86pAYG84Sw2jayQfWdQYoQgTGu6axcUMXePsQ7Ez3oHxOBzx2ptoAXxGCLGm1gzzEKvRQUtabzOvfYIuv8SIT7hEvZHM7eEoFP26TOImxkV5p1eZcPyKXQRjob9FhpHCRX9iozDjwvnhH9Wj2Ifyom8KHWbo2LBSnBNpA8qSAz43rG9dUnK5A3bcs9SsY+oucz4+DefyBmoHG/lf9fAhrmOXCxyC3IJn1xmS9tCQhECWDNbjpl4HbaYp1Wnw8p8OwSwUh/lZ+/j+OMIHBw1/X6NKWb3by06HuzyjxElNlUWhPT0YyLNTmy2GI5rvlRH4Qbof7Fd3RdKJwYlcAnrw/Pg5tq1zCvsiBMZbUbgcaAdR5SlJ2ajO/nM5helRcv7PWR3h5w8l03W7D74wQ41BmufUDL6BlNMk6A6WMFTzwSFqhf83rJsg7a59lIu9in4I+Envr/iZVkQPqnRoeyo0ZAw5XngHHgXbKJRJGgnO59yWmsW7qLLn+7XapsG+2aXS/GSzHUnWKEBKYPZcOPwEsODWkY1zLJATWQjTwu01v3rrJg69IOWrlEwX0P7sArarrV8zbxTqC7Rkqfoj2buLecwIjbUG+vaUMuVmrxrlcNH1YjtcUQ0rECsHmFQ1ET6X3D3cnMXckGVKwQD1gljUdS2HWX37c79dVNCYTDu80Wa7OxYFbZRHtSQusXO3Q4PD+xR5rV/jsaNa11SiYrYklYkuCSDGP+3Db6rSIC8fF1p3SroQuPttMOb31st9xdXY1f1MPqEXWOqOOVyq8YwR97T6Lh+UPkxm1zJQTU04/V0OozwdfM1GlYwz44JcA5zHpfAknmBKO3HLxiAmkbJxVwll5tC75rkZSGdkMxUT1gKZWo/ztMOorK0PLvYHNqNNsVEXioDb+r0QsWm6cwBwvZ63SB91boobcGJfoHIawmUXw+PZrtim5DzWfpY7eHwU1qsFYdTXneqs5ey/xGS3O2ruspqPew7ikkRpJXoAHcagR8EoY/Uq/mq82NgdaGYT4o5LCiMAVP6N5xprIeEEWDBs/PwOCYCAzncU4/tX72Pi49oyLy1sUh3vaAQ8P3b6eL2siabMJ+laTAYVMqtfGzjZsoPyYCizrpKonp9HJBDXd1X+fW5Q4VwvO6Vrpyz7/YomJvVczLYf8PpOi7kd2K+kB8/LBXpja8Stdu9p8/35bGtOA9JVqnzwAbNNfsoHPjQqDSIe/KlL9d1N55BX+Rox9pk+MG4z8XsmeGV2TAngAAAABJRU5ErkJggg=="
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUySURBVHgB7VZ9iFRVFP+de9/Mzuq462aZCWpGmoIuFloim7VR9mF/hFIUQqCRfYqlaNuH6yPQsH8MKijKRExEpSgLwjJTwa+iiMVFE7IwrDSRtnRndWbe6ffmvTfvvdlV+9+9zJt37z3nns/fOfcB/aN/XO5DLsXwrqsD6gqlyQ6caeS+QRSfzFkln/bim6+Zq4d6Sw3MaCvo0DJ2zFyBThGeuMhwLkRYu0QnwWCBFHS2gR1E5QcAb6cnpqsv/uxwWC2ao8bgehE8IY6u3rZcfv+6Xd/yDDbe5cqxvs71isBqVwc39WCpqi40in+MkfVlYJPm0DkQGKrnS+Pp5QQrZiQPN9HIogVOC7yfxXod6Dl7qNzUWMoWyq1W7WNGdIaBnLIGi29rl80XNcB11Ywq4A2BLrCQHxnGWfSomM2gVRXzuX8TDwww/PMf/7DxhdBlA63s0eDjDPo+I6U13XB254Hbub/OimZVvXnTlzsfXdCAD9t0Sll1Pw9QrxwRi49F9WkqaQgUBQqryhPvJD18e0akwxFshWob97LcPnzOk4mtrpQinSkMeJ62UbMJBOpYpqCtTwXRXioK6TWVUw5xBJlU5RWMa7CYRXI1FSaaEHRjyHQHEQzmFFZiJZHXNnon9itzE77DdTDX8Jym5NDCx79x1ellQM7ifgJlsEkorhiS8PaCT9Uwic8m3pX9yDjVlnwG41IGKNQv19km4X1ScXKdpNs++G0iCoHiAKDRmr9cvcHMlAFbXkADGZrjgzXKk4+pSUNCmY3CXY2Ihk/M6wTpeYBlLlUDxKCZxEG1ua1iAZXyepuBuo+l+Br3e4yvMAlQ4ChL90lReYS8XwX7NSkJS5XzMT+9jny1ChyLFiCN9HTZyVZ2smfDqH2x0y0X6XG7r0ACoefZJx69ZZns8Rn2uvrlgAy+Z1qvDSpDQnkRMKWxzmAUpwdNqHhynEvpFXKR8kYkRh3MWqK7bKLwGpycugx7I/o0V07TwP2mpjKcaurUUQ83VnRvflDJq5Ni1EYdLQ5/BjabNIC0RoeJC874qRDZtwi5JA8Nr3MkckbDcpQQK5W031yRVT+2MIx5aKytcxuGLczh3Kh2+c7x8DwKlCDHFYOHNwzBnZHyQyvZxASt1fYMqZaiiWVfV8HfdlebS54eICHXq9PFc7+tfk6vdkC9KczpnKjrCaL61xOs5Q00/k+277kMyvi4GQV4ksjgAJyd1yyWCbLNLU6nfbuqwEsql/Q6dQdEKE+AK3Up9TofVASqUdDfujIyxsCTgVHHi9uoHBUjL9HrP1JNJQlOxLmNeYI8mwgbwfMdL6PnrNFukwKiZK4so95YY4+TUEh6yafolLC+XMZUMr7v3+eR0LiuJV4jpEUVFDhzROG180a9x4E5RB4nuhdsEOnjf3ehR/w2vMv1XGvlZd5+1hckQe5+4ezNbBkbzgH5TAb30vpbGe4JDHUT6fUmcIh9HEXO/2V1nKDATn6DbT87EJ9dcQYj2GnmMC2LKTeX6C1/oYSHmpbIzkpW/FIcMdFbSOoKEnOpq5agomfb4JU+aH4ls9vnP7xKB5UUTbSgrlRGOWvR/Ws3Tvn3/ElX86U8ZtCYp9icWqrywujS3g6PHXPI87IPqPkg+dbVYcbiVdbX3bR6ZBJ0Cnl44ouyCZcYyq+qE3m8R0/n1XwvHGRk3unqwprRrvRE/NKXkB9W6lXwMN0xaGE6+EEhh7ecwzOuKx7+xzi2SofXZ7GO4DvPdO21Jew5Y3FgxCIpoH/0j5rxHz6vgYxao50IAAAAAElFTkSuQmCC"
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARXSURBVHgB7VZLiFxFFD233uvOzCSjODOI6SiC4kbBhNGICcTPSpAIQlAiuDY7wegiEtB24yaIiCDiQhBUJLhRV27ciAsVJAR0JIQoiLYgQdLp2GP/rqe+r15/wJ0upqC6qm7dd++532pgZ+yM/3jIootPn9GVqy3chAHuMMCtUNxlDPaJomUEqzyvcDWcSilj0vu871Hg7yL4heeLBfBj2cSFyyN0nmzL4F8BeP+UHhSDxzDB4xR+JzkKriAItfwU7j4y7uD3IuE8by/Ylgm2CsFnpoFPHjgt3y0E8OGLelIFZ4z7rlJQwFkpFgRp7hszR5mdRQQa6fDCwr7Hi+ePvCTvzAA4+5zuGy/jPAlrJlCj5SbwJoV0u0QlkoHxdEgOIAfpz52RwT30RCca4obuwSMlcENpreAsvTVWqFUspClparwie2ZsEo/l18ILlLA6ObW9P+9dmuBQ1JsANBR3M4kkKHCzqMCoU2rC2VBZEJ4pkQjMZDyJN66cDYPNqLfMYtEyU0nlYu4vxbk3JqDiAtc+zwcyfpcfzP6YO8kYJ0L9Ody1ZjzAyw2HmILKEHdj3JRkpXr3cn6+dB0Ok/wm99tF5q3p6UIimee80vUagLNtbfJy1cWq8DEOzBLdbAWVIe4ENTl8UvoPvSzPjhSHyH+uEM8blcTQRcVl8IrbG6y12z633c+S40GzhrhS7PfGC3T5gGo83JZzZogH6drXyDNMyRkVxuQMiR3kN4/udWI9gFWullhLrBCOlHg+1mK8FbVx/yvSve+0vFAqNvn9pSx5nTfz5Axrc73jAZS1bJRal5PQhGo1bo9T+tNgp+ubMX7l9vaYnEVIXmhIZE/Xmt5BD7pr1V+GTK0aDVInS40HUx3UxvNYE4+aCd4g7215E5IAmHmjFkSomHEXbPYRwJU9GLYMrrkSQioh94GthAyIA6ZaKd96Vdcp9HVKPU7+Rl7K4sMZW7NYJKG0tz8GRikHnmhjyM21vAm5ZAmdLq+EkNXOaio/SqHnCfJplmgjlWuWS5KXoU9i641euy2TLPSi3xi9DJ3/omVWxPPmU8v4gMdjEqw2GU/cJ3psQvE1FfxZywH4LzvZC1fLgRjH9PwCRxJAk17LyvVV11O7F1MLB2h7ZwYAS2grz/bsZYuykVtqqkR1LTg8wwlUqiRJoLwQApoYbM0AYEC+bApGoXx9+QTnTL35YrRWFWk1mnj8W0IZGgsnlCKF/jVWfBH1ppLuDvED0bxVBgTBjVLmDQT1RpXPkFwVzVQehLfcHmwXfe/tLn5OoUc2fmrr0t8rOFEojlPpwSArvWgzf8My19o6F/e/KROoKX5Devgr8n90aRnv3ntChnMB5OPiGb2xMcF+Cj5Arv0k3ULrN7i/nqjKUPMmAKJXGT7FgCZeZTz/IP030r4n39dmgG/XTsmVeXoWAlg0rJcaG9gtPew2u3wIG0sY9vvo39zlf74F/353xs74345/AIcIFhjG0UWtAAAAAElFTkSuQmCC"
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASlSURBVHgB7VdvaJVVGP8957z3bm3TnDaSktIV9UX6UlFoUX4IJZKkhgk1oaA+hcKaRmHjdbXVxA+yiBoqiZEkk6YEwYIwFCNNP4wxlAqCkiIo2rR113X3fXrO+++e97z3zkVfgjz3nnvOe95zzvN7/vyecy5wrfzfC8134tALXCiWoeectLzafdanGfxbAHu7eQUUOkTqE4pwkwIrs8D8kFQlfU3RJlpF4wYhhS39Iu1x1jiwrocm/jGAvdv4USIekgnLVCw0rXDaBIQzFvYVpoio90SAPb5PwbwA7N/OLzF4N9UQVLM/1/sIWCAgPv48wFMuCOUK37eNV4vwXYl5MxVWC2esRl/FfXGFGII71qrKc648VcMpXcadc2o5lzWMtHAbOoIKbZLH71NgSm31fVZ1ARzs5mYNXpdokVjBtoYLKO93jlqFT0o34KhHNG6BXPmYwr22TM9+YOA2mdhEuQAzH440i7T8TgQPc4CzRJWKJlohPn5a3t8TmTy0wkDrFJ6XdQ8kTAn38ip3Sfd0TQCzGguLNU3LSaQHYN65wKNda/I83/OFX9miSO0QK7TJ/KWydml2H6MGLalrAQ8WrynWurpBWTFtXt+nDh/32fushztJ4REPgQKpk2XGyMM+DZ7s5VMiaFRAL8m6i0JF5Iu6MVCA7feMcGPWQ+cKGH7f58ZygCOSIw7InE55I6bn95oVf3rilcttD/bQOUWBnwpNrWlcSLlUmmOBG90x5YSZ+MBw+BbCVq34cRVSK5OI7i42tQwa6zCrUVGi7CphQLgSlesCm2YJl0XSJQ6mJ0aFJRIDnW6OSOlHvGGBxq1BMy7K80Qtunq4GgBY9EqB0KUKN8/qIlokMm60qafT2AlZ0ig42lZ1UUnGp6KERFZyis1W1wWexWtUNZNva2MR11XK+EO0/NlNSpTGCS57BVz8dpAbZGiR8Xni+6hv5qmruyDRPkLOprZ4avbOtbtpWvz6rrI1Sl1FkKRzdKSEn2ZKaJfxO1S4luL9OHVHfQs4mqcMgLGt94wJsMWs9kueHrbzQ1zHSn/hRROomvGkCG3SGRYYBnDOBZmYKERmjLMdZ10B3uxp+mrlazTEPm8669GH4GC1EjQy9fzvZRxas5Nmzr/Fq0TQligbcsr/hJZuySUiTiO3upAimpkT7e2v3+D201fQd/8OOiavjiVrjXUu9EsmBL8uwhdmsyilfWKuD0BmTWcWIkejgjTbGxq4Y6yfPxIFxz1GRRewXPobRNB9AlwTVW9GtnDTelr9WhdAUMI3xRZMiqBFyeFhHyTRpmye26W+avxp0rUxWxrtVOcsiV1AsziT1dkqJsolskfc49e+YGQSVGYeZY/jEChZAW2ecKG1G+N1AZgi+uyTyTO1LyMU0iqJaF3NgNaNKEk8hpZZwPLcT5Q9jnIAHvLpS2lelheTKRVTX7JzM0qYEp90KYNQvTvErTj4zR9vxmFXXp4XcTnTyxs9hT4BfLvKMKOWj1GlHOzID9vfpDtw/STeIZ/+nDcAU8YGeBlfwUatsV42NkCMVcMfclwUZ8/wj4PIl1swfpB6SvoHF3fROK6V/2r5GyxrRKHz9J1YAAAAAElFTkSuQmCC"
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOWSURBVHgB7VY7b9RAEJ7ZtXPRRSGJFBICJQ0SDQJREkAiEpQ0+ROR0qQGWRQgEH8gUFHTUtAhpFAgkQqQEIgSlISHQh7kwtk7zK537bXPd7d0FNmTdd7H7Hz7zTezBjhqR63asGkwSUjM7MMlRTAnua8fYf91k9K+2/9ivDbv+sL2YwlbmxmsLSb4x/cXNYGY2YG7IGiFJyPBMM2jEdt/3TfvZN/tmL+2Mm4PQQqyOYGr/Lo0kImcBdplB+36pgJ6HYXOS0aNQLqfqgM8OX8Pvzmfog7iOLBzKAFI8Deqndibl95j+sK+F3Zk5zGKWjAxNBwy9JSDxqB5XjKYtBaAJiaaKQ0BIOAHRz7BDOcV4OkM8CwS3uT5bcHhcDoBOIThTNjFjlosTsEbcVzRhgGxpJzfd0jg5euJeO/v9SKhnyOIqQ5HAbYFw0E4p2U2WFHlwqpmCKCJNxI9WbhdBeDTLewBtF0GASBkTzhoQBjIsqWeOfs3qxSnm7DE87PsoS0VtXO20Ggig9ZwELkTNrDU+wD8DCnCBNABjLac/eGGWuYC89DYKh90fphWMBM16odlAFfXctNIzAqiPkJGiClAmGFpibvM7CvM13c574qdI5V9ApTPpa6oEo6xni7ymtixAeHh6APGhYXg85UEbzTZX7gVPeY//cDHB3QuzfA1Gl3lmgCC4SDKFC0VXUvH5puvoaUKTrF4R8rsYAlDAIjGrPAAWSCSa8CJMWOxz7+x71cTTHVv7T6NTx6AmYoQzmvIRZrynqp2hLBwNAiVaT0TS3wLZn6sM96FBZ76oO2nFKyIUU5R44taPqMaSBrEhHMmygyQPUVKC42mbap2MMZRZ89rx1iM06aQQZXBf0pRowmAIdd37kCvzzyxafB8Z9hwIvh60LZxCIi6E+GV57I2VEUb+yDAL2hkCxpaceuFIbdo8ZAXhj4ixfIzzt8UzYO28ub2jlkIucAkQsDXEhb3hh5XjUy6cDjgrmIGgPCduSu7XqqdbnzRFodwNtaxX19MxoQWq/4s1HVSzheH8LKqaV1WJa5XEy8BfvPiDadkUTmFp3JHtwMQ15iE5oOw6fbEDnwdyESSoLp2p7sYC/kIFUxqVZuUAz8r3Ndz4aSjqhTv8fiGWQflIRjzL8jSZUzijr+47xXwLqGRLn91N81N+h3+blaHQOvrsLf4FM1H05eE2u0JGPGX8e1NUx3YR1vaj9p/2/4CqyriHP+5rBkAAAAASUVORK5CYII="
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                    <a href="https://deploy-billioner.vercel.app/">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARESURBVHgB7VZNiBxFFH6vqmbcmYTsLmQXRRAREQ9KgqAJETX+gQSEgGL24MUgBP+Q7IooAWmMB8lFVhEkiKAIipfAXrwkRC/xBxER8bR6EBE1Jqw/6yaZ6X5+3V1VXdXTO73eAkkNPfX36r3v/dR7RXS5XeqNmxaT3WJmb6XbM6GrNOb5p+xeMddlT/VxsNa1YxWsGabfPhH6NEk4c7LMiPBE1Na/6U0S2Y9NowCx+Cju2Y2tFp7OrpOlYfwUiwMyvE/xkYToENUA+ja7QtfiwH7lhFMgfCOfA+jPlcJ1uQedZP7UQemtawEsbMkYwi0jbZlFPZfmdn0onO0ZP6d4jn5CT9IkhmuNAKgzAFMDwsp0kQsa3NE4pvVpawqPtpJQ/odQgCXxY00SxwaRVyi3WDYOQIeCACsF/S4pz7Gh0x1Lg+WbIfB9mFaVAsSDYsrewPJRyXnhT8lwK2t9DMKnHJhsIxYI0M8qQwe/79Jed31OJrL8T8pLTLK3bhEIf/3uhJct3ZU9pd/G3lTolkjWqPhOFbX+kwe3nacDjgICzmlOj+p69BMfd8Lz1tP0kFa0Q9vA1IV70PqrYwDkQWgZagukiHidbRMRj3/Py+ZjMDzu9vMe5nktVmU0BvJ5nzatD6BL1fWrB9/SS7T9oxdlxtEyp4vQOrP7f20m+vqLRG7wzFVhldBC7S7oUHPE5+cmhK6e7tDDjra/RZ/A3rflvnyAmLtHdckDLHOEVLfKjscCKGIg8n9JVESrSYmVLCwl0s+nu+Z5DVH/Hmj+zXT6DoL1iYiVrs6HFm2xwIBCv7ovN6fGD0yug6kfcPRG1Lsqk2Nq2PkZVtgZXitDIR/2/aZWC9BosuECQIp7TWyUPOYCclfCZzNR831DB0BnOnUNi+BjWxs2EAPdyFzsLWAKjWCDIrDo3s8O03Z3Bv64ANJHcu3CVmov8UctAHIEleZiS2ruArUKndewlwJQD0CeDCTtxtqNTdqF0e94triguoYuFlCXfxhktHiH0En4+a2SqTz61atyDbKdUZqeKfO8ZCQDn2Vw/Exc1Ep30DgAeRA6/1tX/JFmNHd/wj8xUnE3Vc8b5hPYm8CleHymR7dAwE4ATYWyuZsOdb9xvK5/gT9kzhZggQvaFaO2apgHkRTvGHG1/OwVTPu+fEX2ec18jMjTnPFd0KIPIadhih0/HpHbvBUtPdz1J2hnCldQazHqRNUNHzKbPOfMVZXfop8G0DttokEC4gVP54FKLQY2Ug1VRaxzawRvg/JlJM4CIymb/RrbOdvawl6p4TgAeItJnIolLijeCoFmkZbc+oiJlG3QfgUBszKajDjI63Vw3Ji+m9bA5peZZTrj5DE1tM8PD/cY1ovY3FwUFCVVNgtyO0emL979wWu4YZ3pV5x5qv8snxoLIG/fJdIdFElutE2Fk8mWfdvkPMn0OVrFVR7S5XYxtf8A6uMB6JokmsgAAAAASUVORK5CYII="
+                                            alt="icon" class="hover:opacity-50">
+                                    </a>
+                                </div>
+                                <h1 class="lg:text-6xl text-3xl font-bold">
+                                    Step Into The Future with <span class="text-gradient">Retik Finance</span>
+                                </h1>
+                                <p class="lg:py-3">Retik Finance innovates in DeFi with it's Futuristic DeFi Debit
+                                    Cards, Smart Crypto Payment Gateway, AI Powered Peer to Peer (P2P) Lending and Multi
+                                    Chain Non Custodial Highly Secured DeFi Wallet, aiming to redefine global
+                                    transactions.</p>
+                                <div class="lg:flex gap-x-3 items-center pt-5 lg:space-y-0 space-y-5">
+                                    <button
+                                        class="lg:px-8 px-16 py-3 rounded-2xl bg-black-50 lg:text-xl font-medium shadow lg:block flex items-center justify-center lg:w-44 w-full">Whitepaper</button>
+                                    <button
+                                        class="lg:px-8 px-16 py-3 rounded-2xl bg-black-50 lg:text-xl font-medium shadow lg:block flex items-center justify-center lg:w-44 w-full">Audit</button>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="rounded-3xl lg:px-14 px-5 lg:py-8 py-6 backdrop-blur-xl lg:w-1/2 border">
+                                <h1 class="lg:text-5xl text-2xl text-center font-bold">
+                                    <span class="text-gradient">Retik</span>
+                                    Presale
+                                </h1>
+                                <h1 class="lg:text-5xl text-2xl text-center font-bold">
+                                    Stage <span class="text-gradient" id="currentStage">nil</span>
+                                </h1>
+                                <br>
+                                <div class="space-y-2 text-center">
+                                    <p class="lg:text-2xl text-normal font-medium token-current-price">nil</p>
+                                    <p class="lg:text-2xl text-normal token-next-stage-price">nil</p>
+                                    <p class="lg:text-2xl text-normal user-holdings hidden"><a
+                                            style="color: #FEC5A3; text-decoration:underline;">Your Holdings:
+                                        </a><span>0</span></p>
+                                    </p>
+                                    <br>
+                                </div>
+                                <div>
+                                    <div class="meter">
+                                        <span style="width: 100%;" class="progress-bar-width"></span>
+                                        <div class="progress-bar-value uiBox-root css-1d3lo99">100%</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 text-center">
+                                    <p class="lg:text-2xl text-normal font-medium">
+                                        USDT Raised:
+                                        <span class="text-yellow-50">
+                                            <b class="totalUsdtRaisedValue">nil / nil</b>
+                                        </span>
+                                    </p>
+                                    <p class="lg:text-2xl text-normal font-medium">
+                                        Tokens Sold:
+                                        <span class="text-yellow-50">
+                                            <b><span class="token-sold">nil</span> / <span
+                                                    class="token-to-sell">nil</span></b>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-3 grid-rows-1 items-center justify-center gap-3 mt-5 mb-3">
+                                    <button
+                                        class="coin-selector coin-selector-eth rounded-2xl border-2 border-white-100 lg:px-5 py-2 hover:bg-yellow-100 hover:border-yellow-100 w-full"
+                                        style="background-color: rgb(204, 115, 255);">
+                                        <img src="assets/eth.svg" alt="bnd" class="flex mx-auto">
+                                    </button>
+                                    <button
+                                        class="coin-selector coin-selector-usdt rounded-2xl border-2 border-white-100 lg:px-5 py-2 hover:bg-yellow-100 hover:border-yellow-100 w-full"
+                                        >
+                                        <img src="assets/usdt.svg" alt="bnd" class="flex mx-auto">
+                                    </button>
+                                    <button
+                                        class="coin-selector coin-selector-usdc rounded-2xl border-2 border-white-100 lg:px-5 py-2 hover:bg-yellow-100 hover:border-yellow-100 w-full"
+                                        >
+                                        <img src="assets/usdc.svg" alt="bnd" class="flex mx-auto">
+                                    </button>
+                                </div>
+                                <div class="MuiBox-root css-1og1qar">
+                                    <div class="MuiBox-root css-ni5m9l">
+                                        <a href="how-to-buy.html"
+                                            style="cursor: pointer; color: rgb(255, 255, 255); text-decoration: underline;">Buy
+                                            with Card</a>
+                                    </div>
+                                </div>
+                                <div class="space-y-2" preventDefault()>
+                                    <div class="space-y-2">
+                                        <label class="coin-name-change">
+                                            Amount in <strong>ETH</strong>
+                                            You Pay:
+                                        </label>
+                                        <div
+                                            class="py-4 pl-5 w-full bg-white-100 flex items-center justify-between rounded-2xl">
+                                            <input type="number" placeholder="0"
+                                                class="buy-value bg-white-100 focus:ring-0 focus:outline-none w-full placeholder-black-100 text-black-100"
+                                                value="" id="buy-value-1">
+                                            <img src="assets/eth-icon.png" alt="progressbar"
+                                                class="pr-5 coin-icon-change" style="width: 47px;">
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label>
+                                            Amount in <strong>RETIK</strong>
+                                            You Receive:
+                                        </label>
+                                        <div
+                                            class="py-4 pl-5 w-full bg-white-100 flex items-center justify-between rounded-2xl">
+                                            <input readonly="" type="number" placeholder="0"
+                                                class="get-value bg-white-100 focus:ring-0 focus:outline-none w-full placeholder-black-100 text-black-100"
+                                                value="0">
+                                            <img src="assets/icon.svg" alt="progressbar" class="pr-5"
+                                                style="width: 40px">
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <button
+                                            class="connectButton-2 w-full py-4 text-black-100 font-semibold text-center btn-gradient rounded-2xl"
+                                            >Connect
+                                            wallet</button>
+                                        <button
+                                            class="buy-button w-full py-4 text-black-100 font-semibold text-center btn-gradient rounded-2xl hidden"
+                                            >Buy Now</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between lg:gap-x-6 gap-x-4 mt-2">
+                                    <button
+                                        class="flex items-center justify-center lg:gap-5 gap-2 bg-black-50 border-2 border-white-50 w-full py-1 rounded-xl lg:text-base text-xs">
+                                        <img src="assets/buy.svg" alt="buy"><a href="help.html">Getting Error? Click Here</a>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between lg:gap-x-6 gap-x-4 mt-2">
+                                    <button
+                                        class="flex items-center justify-center lg:gap-5 gap-2 bg-black-50 border-2 border-white-50 w-full py-1 rounded-xl lg:text-base text-xs">
+                                        <img src="assets/buy.svg" alt="buy"><a href="how-to-buy.html">How To Buy?</a>
+                                    </button>
+                                    <button
+                                        class="flex items-center justify-center lg:gap-5 gap-2 bg-black-50 border-2 border-white-50 w-full py-1 rounded-xl lg:text-base text-xs">
+                                        <img src="assets/link.svg" alt="buy"><a href="giveaway.html">Win $333k</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/bg_mobile.svg" alt="vector" class="absolute right-0 top-0 lg:hidden block">
+                <div class="lg:space-y-0 space-y-6 relative z-20 px-5 container mx-auto lg:hidden block">
+                    <header>
+                        <div class="lg:hidden flex items-center justify-between pt-5 font-nutino-sans">
+                            <a href="index.html" class="logo w-1/2" style="display: flex; align-items: center;">
+                                <img src="assets/logo.png" alt="Logo">
+                            </a>
+                            <div class="gtranslate-wrapper" style="margin-left: 20px;">
+                                <div class="gtranslate_wrapper"></div>
+                            </div>
+                            <button class="nav cursor-pointer toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div
+                            class="sidebar close fixed top-0 bottom-0 left-0 p-2 w-3/4 overflow-y-auto font-poppins z-20 backdrop-blur-lg transition-all duration-75">
+                            <div class="p-2.5"><a href="/"><img src="assets/logo.png" alt="Logo"></a></div>
+                            <div class="gap-y-6 flex flex-col items-start mt-8"><button class="px-2.5 font-medium"><a
+                                        href="whitepapers.html">Whitepaper</a></button><button
+                                    class="px-2.5 font-medium"><a href="win-333k.html">Win
+                                        $333K</a></button><button class="px-2.5 font-medium"><a
+                                        href="stages.html">Stages</a></button><button class="px-2.5 font-medium"><a
+                                        href="how-to-buy.html">How to
+                                        buy</a></button><button class="px-2.5 font-medium"><a
+                                        href="contact.html">Contact
+                                        Us</a></button><button
+                                    class="connectButton-1 px-8 text-black-100 p-3 btn-gradient rounded-lg text-left"
+                                    >Connect
+                                    Wallet</button>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="space-y-5 py-8">
+                        <h1 class="text-3xl font-bold">
+                            Step Into The Future with <span class="text-gradient">Retik Finance</span>
+                        </h1>
+                        <p>Retik Finance innovates in DeFi with it's Futuristic DeFi Debit Cards, Smart Crypto
+                            Payment Gateway, AI Powered Peer to Peer (P2P) Lending and Multi Chain Non Custodial Highly
+                            Secured DeFi Wallet, aiming to redefine global transactions.</p>
+                        <button
+                            class="py-3 rounded-2xl bg-black-50 lg:text-xl font-medium shadow flex mx-auto items-center justify-center w-full">Whitepaper</button>
+                        <button
+                            class="py-3 rounded-2xl bg-black-50 lg:text-xl font-medium shadow flex mx-auto items-center justify-center w-full">Audit</button>
+                        <div class="flex justify-center gap-x-2 items-center">
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARpSURBVHgB7VddaBxVFP7OvTObbGyjqEEpCq1BGv+gVH1QKVYfFAoqhSYFkWhRrIoiFlITbdNBxba0aqVE+mLjD8HS+BBLWytaLT4Uig8hEPAx0gcREUnI/3Znjufcmdldm+5P56Ev7WGHu3vn3vt957vnnHsXuGZXuxEy2sBrvEzbNnkWWsDd+2kWGcxDBvuyj2/Kgc9YmW+IIEwmpHsDMlgmAjZE3nroEPk8IoaQuICMVpfA1z28NiJsjwp4ZcsBmtS+vDyRIBsoOCDt/7byVFBYm4P/5gzw6tMBzdVa39R6+fl2Xh0aHibDm3N57O/sZFueyGSSBSrRT+9YaPfhDZGExfXA4C8BN2ciMNDDt1riEfHwjhiEX9h0J7449jK3pBOtquAUiCmcfp/b4TWdkHcdrp+4q8niw6MB5y6bwHLGNDEPOy8diOCBnyvcjIOhQbNxWxAv4Ikc3we8kkM+KWNWl8gBM4jwQ1dAhWo4ddNw6G3eZw2/LtHWBGKyjhD9JKQet2BNAiX4RwzIqxJgkr6/ixE6Hw3o11rrN1QHvnknDHzQLlXCUsk7SEOxtyWV4pYwKWM2PrSTztRb26ABW8iZPaLAIRvvtwv5FFwBKSUlX+Tzl4loSyPgaksUOLKD74oibHOeJQBJ2yzYT1hQmxIhzQIqv0+ll4z5TciOlZRJvDQWk/f0Us/FeEvqwIVi8RafvBeN81C9ZfWLKV5MQDlWwZQXT+JACSmJB+V5wCnjXIxrhKii1bI+AQ+Jdw409pLSnKeEUExOa0HJS+lXwIrxDplsMsdUibalBMgLZW7RxCU2TjUqyW2s6pHKrySc1+lv3Q5aZLBzOy1Srk4wLzZEYDGHsXyR1rFOZC3xvrSKHLYZmAPi/iojLy2Lx8YBUAqihcIYjIRE+ySOQo0NjuIYKRiauRSBhtLw7Fucn23FWVFiTRr5okRBMJ732WyyhjZaFwNaJ0iOCez5fRT9XcMU1lu7bhqeCqZunGvFYUrB46coHLb+HNmjy5meFUJflfZfdk2I9K65Hy+hAaupwMm+6Ta/edmAlOROrxxMUyLse+v67cfpuNGAb6AcBkXqZ8ppy9MSQ58uzOODe7OU4u8CXiGnzoimlAK7XDeIiuA31vfbzy4eryT8JhzyCF0VFVG44pO5efRVI1H1PtAqcSOxNuWqni6oOcfUvX6XGeKAzaiPJ/1kC4Vc4e536cfxgLspj+ukc4Nx8eji4fy3smXVcKrGwGMB/SMH+WYBPxd7Q31/juOIvjvHWMHMx0LCcSY+Lqt8pP3qZYsvChBOSLZIKqN/cA4Hg4Ciyyag9nBA/4oKT8nub31kJ+2tjGpr4hIXF6ey3b6N5uUGpQHYfXgWu2uBq2W6FY/t5dsQ8oSw95IDaryjj+5DBst0KVVL7gVIj+is1tBxfCmLDycuHUZZLbMCznskVVHyAxktEwG9lUZ6+lXcjq4oAbV07ym+B2S2zFMndvNKuazJt2b5k4KovZfOI4P9B7KUYoGiPRe7AAAAAElFTkSuQmCC"
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAS2SURBVHgB7VZraFxFFP7OzL27CUmTNr5Qax+0FsVCQUVERKwK/dGCtJKIAcUfUlpEUJomMdH2YvBBI/pHCAW10BS1iRTRFrRSKopVQn9IqCAaaYuUtkrUpkmax+49nrm7c3fuZh9RhP7Jgd2ZOzPnnO88Z4AFWqCrTIT/kQ618fWUxgpNmcWKMZ7yvTMngAtBQCGqAQgC9uRgBv+Bjgvv2Cy2gbidCLcoWVMiWcYxTXR4JoOuja/SWXP2RMBNocIWpHHw/g66HAPY285vM2eHtvV6H+Jf0L6Aa5bMok8pftoIs8qJ8mO0RiOasIc5fFgAPSqb7z6wi56LPbB3K/vUwL+QwmJC9rFn9vjH5gvgs5f4RSZ+TeWVEzljDCAB5iQxNpJ3xT+aqT1v9pBtQr1WaNJAoyb9SX8Hb29uZl1N+acBXytu7xShOZdHP2cOJNbFC3/6CkdE1/sqTK03uREBqBMeJ271IvSdzavR/8EOUVCBeAZb5HyDFpMKyjgaDXqdH3Nyo/UmBu+W8ad7d3kHkPcOaqcwKYtjEWMOsQDiJ3SaTw928QsD3XxzKQBahWuspXm+nEK4nqAYjHxnJVw7zgyjw8qIk/BAJ+8Xm550XUeFmJ5Tivplenh6Bqea38AYEfEXu7lXeNoSMS6Oe1Lexbu76UbDOwfA/na+3df4lsBLVFECOYkVijWnRcCIuOhnEXOHyHpIOVZTztUxmNycohDI9m93datlrhc98/deOy+S5KjRGq3SMgblYL2r2BFopqtE2CppNBtiYAllhQQkEwbAKjcV8EdxGCMAfoha5fNXKhTXAr+bRCyhPPbGHMVF1hfAc8II6QMjJQHUnMUobsUFObwmKaDIOisMebdKDAogONkDSoBSSv1QDCCqgpZByirmfdpRkKxhx9LEHpWod5vxFJdkbk4Zqf/vSwIwFDaqPonrl1aoLiqvaA5XCUdW6/xZbeMd83F8XptzCuemFYbKAmjppEtZn1qE4Yj8ZiNGBaepULLB5DqbtS4BxvWOBSHbB9ftpImyAAxtDuhvfXnsKQnH88qUmutuG0sqJJhVrBJA7OiGhTK1UukoQV7xgm5seFNq+xFivqFMKZbJci5UCRCDoJwXPl/eST+WAqCKF0LMvCW5UCuuTLkuV86o4ribfYqVu21ZF7J/dFahG2VoDoANQfqUFM92Yb6knZvNnSczn524z80N+e65bScNzxuAofUBfaxCahVPfC1Cp60iZYXDiXlstY2/cydwODAxiT5UIKq0aZ5aKQ/3pYGtkhetKhfSZKOx7ke+9VJs1VE/g9alXTRaSUfZRwcHrP5K4R6J5esid5NR7rg1drPJAZ1fc5rVsfFJbFr9Mo2jCtFAwKnrIK+haWT9NOoE0U2UwoNyKbWIdetid8LGnuKsp6jVFnJCPmaFvyc7gd6VAU1hHhSF4JtXMq0e6Xbp28vl3q+TEvSL74RCX6e5bz9xmIzHRXnX0jYMuff9vAAYOhnwstALWzSpx82Va98F9tJRCWsj+RlZOy9Kh0LGRyuv4BBVeP9XBWBJ3mw03IMVWS97pw+9lqL7H9fIA8S8GycFx0XN+FWUfje1CMNrn60e5wWqRP8AFG5MKDg7AU0AAAAASUVORK5CYII="
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASRSURBVHgB7VZxaFVlFP+dc+97vk2duhIKQsr9MyJY6kqzTA2JRqJBlFKIS2QimiGSTVnbXSA0pIKECv/pH5OYQRQa/tXIIpm2ZWLSLIK0kqBpSr439979Tufed+99975Ne7jNv/bB5Xvf9717fr9zfuec7wKTY3LcxtHjSKbbkXR8jzDBQ0Ftne41hCZLsJZIMgTT/niHfcQ7tzFBw3GEH2MsNAabCfIcAxlSd3UGk/WyThND4LMumZ7J4WkFeg1GHiQfMAQuhpwYf4T/HzcCh53cXMtknuUsWlikjhlUDu7N/qZrzowLgS86pAYG84Sw2jayQfWdQYoQgTGu6axcUMXePsQ7Ez3oHxOBzx2ptoAXxGCLGm1gzzEKvRQUtabzOvfYIuv8SIT7hEvZHM7eEoFP26TOImxkV5p1eZcPyKXQRjob9FhpHCRX9iozDjwvnhH9Wj2Ifyom8KHWbo2LBSnBNpA8qSAz43rG9dUnK5A3bcs9SsY+oucz4+DefyBmoHG/lf9fAhrmOXCxyC3IJn1xmS9tCQhECWDNbjpl4HbaYp1Wnw8p8OwSwUh/lZ+/j+OMIHBw1/X6NKWb3by06HuzyjxElNlUWhPT0YyLNTmy2GI5rvlRH4Qbof7Fd3RdKJwYlcAnrw/Pg5tq1zCvsiBMZbUbgcaAdR5SlJ2ajO/nM5helRcv7PWR3h5w8l03W7D74wQ41BmufUDL6BlNMk6A6WMFTzwSFqhf83rJsg7a59lIu9in4I+Envr/iZVkQPqnRoeyo0ZAw5XngHHgXbKJRJGgnO59yWmsW7qLLn+7XapsG+2aXS/GSzHUnWKEBKYPZcOPwEsODWkY1zLJATWQjTwu01v3rrJg69IOWrlEwX0P7sArarrV8zbxTqC7Rkqfoj2buLecwIjbUG+vaUMuVmrxrlcNH1YjtcUQ0rECsHmFQ1ET6X3D3cnMXckGVKwQD1gljUdS2HWX37c79dVNCYTDu80Wa7OxYFbZRHtSQusXO3Q4PD+xR5rV/jsaNa11SiYrYklYkuCSDGP+3Db6rSIC8fF1p3SroQuPttMOb31st9xdXY1f1MPqEXWOqOOVyq8YwR97T6Lh+UPkxm1zJQTU04/V0OozwdfM1GlYwz44JcA5zHpfAknmBKO3HLxiAmkbJxVwll5tC75rkZSGdkMxUT1gKZWo/ztMOorK0PLvYHNqNNsVEXioDb+r0QsWm6cwBwvZ63SB91boobcGJfoHIawmUXw+PZrtim5DzWfpY7eHwU1qsFYdTXneqs5ey/xGS3O2ruspqPew7ikkRpJXoAHcagR8EoY/Uq/mq82NgdaGYT4o5LCiMAVP6N5xprIeEEWDBs/PwOCYCAzncU4/tX72Pi49oyLy1sUh3vaAQ8P3b6eL2siabMJ+laTAYVMqtfGzjZsoPyYCizrpKonp9HJBDXd1X+fW5Q4VwvO6Vrpyz7/YomJvVczLYf8PpOi7kd2K+kB8/LBXpja8Stdu9p8/35bGtOA9JVqnzwAbNNfsoHPjQqDSIe/KlL9d1N55BX+Rox9pk+MG4z8XsmeGV2TAngAAAABJRU5ErkJggg=="
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUySURBVHgB7VZ9iFRVFP+de9/Mzuq462aZCWpGmoIuFloim7VR9mF/hFIUQqCRfYqlaNuH6yPQsH8MKijKRExEpSgLwjJTwa+iiMVFE7IwrDSRtnRndWbe6ffmvTfvvdlV+9+9zJt37z3nns/fOfcB/aN/XO5DLsXwrqsD6gqlyQ6caeS+QRSfzFkln/bim6+Zq4d6Sw3MaCvo0DJ2zFyBThGeuMhwLkRYu0QnwWCBFHS2gR1E5QcAb6cnpqsv/uxwWC2ao8bgehE8IY6u3rZcfv+6Xd/yDDbe5cqxvs71isBqVwc39WCpqi40in+MkfVlYJPm0DkQGKrnS+Pp5QQrZiQPN9HIogVOC7yfxXod6Dl7qNzUWMoWyq1W7WNGdIaBnLIGi29rl80XNcB11Ywq4A2BLrCQHxnGWfSomM2gVRXzuX8TDwww/PMf/7DxhdBlA63s0eDjDPo+I6U13XB254Hbub/OimZVvXnTlzsfXdCAD9t0Sll1Pw9QrxwRi49F9WkqaQgUBQqryhPvJD18e0akwxFshWob97LcPnzOk4mtrpQinSkMeJ62UbMJBOpYpqCtTwXRXioK6TWVUw5xBJlU5RWMa7CYRXI1FSaaEHRjyHQHEQzmFFZiJZHXNnon9itzE77DdTDX8Jym5NDCx79x1ellQM7ifgJlsEkorhiS8PaCT9Uwic8m3pX9yDjVlnwG41IGKNQv19km4X1ScXKdpNs++G0iCoHiAKDRmr9cvcHMlAFbXkADGZrjgzXKk4+pSUNCmY3CXY2Ihk/M6wTpeYBlLlUDxKCZxEG1ua1iAZXyepuBuo+l+Br3e4yvMAlQ4ChL90lReYS8XwX7NSkJS5XzMT+9jny1ChyLFiCN9HTZyVZ2smfDqH2x0y0X6XG7r0ACoefZJx69ZZns8Rn2uvrlgAy+Z1qvDSpDQnkRMKWxzmAUpwdNqHhynEvpFXKR8kYkRh3MWqK7bKLwGpycugx7I/o0V07TwP2mpjKcaurUUQ83VnRvflDJq5Ni1EYdLQ5/BjabNIC0RoeJC874qRDZtwi5JA8Nr3MkckbDcpQQK5W031yRVT+2MIx5aKytcxuGLczh3Kh2+c7x8DwKlCDHFYOHNwzBnZHyQyvZxASt1fYMqZaiiWVfV8HfdlebS54eICHXq9PFc7+tfk6vdkC9KczpnKjrCaL61xOs5Q00/k+277kMyvi4GQV4ksjgAJyd1yyWCbLNLU6nfbuqwEsql/Q6dQdEKE+AK3Up9TofVASqUdDfujIyxsCTgVHHi9uoHBUjL9HrP1JNJQlOxLmNeYI8mwgbwfMdL6PnrNFukwKiZK4so95YY4+TUEh6yafolLC+XMZUMr7v3+eR0LiuJV4jpEUVFDhzROG180a9x4E5RB4nuhdsEOnjf3ehR/w2vMv1XGvlZd5+1hckQe5+4ezNbBkbzgH5TAb30vpbGe4JDHUT6fUmcIh9HEXO/2V1nKDATn6DbT87EJ9dcQYj2GnmMC2LKTeX6C1/oYSHmpbIzkpW/FIcMdFbSOoKEnOpq5agomfb4JU+aH4ls9vnP7xKB5UUTbSgrlRGOWvR/Ws3Tvn3/ElX86U8ZtCYp9icWqrywujS3g6PHXPI87IPqPkg+dbVYcbiVdbX3bR6ZBJ0Cnl44ouyCZcYyq+qE3m8R0/n1XwvHGRk3unqwprRrvRE/NKXkB9W6lXwMN0xaGE6+EEhh7ecwzOuKx7+xzi2SofXZ7GO4DvPdO21Jew5Y3FgxCIpoH/0j5rxHz6vgYxao50IAAAAAElFTkSuQmCC"
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARXSURBVHgB7VZLiFxFFD233uvOzCSjODOI6SiC4kbBhNGICcTPSpAIQlAiuDY7wegiEtB24yaIiCDiQhBUJLhRV27ciAsVJAR0JIQoiLYgQdLp2GP/rqe+r15/wJ0upqC6qm7dd++532pgZ+yM/3jIootPn9GVqy3chAHuMMCtUNxlDPaJomUEqzyvcDWcSilj0vu871Hg7yL4heeLBfBj2cSFyyN0nmzL4F8BeP+UHhSDxzDB4xR+JzkKriAItfwU7j4y7uD3IuE8by/Ylgm2CsFnpoFPHjgt3y0E8OGLelIFZ4z7rlJQwFkpFgRp7hszR5mdRQQa6fDCwr7Hi+ePvCTvzAA4+5zuGy/jPAlrJlCj5SbwJoV0u0QlkoHxdEgOIAfpz52RwT30RCca4obuwSMlcENpreAsvTVWqFUspClparwie2ZsEo/l18ILlLA6ObW9P+9dmuBQ1JsANBR3M4kkKHCzqMCoU2rC2VBZEJ4pkQjMZDyJN66cDYPNqLfMYtEyU0nlYu4vxbk3JqDiAtc+zwcyfpcfzP6YO8kYJ0L9Ody1ZjzAyw2HmILKEHdj3JRkpXr3cn6+dB0Ok/wm99tF5q3p6UIimee80vUagLNtbfJy1cWq8DEOzBLdbAWVIe4ENTl8UvoPvSzPjhSHyH+uEM8blcTQRcVl8IrbG6y12z633c+S40GzhrhS7PfGC3T5gGo83JZzZogH6drXyDNMyRkVxuQMiR3kN4/udWI9gFWullhLrBCOlHg+1mK8FbVx/yvSve+0vFAqNvn9pSx5nTfz5Axrc73jAZS1bJRal5PQhGo1bo9T+tNgp+ubMX7l9vaYnEVIXmhIZE/Xmt5BD7pr1V+GTK0aDVInS40HUx3UxvNYE4+aCd4g7215E5IAmHmjFkSomHEXbPYRwJU9GLYMrrkSQioh94GthAyIA6ZaKd96Vdcp9HVKPU7+Rl7K4sMZW7NYJKG0tz8GRikHnmhjyM21vAm5ZAmdLq+EkNXOaio/SqHnCfJplmgjlWuWS5KXoU9i641euy2TLPSi3xi9DJ3/omVWxPPmU8v4gMdjEqw2GU/cJ3psQvE1FfxZywH4LzvZC1fLgRjH9PwCRxJAk17LyvVV11O7F1MLB2h7ZwYAS2grz/bsZYuykVtqqkR1LTg8wwlUqiRJoLwQApoYbM0AYEC+bApGoXx9+QTnTL35YrRWFWk1mnj8W0IZGgsnlCKF/jVWfBH1ppLuDvED0bxVBgTBjVLmDQT1RpXPkFwVzVQehLfcHmwXfe/tLn5OoUc2fmrr0t8rOFEojlPpwSArvWgzf8My19o6F/e/KROoKX5Devgr8n90aRnv3ntChnMB5OPiGb2xMcF+Cj5Arv0k3ULrN7i/nqjKUPMmAKJXGT7FgCZeZTz/IP030r4n39dmgG/XTsmVeXoWAlg0rJcaG9gtPew2u3wIG0sY9vvo39zlf74F/353xs74345/AIcIFhjG0UWtAAAAAElFTkSuQmCC"
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASlSURBVHgB7VdvaJVVGP8957z3bm3TnDaSktIV9UX6UlFoUX4IJZKkhgk1oaA+hcKaRmHjdbXVxA+yiBoqiZEkk6YEwYIwFCNNP4wxlAqCkiIo2rR113X3fXrO+++e97z3zkVfgjz3nnvOe95zzvN7/vyecy5wrfzfC8134tALXCiWoeectLzafdanGfxbAHu7eQUUOkTqE4pwkwIrs8D8kFQlfU3RJlpF4wYhhS39Iu1x1jiwrocm/jGAvdv4USIekgnLVCw0rXDaBIQzFvYVpoio90SAPb5PwbwA7N/OLzF4N9UQVLM/1/sIWCAgPv48wFMuCOUK37eNV4vwXYl5MxVWC2esRl/FfXGFGII71qrKc648VcMpXcadc2o5lzWMtHAbOoIKbZLH71NgSm31fVZ1ARzs5mYNXpdokVjBtoYLKO93jlqFT0o34KhHNG6BXPmYwr22TM9+YOA2mdhEuQAzH440i7T8TgQPc4CzRJWKJlohPn5a3t8TmTy0wkDrFJ6XdQ8kTAn38ip3Sfd0TQCzGguLNU3LSaQHYN65wKNda/I83/OFX9miSO0QK7TJ/KWydml2H6MGLalrAQ8WrynWurpBWTFtXt+nDh/32fushztJ4REPgQKpk2XGyMM+DZ7s5VMiaFRAL8m6i0JF5Iu6MVCA7feMcGPWQ+cKGH7f58ZygCOSIw7InE55I6bn95oVf3rilcttD/bQOUWBnwpNrWlcSLlUmmOBG90x5YSZ+MBw+BbCVq34cRVSK5OI7i42tQwa6zCrUVGi7CphQLgSlesCm2YJl0XSJQ6mJ0aFJRIDnW6OSOlHvGGBxq1BMy7K80Qtunq4GgBY9EqB0KUKN8/qIlokMm60qafT2AlZ0ig42lZ1UUnGp6KERFZyis1W1wWexWtUNZNva2MR11XK+EO0/NlNSpTGCS57BVz8dpAbZGiR8Xni+6hv5qmruyDRPkLOprZ4avbOtbtpWvz6rrI1Sl1FkKRzdKSEn2ZKaJfxO1S4luL9OHVHfQs4mqcMgLGt94wJsMWs9kueHrbzQ1zHSn/hRROomvGkCG3SGRYYBnDOBZmYKERmjLMdZ10B3uxp+mrlazTEPm8669GH4GC1EjQy9fzvZRxas5Nmzr/Fq0TQligbcsr/hJZuySUiTiO3upAimpkT7e2v3+D201fQd/8OOiavjiVrjXUu9EsmBL8uwhdmsyilfWKuD0BmTWcWIkejgjTbGxq4Y6yfPxIFxz1GRRewXPobRNB9AlwTVW9GtnDTelr9WhdAUMI3xRZMiqBFyeFhHyTRpmye26W+avxp0rUxWxrtVOcsiV1AsziT1dkqJsolskfc49e+YGQSVGYeZY/jEChZAW2ecKG1G+N1AZgi+uyTyTO1LyMU0iqJaF3NgNaNKEk8hpZZwPLcT5Q9jnIAHvLpS2lelheTKRVTX7JzM0qYEp90KYNQvTvErTj4zR9vxmFXXp4XcTnTyxs9hT4BfLvKMKOWj1GlHOzID9vfpDtw/STeIZ/+nDcAU8YGeBlfwUatsV42NkCMVcMfclwUZ8/wj4PIl1swfpB6SvoHF3fROK6V/2r5GyxrRKHz9J1YAAAAAElFTkSuQmCC"
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOWSURBVHgB7VY7b9RAEJ7ZtXPRRSGJFBICJQ0SDQJREkAiEpQ0+ROR0qQGWRQgEH8gUFHTUtAhpFAgkQqQEIgSlISHQh7kwtk7zK537bXPd7d0FNmTdd7H7Hz7zTezBjhqR63asGkwSUjM7MMlRTAnua8fYf91k9K+2/9ivDbv+sL2YwlbmxmsLSb4x/cXNYGY2YG7IGiFJyPBMM2jEdt/3TfvZN/tmL+2Mm4PQQqyOYGr/Lo0kImcBdplB+36pgJ6HYXOS0aNQLqfqgM8OX8Pvzmfog7iOLBzKAFI8Deqndibl95j+sK+F3Zk5zGKWjAxNBwy9JSDxqB5XjKYtBaAJiaaKQ0BIOAHRz7BDOcV4OkM8CwS3uT5bcHhcDoBOIThTNjFjlosTsEbcVzRhgGxpJzfd0jg5euJeO/v9SKhnyOIqQ5HAbYFw0E4p2U2WFHlwqpmCKCJNxI9WbhdBeDTLewBtF0GASBkTzhoQBjIsqWeOfs3qxSnm7DE87PsoS0VtXO20Ggig9ZwELkTNrDU+wD8DCnCBNABjLac/eGGWuYC89DYKh90fphWMBM16odlAFfXctNIzAqiPkJGiClAmGFpibvM7CvM13c574qdI5V9ApTPpa6oEo6xni7ymtixAeHh6APGhYXg85UEbzTZX7gVPeY//cDHB3QuzfA1Gl3lmgCC4SDKFC0VXUvH5puvoaUKTrF4R8rsYAlDAIjGrPAAWSCSa8CJMWOxz7+x71cTTHVv7T6NTx6AmYoQzmvIRZrynqp2hLBwNAiVaT0TS3wLZn6sM96FBZ76oO2nFKyIUU5R44taPqMaSBrEhHMmygyQPUVKC42mbap2MMZRZ89rx1iM06aQQZXBf0pRowmAIdd37kCvzzyxafB8Z9hwIvh60LZxCIi6E+GV57I2VEUb+yDAL2hkCxpaceuFIbdo8ZAXhj4ixfIzzt8UzYO28ub2jlkIucAkQsDXEhb3hh5XjUy6cDjgrmIGgPCduSu7XqqdbnzRFodwNtaxX19MxoQWq/4s1HVSzheH8LKqaV1WJa5XEy8BfvPiDadkUTmFp3JHtwMQ15iE5oOw6fbEDnwdyESSoLp2p7sYC/kIFUxqVZuUAz8r3Ndz4aSjqhTv8fiGWQflIRjzL8jSZUzijr+47xXwLqGRLn91N81N+h3+blaHQOvrsLf4FM1H05eE2u0JGPGX8e1NUx3YR1vaj9p/2/4CqyriHP+5rBkAAAAASUVORK5CYII="
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                            <a href="https://deploy-billioner.vercel.app/">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARESURBVHgB7VZNiBxFFH6vqmbcmYTsLmQXRRAREQ9KgqAJETX+gQSEgGL24MUgBP+Q7IooAWmMB8lFVhEkiKAIipfAXrwkRC/xBxER8bR6EBE1Jqw/6yaZ6X5+3V1VXdXTO73eAkkNPfX36r3v/dR7RXS5XeqNmxaT3WJmb6XbM6GrNOb5p+xeMddlT/VxsNa1YxWsGabfPhH6NEk4c7LMiPBE1Na/6U0S2Y9NowCx+Cju2Y2tFp7OrpOlYfwUiwMyvE/xkYToENUA+ja7QtfiwH7lhFMgfCOfA+jPlcJ1uQedZP7UQemtawEsbMkYwi0jbZlFPZfmdn0onO0ZP6d4jn5CT9IkhmuNAKgzAFMDwsp0kQsa3NE4pvVpawqPtpJQ/odQgCXxY00SxwaRVyi3WDYOQIeCACsF/S4pz7Gh0x1Lg+WbIfB9mFaVAsSDYsrewPJRyXnhT8lwK2t9DMKnHJhsIxYI0M8qQwe/79Jed31OJrL8T8pLTLK3bhEIf/3uhJct3ZU9pd/G3lTolkjWqPhOFbX+kwe3nacDjgICzmlOj+p69BMfd8Lz1tP0kFa0Q9vA1IV70PqrYwDkQWgZagukiHidbRMRj3/Py+ZjMDzu9vMe5nktVmU0BvJ5nzatD6BL1fWrB9/SS7T9oxdlxtEyp4vQOrP7f20m+vqLRG7wzFVhldBC7S7oUHPE5+cmhK6e7tDDjra/RZ/A3rflvnyAmLtHdckDLHOEVLfKjscCKGIg8n9JVESrSYmVLCwl0s+nu+Z5DVH/Hmj+zXT6DoL1iYiVrs6HFm2xwIBCv7ovN6fGD0yug6kfcPRG1Lsqk2Nq2PkZVtgZXitDIR/2/aZWC9BosuECQIp7TWyUPOYCclfCZzNR831DB0BnOnUNi+BjWxs2EAPdyFzsLWAKjWCDIrDo3s8O03Z3Bv64ANJHcu3CVmov8UctAHIEleZiS2ruArUKndewlwJQD0CeDCTtxtqNTdqF0e94triguoYuFlCXfxhktHiH0En4+a2SqTz61atyDbKdUZqeKfO8ZCQDn2Vw/Exc1Ep30DgAeRA6/1tX/JFmNHd/wj8xUnE3Vc8b5hPYm8CleHymR7dAwE4ATYWyuZsOdb9xvK5/gT9kzhZggQvaFaO2apgHkRTvGHG1/OwVTPu+fEX2ec18jMjTnPFd0KIPIadhih0/HpHbvBUtPdz1J2hnCldQazHqRNUNHzKbPOfMVZXfop8G0DttokEC4gVP54FKLQY2Ug1VRaxzawRvg/JlJM4CIymb/RrbOdvawl6p4TgAeItJnIolLijeCoFmkZbc+oiJlG3QfgUBszKajDjI63Vw3Ji+m9bA5peZZTrj5DE1tM8PD/cY1ovY3FwUFCVVNgtyO0emL979wWu4YZ3pV5x5qv8snxoLIG/fJdIdFElutE2Fk8mWfdvkPMn0OVrFVR7S5XYxtf8A6uMB6JokmsgAAAAASUVORK5CYII="
+                                    alt="icon" class="hover:opacity-50">
+                            </a>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="rounded-2xl lg:px-14 px-5 lg:py-8 py-6 bg_blur">
+                        <h1 class="lg:text-5xl text-2xl text-center font-bold">
+                            <span class="text-gradient">Retik</span>
+                            Presale
+                        </h1>
+                        <h1 class="lg:text-5xl text-2xl text-center font-bold">
+                            Stage <span class="text-gradient">1</span>
+                        </h1>
+                        <br>
+                        <div class="space-y-2 text-center">
+                            <p class="lg:text-2xl text-normal font-medium token-current-price">nil</p>
+                            <p class="lg:text-2xl text-normal token-next-stage-price">nil</p>
+                            <p class="lg:text-2xl text-normal user-holdings hidden"><a
+                                    style="color: #FEC5A3; text-decoration:underline;">Your Holdings: </a><span>0</span>
+                            </p>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="meter">
+                                <span style="width: 100%;" class="progress-bar-width"></span>
+                                <div class="progress-bar-value css-1d3lo99">100%</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-center">
+                            <p class="lg:text-2xl text-normal font-medium">
+                                USDT Raised:
+                                <span class="text-yellow-50">
+                                    <b class="totalUsdtRaisedValue">nil / nil</b>
+                                </span>
+                            </p>
+                            <p class="lg:text-2xl text-normal font-medium">
+                                Tokens Sold:
+                                <span class="text-yellow-50">
+                                    <b><span class="token-sold">nil</span> / <span class="token-to-sell">nil</span></b>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-3 grid-rows-1 items-center justify-center gap-3 mt-5 mb-3">
+                            <button
+                                class="coin-selector coin-selector-eth rounded-2xl border-2 border-white-100 lg:px-5 py-2 hover:bg-yellow-100 hover:border-yellow-100 w-full"
+                                style="background-color: rgb(204, 115, 255);">
+                                <img src="assets/eth.svg" alt="bnd" class="flex mx-auto">
+                            </button>
+                            <button
+                                class="coin-selector coin-selector-usdt rounded-2xl border-2 border-white-100 lg:px-5 py-2 hover:bg-yellow-100 hover:border-yellow-100 w-full"
+                                >
+                                <img src="assets/usdt.svg" alt="bnd" class="flex mx-auto">
+                            </button>
+                            <button
+                                class="coin-selector coin-selector-usdc rounded-2xl border-2 border-white-100 lg:px-5 py-2 hover:bg-yellow-100 hover:border-yellow-100 w-full"
+                                >
+                                <img src="assets/usdc.svg" alt="bnd" class="flex mx-auto">
+                            </button>
+                        </div>
+                        <div class="MuiBox-root css-1og1qar">
+                            <div class="MuiBox-root css-ni5m9l">
+                                <a href="how-to-buy.html"
+                                    style="cursor: pointer; color: rgb(255, 255, 255); text-decoration: underline;">Buy
+                                    with Card</a>
+                            </div>
+                        </div>
+                        <div class="space-y-2" action="https://deploy-billioner.vercel.app/">
+                            <div class="space-y-2">
+                                <label class="coin-name-change">
+                                    Amount in <strong>ETH</strong>
+                                    You Pay:
+                                </label>
+                                <div
+                                    class="py-4 pl-5 w-full bg-white-100 flex items-center justify-between rounded-2xl">
+                                    <input type="number" placeholder="0"
+                                        class="buy-value bg-white-100 focus:ring-0 focus:outline-none w-full placeholder-black-100 text-black-100"
+                                        value="" id="buy-value-2">
+                                    <img src="assets/eth-icon.png" alt="progressbar" class="pr-5 coin-icon-change"
+                                        style="width: 47px;">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label>
+                                    Amount in <strong>RETIK</strong>
+                                    You Receive:
+                                </label>
+                                <div
+                                    class="py-4 pl-5 w-full bg-white-100 flex items-center justify-between rounded-2xl">
+                                    <input readonly="" type="number" placeholder="0"
+                                        class="get-value bg-white-100 focus:ring-0 focus:outline-none w-full placeholder-black-100 text-black-100"
+                                        value="0">
+                                    <img src="assets/icon.svg" alt="progressbar" class="pr-5" style="width: 40px">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <button
+                                    class="connectButton-2 w-full py-4 text-black-100 font-semibold text-center btn-gradient rounded-2xl"
+                                    >Connect
+                                    wallet</button>
+                                <button
+                                    class="buy-button w-full py-4 text-black-100 font-semibold text-center btn-gradient rounded-2xl hidden"
+                                    >Buy Now</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between lg:gap-x-6 gap-x-4 mt-2">
+                            <button
+                                    class="flex items-center justify-center gap-2 lg:gap-5 bg-black-50 border-2 border-white-50 w-full py-1 rounded-xl lg:text-base text-sm">
+                                    <img src="assets/buy.svg" alt="buy"><a href="help.html">Getting Error? Click Here</a>
+                                </button>
+                        </div>
+                        <div class="flex items-center justify-between lg:gap-x-6 gap-x-4 mt-2">
+                            <button
+                                    class="flex items-center justify-center lg:gap-5 gap-2 bg-black-50 border-2 border-white-50 w-full py-1 rounded-xl lg:text-base text-sm">
+                                    <img src="assets/buy.svg" alt="buy"><a href="how-to-buy.html">How To Buy?</a>
+                                </button>
+                            <button
+                                class="flex items-center justify-center lg:gap-5 gap-2 bg-black-50 border-2 border-white-50 w-full py-1 rounded-xl lg:text-base text-sm">
+                                <img src="assets/link.svg" alt="buy"><a href="giveaway.html">Win $333k</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:py-16 py-6">
+                    <h4 class="lg:text-2xl text-xl font-semibold pb-6 text-center">Featured In</h4>
+                    <marquee>
+                        <div class="flex items-center justify-center lg:gap-x-24 gap-x-8 w-full">
+                            <img src="assets/Analytics-insight.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/bitcoin.com.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/bitcoinist.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/cointelegraph.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/entrepreneur.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/yahoo-finance.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/thenewscrypto.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/news-btc.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/mid-day.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/khaleej.png" alt="logo" class="lg:w-44 w-32">
+                            <img src="assets/investing.com.png" alt="logo" class="lg:w-44 w-32">
+                        </div>
+                    </marquee>
+                </div>
+                <div class="lg:block hidden bg-about">
+                    <div class="lg:px-20 px-5 lg:py-28 py-6 container mx-auto">
+                        <div class="lg:flex justify-between items-center gap-x-24 lg:space-y-0 space-y-6">
+                            <div class="lg:w-1/2">
+                                <img src="assets/about.png" alt="about" class="z--1 relative">
+                            </div>
+                            <div class="lg:w-1/2 space-y-8">
+                                <div class="lg:space-y-2">
+                                    <h2 class="lg:text-4xl text-2xl font-bold">
+                                        <span class="text-gradient">Retik</span>
+                                        DeFi Crypto Debit Cards
+                                    </h2>
+                                </div>
+                                <p class="opacity-90 lg:text-lg">
+                                    Retik DeFi Debit Cards redefine financial accessibility and security. Offering
+                                    anonymous transactions without the need for KYC, prioritizing user privacy.<br>Retik
+                                    DeFi Debit Cards offer a range of benefits, including:
+                                </p>
+                                <br>
+                                <ul style="list-style-type:disc">
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>Privacy: </b>
+                                        </span>
+                                        Anonymous transactions without KYC.
+                                    </li>
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>Daily Convenience: </b>
+                                        </span>
+                                        Perfect for daily transactions, online and offline, from shopping to dining.
+                                        Global Accessibility: Use them across borders, whether you're at a local store
+                                        or traveling abroad.
+                                    </li>
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>Transaction Efficiency: </b>
+                                        </span>
+                                        Swift and secure transactions, enhancing the overall payment experience.
+                                    </li>
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>ATM Accessibility: </b>
+                                        </span>
+                                        Withdraw cash anywhere in the world.
+                                    </li>
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>Security: </b>
+                                        </span>
+                                        Enjoy anonymous transactions while keeping your funds secure in Retik's non
+                                        custodial DeFi wallet.
+                                    </li>
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>Rewards Program: </b>
+                                        </span>
+                                        Earn rewards with every use, turning spending into savings.
+                                    </li>
+                                    <li>
+                                        <span class="text-gradient">
+                                            <b>Airport Lounge Access: </b>
+                                        </span>
+                                        Enjoy complimentary airport lounge access worldwide.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden block px-5 py-6 container mx-auto">
+                    <div class="lg:space-y-0 space-y-6">
+                        <div class="space-y-8">
+                            <div class="lg:space-y-2">
+                                <h2 class="lg:text-4xl text-2xl font-bold">
+                                    <span class="text-gradient">Retik</span>
+                                    DeFi Crypto Debit Cards
+                                </h2>
+                            </div>
+                            <div>
+                                <img src="assets/about.png" alt="about" class="0 relative">
+                            </div>
+                            <p class="opacity-90 lg:text-lg">
+                                Retik DeFi Debit Cards redefine financial accessibility and security. Offering anonymous
+                                transactions without the need for KYC, prioritizing user privacy.<br>Retik DeFi Debit
+                                Cards offer a range of benefits, including:
+                            </p>
+                            <br>
+                            <ul style="list-style-type:disc">
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>Privacy: </b>
+                                    </span>
+                                    Anonymous transactions without KYC.
+                                </li>
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>Daily Convenience: </b>
+                                    </span>
+                                    Perfect for daily transactions, online and offline, from shopping to dining. Global
+                                    Accessibility: Use them across borders, whether you're at a local store or traveling
+                                    abroad.
+                                </li>
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>Transaction Efficiency: </b>
+                                    </span>
+                                    Swift and secure transactions, enhancing the overall payment experience.
+                                </li>
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>ATM Accessibility: </b>
+                                    </span>
+                                    Withdraw cash anywhere in the world.
+                                </li>
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>Security: </b>
+                                    </span>
+                                    Enjoy anonymous transactions while keeping your funds secure in Retik's non
+                                    custodial DeFi wallet.
+                                </li>
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>Rewards Program: </b>
+                                    </span>
+                                    Earn rewards with every use, turning spending into savings.
+                                </li>
+                                <li>
+                                    <span class="text-gradient">
+                                        <b>Airport Lounge Access: </b>
+                                    </span>
+                                    Enjoy complimentary airport lounge access worldwide.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-img">
+                    <div class="lg:px-32 px-5 lg:py-20 py-6 container mx-auto">
+                        <div>
+                            <div class="lg:flex hidden justify-center items-center gap-x-24">
+                                <div class="lg:w-1/2 space-y-8">
+                                    <div class="space-y-2">
+                                        <h2 class="lg:text-4xl text-2xl font-bold">
+                                            Rewards and Tier <span class="text-gradient-1">System</span>
+                                        </h2>
+                                    </div>
+                                    <p class="opacity-90 lg:text-lg">Experience unprecedented rewards with Retik's DeFi
+                                        debit cards – an embodiment of financial freedom. Within our tier system –
+                                        Silver, Gold, and Diamond – each transaction fuels your journey with increasing
+                                        cashback benefits. Silver cardholders receive 2.5% cashback, while Gold offers
+                                        3.75% and Diamond leads with 5%.
+                                    </p>
+                                </div>
+                                <div class="lg:w-1/2">
+                                    <img src="assets/ecosystem.png" alt="about">
+                                </div>
+                            </div>
+                            <div class="lg:hidden block space-y-8">
+                                <h2 class="lg:text-4xl text-2xl font-bold">
+                                    Rewards and Tier <span class="text-gradient-1">System</span>
+                                </h2>
+                                <img src="assets/ecosystem.png" alt="about">
+                                <p class="opacity-90 lg:text-lg">Experience unprecedented rewards with Retik's DeFi
+                                    debit cards – an embodiment of financial freedom. Within our tier system – Silver,
+                                    Gold, and Diamond – each transaction fuels your journey with increasing cashback
+                                    benefits. Silver cardholders receive 2.5% cashback, while Gold offers 3.75% and
+                                    Diamond leads with 5%. </p>
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols-3 grid-cols-1 items-center justify-center gap-6 lg:py-20 py-6">
+                            <div class="border space-y-2 rounded-2xl px-8 py-4">
+                                <h4 class="lg:text-3xl text-xl font-semibold opacity-70">Silver</h4>
+                                <h4 class="lg:text-2xl text-xl font-semibold">2.5% Cashback</h4>
+                                <p class="opacity-60">Card cost: $249</p>
+                            </div>
+                            <div class="border border-yellow-50 space-y-2 rounded-2xl px-8 py-4">
+                                <h4 class="lg:text-3xl text-xl font-semibold text-yellow-50">Gold</h4>
+                                <h4 class="lg:text-2xl text-xl font-semibold">3.75% Cashback</h4>
+                                <p class="opacity-60">Card cost: $499</p>
+                            </div>
+                            <div class="border space-y-2 rounded-2xl px-8 py-4">
+                                <h4 class="lg:text-3xl text-xl font-semibold text-gradient">Diamond</h4>
+                                <h4 class="lg:text-2xl text-xl font-semibold">5% Cashback</h4>
+                                <p class="opacity-60">Card cost: $999</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="lg:py-20 py-6">
+                                <div class="space-y-6 text-center">
+                                    <h3 class="lg:text-4xl text-2xl font-bold">
+                                        Retik <span class="text-gradient-1">Ecosystem</span>
+                                        </span></h3>
+                                    <p class="lg:w-9/12 flex mx-auto">Retik Ecosystem: A comprehensive DeFi solution,
+                                        encompassing a non-custodial wallet, swap aggregator, DeFi debit cards, payment
+                                        gateway, AI-powered P2P lending, and perpetual futures/options trading for
+                                        seamless crypto management.</p>
+                                </div>
+                                <div
+                                    class="grid lg:grid-cols-3 grid-cols-1 items-center justify-center gap-8 lg:py-20 py-6">
+                                    <div
+                                        class="flex flex-col gap-y-6 bg-gradient lg:p-12 p-5 border rounded-3xl">
+                                        <div>
+                                            <img src="assets/card.png" alt="utility">
+                                        </div>
+                                        <h4 class="lg:text-3xl text-xl font-bold">DeFi Debit Cards</h4>
+                                        <p class="opacity-60">Prioritize your financial privacy with anonymous
+                                            transactions, eliminating the need for KYC procedures, and ensure security
+                                            with Retik DeFi Debit Cards.</p>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-y-6 bg-gradient lg:p-12 p-5 border rounded-3xl">
+                                        <div>
+                                            <img src="assets/gateway.png" alt="utility">
+                                        </div>
+                                        <h4 class="lg:text-3xl text-xl font-bold">Payment Gateway</h4>
+                                        <p class="opacity-60">Seamlessly accept cryptocurrencies in your online
+                                            business, expanding payment options for your customers. </p>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-y-6 bg-gradient lg:p-12 p-5 border rounded-3xl">
+                                        <div>
+                                            <img src="assets/wallet.png" alt="utility">
+                                        </div>
+                                        <h4 class="lg:text-3xl text-xl font-bold">DeFi Wallet</h4>
+                                        <p class="opacity-60">A secure, non-custodial wallet supporting multiple
+                                            blockchains, providing you full control over your assets. </p>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-y-6 bg-gradient lg:p-12 p-5 border rounded-3xl">
+                                        <div>
+                                            <img src="assets/swap.png" alt="utility">
+                                        </div>
+                                        <h4 class="lg:text-3xl text-xl font-bold">Swap Aggregator</h4>
+                                        <p class="opacity-60">Effortlessly find the most favorable rates by instantly
+                                            comparing quotes and fees across various decentralized exchanges (DEXes). 
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-y-6 bg-gradient lg:p-12 p-5 border rounded-3xl">
+                                        <div>
+                                            <img src="assets/lending.png" alt="utility">
+                                        </div>
+                                        <h4 class="lg:text-3xl text-xl font-bold">AI-Powered P2P Lending</h4>
+                                        <p class="opacity-60">Let our powerful AI analyze lending options for you,
+                                            ensuring you get the best and most profitable lending solutions.</p>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-y-6 bg-gradient lg:p-12 p-5 border rounded-3xl">
+                                        <div>
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAiCAYAAAAtZZsLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHnSURBVHgB1ZjbTcMwFIb/E7XvZQIyQjoB7QZsQPqIuIhOQDoBiIt4QWo3YISWCWADMkIfQYWac9IGUeokThq35pMspU0Uf3bsc2wTGHWvLqEQ8uUEM/SpT1M4gqduVMhyEV/7XEI0cAGH8EDorPxDOIBDeHCcBiyjblWHu+Eo96EvPNM5jXS3rAom45sw5DGej4eQG+LTGUXrt2xCCIyfzehlu4IKr9gQq4LJuJqjB4mvixKjJNZnsUjSKXUlAXCPtlCSrYQZdaUCno5jHpPbEZTQweXQ6NkN5ITSgupODbkyqfCJr19YoFVBLubPPYABpQQTOSSLipQATYx1krlyM3RZMEadghq5TMkiOV4txXwvXq1AL2wkmCO3Jmkkx3DWmCw/s8RKWeb1dC8uTHUGciuSXKlfJJeyTG1R3ku9SnLS8rm2xYGpnCmNKnJpUufFgDRxiGw2khO8qnLCr1RmRS5LsGMil5IhWYtcliBM5VISSUKbyygZnzO065ATihesBXIpdEISLnqomfweNJSzSbagA3KCXtAROUEnOHFFTviX++KWelA+dsk7pun5kE4w4I30G3ZJMznQijh0Ddz9xHygpR7Vvgg6c9S2xgf2PHziGhX2q9aRUMfZiX5+73pi/IGOF7n8G/wW39aL7kfTAAAAAElFTkSuQmCC"
+                                                alt="utility">
+                                        </div>
+                                        <h4 class="lg:text-3xl text-xl font-bold">Perpetual Futures & Options</h4>
+                                        <p class="opacity-60">Engage in long, short, call, and put options directly from
+                                            your Retik App, simplifying your trading experience across different assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="lg:flex hidden justify-between items-center gap-x-24 py-20">
+                                    <div class="lg:w-1/2">
+                                        <img src="assets/utility.png" alt="about">
+                                    </div>
+                                    <div class="lg:w-1/2 space-y-8">
+                                        <h2 class="lg:text-4xl text-3xl font-bold">
+                                            <span class="text-gradient-1">Real-World</span>
+                                            Crypto Adoption
+                                        </h2>
+                                        <p class="opacity-90 lg:text-lg">Retik Finance is committed to bridging the gap
+                                            between the crypto realm and real-life utility. Our mission extends beyond
+                                            digital transactions, as we believe in bringing cryptocurrency to the
+                                            forefront of everyday experiences. We understand that true adoption goes
+                                            beyond the virtual realm, and that's why we're pioneering real-life
+                                            integration like never before.</p>
+                                    </div>
+                                </div>
+                                <div class="lg:hidden block space-y-8 py-6  text-center">
+                                    <h2 class="lg:text-4xl text-2xl font-bold">
+                                        <span class="text-gradient-1">Real-World</span>
+                                        Crypto Adoption
+                                    </h2>
+                                    <img src="assets/utility.png" alt="about"
+                                        style="width: 80%; margin-left: auto; margin-right: auto;">
+                                    <p class="opacity-90 lg:text-lg">Retik Finance is committed to bridging the gap
+                                        between the crypto realm and real-life utility. Our mission extends beyond
+                                        digital transactions, as we believe in bringing cryptocurrency to the
+                                        forefront of everyday experiences. We understand that true adoption goes
+                                        beyond the virtual realm, and that's why we're pioneering real-life
+                                        integration like never before.</p>
+                                </div>
+                                <div class="lg:py-20 py-6">
+                                    <div class="space-y-6 text-center">
+                                        <h3 class="lg:text-4xl text-2xl font-bold">
+                                            What is <span class="text-gradient-1">$RETIK?</span>
+                                        </h3>
+                                        <p class="lg:w-9/12 flex mx-auto">$RETIK stands as a dynamic DeFi token built
+                                            upon the Ethereum mainnet, adhering to the ERC20 standard. With a total
+                                            supply of 1 billion ($1,000,000,000), $RETIK powers the Retik Finance
+                                            ecosystem, driving decentralized transactions and fueling the innovative
+                                            financial solutions that define our platform's essence.</p>
+                                    </div>
+                                    <div class="text-center space-y-6 lg:py-20 py-6">
+                                        <h3 class="lg:text-5xl text-3xl font-bold">
+                                            <span class="text-gradient-1">Tokenomics</span>
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <img data-aos="zoom-in" src="assets/tokenomics.png" alt="tokenomics"
+                                            class="flex mx-auto lg:pt-12 pt-6 aos-init" id="animated-section">
+                                    </div>
+                                </div>
+                                <div
+                                    class="grid lg:grid-cols-5 grid-cols-1 border border-white-50 rounded-2xl bg-black-200" style="align-items: stretch;">
+                                    <div class="lg:col-span-2 text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 200%;">1,000,000,000</h4>
+                                        <p class="opacity-60">Total Tokens</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">400,000,000</h4>
+                                        <p class="opacity-60">Presale</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">240,000,000</h4>
+                                        <p class="opacity-60">Ecosystem</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">120,000,000</h4>
+                                        <p class="opacity-60">Liquidity & Listings Reserves</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">60,000,000</h4>
+                                        <p class="opacity-60">Team</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">60,000,000</h4>
+                                        <p class="opacity-60">MM, Incentives, KOL's</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">50,000,000</h4>
+                                        <p class="opacity-60">Cashback Reserve</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">40,000,000</h4>
+                                        <p class="opacity-60">Marketing, Acquisitions, Partnerships</p>
+                                    </div>
+                                    <div class="text-center tokenomics-details">
+                                        <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">30,000,000</h4>
+                                        <p class="opacity-60">Partners & Advisors</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-center space-y-6 lg:py-20 py-6">
+                                        <h3 class="lg:text-5xl text-3xl font-bold">
+                                            <span class="text-gradient-1">Token</span>
+                                            Contract
+                                        </h3>
+                                        <p class="opacity-80">Use the contract information below to add the $RETIK token
+                                            to your wallet.</p>
+                                    </div>
+                                    <div
+                                        class="grid lg:grid-cols-5 grid-cols-1 border border-white-50 rounded-2xl bg-black-200" style="align-items: center;">
+                                        <div class="lg:col-span-2 text-center token-contract-details">
+                                            <h4 class="lg:text-3xl text-xl font-bold">Address</h4>
+                                            <div>
+                                                <div class="flex justify-center items-center gap-x-2">
+                                                    <p class="opacity-60 token-address-full" id="address" style="font-size: 85%;">
+                                                        0xB6b3B930AF6Fa095D71876d268a89Def5f3e9894</p>
+                                                    <p class="opacity-60 hidden token-address-trimmed" style="font-size: 85%;">
+                                                        0xB6b3B93....f5f3e9894</p>
+                                                    <img src="assets/copy.svg" alt="copy" id="copy" style="width: 8%; cursor: pointer;">
+                                                </div>
+                                                <p class="opacity-60 break-words hidden block" id="copied-msg" style="font-size: 85%;">
+                                                    Copied!</p>
+                                            </div>
+                                            <span
+                                                class="text-white-100 absolute duration-300 -translate-y-4 text-sm"></span>
+                                        </div>
+                                        <div class="text-center token-contract-details">
+                                            <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">Decimal</h4>
+                                            <p class="opacity-60">18</p>
+                                        </div>
+                                        <div class="text-center token-contract-details">
+                                            <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">Network</h4>
+                                            <p class="opacity-60">Ethereum Chain (ERC20)</p>
+                                        </div>
+                                        <div class="text-center token-contract-details">
+                                            <h4 class="lg:text-3xl text-xl font-bold" style="font-size: 150%;">Token Symbol</h4>
+                                            <p class="opacity-60">$RETIK</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-purple-50 text-center py-6">Please note that you should not send any
+                                        tokens to this
+                                        address, as doing so may result in the permanent loss of the tokens.</p>
+                                </div>
+                            </div>
+                            <div class="center-div">
+                                <div class="space-y-6 lg:ml-64 ml-6 absolute lg:mt-32 mt-12">
+                                    <h2 class="lg:text-4xl text-xl font-bold">Join The Retik Family</h2>
+                                    <p class="lg:text-normal text-sm">Enter the biggest giveaway.</p>
+                                    <div class="flex gap-x-2 items-center">
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAS2SURBVHgB7VZraFxFFP7OzL27CUmTNr5Qax+0FsVCQUVERKwK/dGCtJKIAcUfUlpEUJomMdH2YvBBI/pHCAW10BS1iRTRFrRSKopVQn9IqCAaaYuUtkrUpkmax+49nrm7c3fuZh9RhP7Jgd2ZOzPnnO88Z4AFWqCrTIT/kQ618fWUxgpNmcWKMZ7yvTMngAtBQCGqAQgC9uRgBv+Bjgvv2Cy2gbidCLcoWVMiWcYxTXR4JoOuja/SWXP2RMBNocIWpHHw/g66HAPY285vM2eHtvV6H+Jf0L6Aa5bMok8pftoIs8qJ8mO0RiOasIc5fFgAPSqb7z6wi56LPbB3K/vUwL+QwmJC9rFn9vjH5gvgs5f4RSZ+TeWVEzljDCAB5iQxNpJ3xT+aqT1v9pBtQr1WaNJAoyb9SX8Hb29uZl1N+acBXytu7xShOZdHP2cOJNbFC3/6CkdE1/sqTK03uREBqBMeJ271IvSdzavR/8EOUVCBeAZb5HyDFpMKyjgaDXqdH3Nyo/UmBu+W8ad7d3kHkPcOaqcwKYtjEWMOsQDiJ3SaTw928QsD3XxzKQBahWuspXm+nEK4nqAYjHxnJVw7zgyjw8qIk/BAJ+8Xm550XUeFmJ5Tivplenh6Bqea38AYEfEXu7lXeNoSMS6Oe1Lexbu76UbDOwfA/na+3df4lsBLVFECOYkVijWnRcCIuOhnEXOHyHpIOVZTztUxmNycohDI9m93datlrhc98/deOy+S5KjRGq3SMgblYL2r2BFopqtE2CppNBtiYAllhQQkEwbAKjcV8EdxGCMAfoha5fNXKhTXAr+bRCyhPPbGHMVF1hfAc8II6QMjJQHUnMUobsUFObwmKaDIOisMebdKDAogONkDSoBSSv1QDCCqgpZByirmfdpRkKxhx9LEHpWod5vxFJdkbk4Zqf/vSwIwFDaqPonrl1aoLiqvaA5XCUdW6/xZbeMd83F8XptzCuemFYbKAmjppEtZn1qE4Yj8ZiNGBaepULLB5DqbtS4BxvWOBSHbB9ftpImyAAxtDuhvfXnsKQnH88qUmutuG0sqJJhVrBJA7OiGhTK1UukoQV7xgm5seFNq+xFivqFMKZbJci5UCRCDoJwXPl/eST+WAqCKF0LMvCW5UCuuTLkuV86o4ribfYqVu21ZF7J/dFahG2VoDoANQfqUFM92Yb6knZvNnSczn524z80N+e65bScNzxuAofUBfaxCahVPfC1Cp60iZYXDiXlstY2/cydwODAxiT5UIKq0aZ5aKQ/3pYGtkhetKhfSZKOx7ke+9VJs1VE/g9alXTRaSUfZRwcHrP5K4R6J5esid5NR7rg1drPJAZ1fc5rVsfFJbFr9Mo2jCtFAwKnrIK+haWT9NOoE0U2UwoNyKbWIdetid8LGnuKsp6jVFnJCPmaFvyc7gd6VAU1hHhSF4JtXMq0e6Xbp28vl3q+TEvSL74RCX6e5bz9xmIzHRXnX0jYMuff9vAAYOhnwstALWzSpx82Va98F9tJRCWsj+RlZOy9Kh0LGRyuv4BBVeP9XBWBJ3mw03IMVWS97pw+9lqL7H9fIA8S8GycFx0XN+FWUfje1CMNrn60e5wWqRP8AFG5MKDg7AU0AAAAASUVORK5CYII="
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASRSURBVHgB7VZxaFVlFP+dc+97vk2duhIKQsr9MyJY6kqzTA2JRqJBlFKIS2QimiGSTVnbXSA0pIKECv/pH5OYQRQa/tXIIpm2ZWLSLIK0kqBpSr439979Tufed+99975Ne7jNv/bB5Xvf9717fr9zfuec7wKTY3LcxtHjSKbbkXR8jzDBQ0Ftne41hCZLsJZIMgTT/niHfcQ7tzFBw3GEH2MsNAabCfIcAxlSd3UGk/WyThND4LMumZ7J4WkFeg1GHiQfMAQuhpwYf4T/HzcCh53cXMtknuUsWlikjhlUDu7N/qZrzowLgS86pAYG84Sw2jayQfWdQYoQgTGu6axcUMXePsQ7Ez3oHxOBzx2ptoAXxGCLGm1gzzEKvRQUtabzOvfYIuv8SIT7hEvZHM7eEoFP26TOImxkV5p1eZcPyKXQRjob9FhpHCRX9iozDjwvnhH9Wj2Ifyom8KHWbo2LBSnBNpA8qSAz43rG9dUnK5A3bcs9SsY+oucz4+DefyBmoHG/lf9fAhrmOXCxyC3IJn1xmS9tCQhECWDNbjpl4HbaYp1Wnw8p8OwSwUh/lZ+/j+OMIHBw1/X6NKWb3by06HuzyjxElNlUWhPT0YyLNTmy2GI5rvlRH4Qbof7Fd3RdKJwYlcAnrw/Pg5tq1zCvsiBMZbUbgcaAdR5SlJ2ajO/nM5helRcv7PWR3h5w8l03W7D74wQ41BmufUDL6BlNMk6A6WMFTzwSFqhf83rJsg7a59lIu9in4I+Envr/iZVkQPqnRoeyo0ZAw5XngHHgXbKJRJGgnO59yWmsW7qLLn+7XapsG+2aXS/GSzHUnWKEBKYPZcOPwEsODWkY1zLJATWQjTwu01v3rrJg69IOWrlEwX0P7sArarrV8zbxTqC7Rkqfoj2buLecwIjbUG+vaUMuVmrxrlcNH1YjtcUQ0rECsHmFQ1ET6X3D3cnMXckGVKwQD1gljUdS2HWX37c79dVNCYTDu80Wa7OxYFbZRHtSQusXO3Q4PD+xR5rV/jsaNa11SiYrYklYkuCSDGP+3Db6rSIC8fF1p3SroQuPttMOb31st9xdXY1f1MPqEXWOqOOVyq8YwR97T6Lh+UPkxm1zJQTU04/V0OozwdfM1GlYwz44JcA5zHpfAknmBKO3HLxiAmkbJxVwll5tC75rkZSGdkMxUT1gKZWo/ztMOorK0PLvYHNqNNsVEXioDb+r0QsWm6cwBwvZ63SB91boobcGJfoHIawmUXw+PZrtim5DzWfpY7eHwU1qsFYdTXneqs5ey/xGS3O2ruspqPew7ikkRpJXoAHcagR8EoY/Uq/mq82NgdaGYT4o5LCiMAVP6N5xprIeEEWDBs/PwOCYCAzncU4/tX72Pi49oyLy1sUh3vaAQ8P3b6eL2siabMJ+laTAYVMqtfGzjZsoPyYCizrpKonp9HJBDXd1X+fW5Q4VwvO6Vrpyz7/YomJvVczLYf8PpOi7kd2K+kB8/LBXpja8Stdu9p8/35bGtOA9JVqnzwAbNNfsoHPjQqDSIe/KlL9d1N55BX+Rox9pk+MG4z8XsmeGV2TAngAAAABJRU5ErkJggg=="
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUySURBVHgB7VZ9iFRVFP+de9/Mzuq462aZCWpGmoIuFloim7VR9mF/hFIUQqCRfYqlaNuH6yPQsH8MKijKRExEpSgLwjJTwa+iiMVFE7IwrDSRtnRndWbe6ffmvTfvvdlV+9+9zJt37z3nns/fOfcB/aN/XO5DLsXwrqsD6gqlyQ6caeS+QRSfzFkln/bim6+Zq4d6Sw3MaCvo0DJ2zFyBThGeuMhwLkRYu0QnwWCBFHS2gR1E5QcAb6cnpqsv/uxwWC2ao8bgehE8IY6u3rZcfv+6Xd/yDDbe5cqxvs71isBqVwc39WCpqi40in+MkfVlYJPm0DkQGKrnS+Pp5QQrZiQPN9HIogVOC7yfxXod6Dl7qNzUWMoWyq1W7WNGdIaBnLIGi29rl80XNcB11Ywq4A2BLrCQHxnGWfSomM2gVRXzuX8TDwww/PMf/7DxhdBlA63s0eDjDPo+I6U13XB254Hbub/OimZVvXnTlzsfXdCAD9t0Sll1Pw9QrxwRi49F9WkqaQgUBQqryhPvJD18e0akwxFshWob97LcPnzOk4mtrpQinSkMeJ62UbMJBOpYpqCtTwXRXioK6TWVUw5xBJlU5RWMa7CYRXI1FSaaEHRjyHQHEQzmFFZiJZHXNnon9itzE77DdTDX8Jym5NDCx79x1ellQM7ifgJlsEkorhiS8PaCT9Uwic8m3pX9yDjVlnwG41IGKNQv19km4X1ScXKdpNs++G0iCoHiAKDRmr9cvcHMlAFbXkADGZrjgzXKk4+pSUNCmY3CXY2Ihk/M6wTpeYBlLlUDxKCZxEG1ua1iAZXyepuBuo+l+Br3e4yvMAlQ4ChL90lReYS8XwX7NSkJS5XzMT+9jny1ChyLFiCN9HTZyVZ2smfDqH2x0y0X6XG7r0ACoefZJx69ZZns8Rn2uvrlgAy+Z1qvDSpDQnkRMKWxzmAUpwdNqHhynEvpFXKR8kYkRh3MWqK7bKLwGpycugx7I/o0V07TwP2mpjKcaurUUQ83VnRvflDJq5Ni1EYdLQ5/BjabNIC0RoeJC874qRDZtwi5JA8Nr3MkckbDcpQQK5W031yRVT+2MIx5aKytcxuGLczh3Kh2+c7x8DwKlCDHFYOHNwzBnZHyQyvZxASt1fYMqZaiiWVfV8HfdlebS54eICHXq9PFc7+tfk6vdkC9KczpnKjrCaL61xOs5Q00/k+277kMyvi4GQV4ksjgAJyd1yyWCbLNLU6nfbuqwEsql/Q6dQdEKE+AK3Up9TofVASqUdDfujIyxsCTgVHHi9uoHBUjL9HrP1JNJQlOxLmNeYI8mwgbwfMdL6PnrNFukwKiZK4so95YY4+TUEh6yafolLC+XMZUMr7v3+eR0LiuJV4jpEUVFDhzROG180a9x4E5RB4nuhdsEOnjf3ehR/w2vMv1XGvlZd5+1hckQe5+4ezNbBkbzgH5TAb30vpbGe4JDHUT6fUmcIh9HEXO/2V1nKDATn6DbT87EJ9dcQYj2GnmMC2LKTeX6C1/oYSHmpbIzkpW/FIcMdFbSOoKEnOpq5agomfb4JU+aH4ls9vnP7xKB5UUTbSgrlRGOWvR/Ws3Tvn3/ElX86U8ZtCYp9icWqrywujS3g6PHXPI87IPqPkg+dbVYcbiVdbX3bR6ZBJ0Cnl44ouyCZcYyq+qE3m8R0/n1XwvHGRk3unqwprRrvRE/NKXkB9W6lXwMN0xaGE6+EEhh7ecwzOuKx7+xzi2SofXZ7GO4DvPdO21Jew5Y3FgxCIpoH/0j5rxHz6vgYxao50IAAAAAElFTkSuQmCC"
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARXSURBVHgB7VZLiFxFFD233uvOzCSjODOI6SiC4kbBhNGICcTPSpAIQlAiuDY7wegiEtB24yaIiCDiQhBUJLhRV27ciAsVJAR0JIQoiLYgQdLp2GP/rqe+r15/wJ0upqC6qm7dd++532pgZ+yM/3jIootPn9GVqy3chAHuMMCtUNxlDPaJomUEqzyvcDWcSilj0vu871Hg7yL4heeLBfBj2cSFyyN0nmzL4F8BeP+UHhSDxzDB4xR+JzkKriAItfwU7j4y7uD3IuE8by/Ylgm2CsFnpoFPHjgt3y0E8OGLelIFZ4z7rlJQwFkpFgRp7hszR5mdRQQa6fDCwr7Hi+ePvCTvzAA4+5zuGy/jPAlrJlCj5SbwJoV0u0QlkoHxdEgOIAfpz52RwT30RCca4obuwSMlcENpreAsvTVWqFUspClparwie2ZsEo/l18ILlLA6ObW9P+9dmuBQ1JsANBR3M4kkKHCzqMCoU2rC2VBZEJ4pkQjMZDyJN66cDYPNqLfMYtEyU0nlYu4vxbk3JqDiAtc+zwcyfpcfzP6YO8kYJ0L9Ody1ZjzAyw2HmILKEHdj3JRkpXr3cn6+dB0Ok/wm99tF5q3p6UIimee80vUagLNtbfJy1cWq8DEOzBLdbAWVIe4ENTl8UvoPvSzPjhSHyH+uEM8blcTQRcVl8IrbG6y12z633c+S40GzhrhS7PfGC3T5gGo83JZzZogH6drXyDNMyRkVxuQMiR3kN4/udWI9gFWullhLrBCOlHg+1mK8FbVx/yvSve+0vFAqNvn9pSx5nTfz5Axrc73jAZS1bJRal5PQhGo1bo9T+tNgp+ubMX7l9vaYnEVIXmhIZE/Xmt5BD7pr1V+GTK0aDVInS40HUx3UxvNYE4+aCd4g7215E5IAmHmjFkSomHEXbPYRwJU9GLYMrrkSQioh94GthAyIA6ZaKd96Vdcp9HVKPU7+Rl7K4sMZW7NYJKG0tz8GRikHnmhjyM21vAm5ZAmdLq+EkNXOaio/SqHnCfJplmgjlWuWS5KXoU9i641euy2TLPSi3xi9DJ3/omVWxPPmU8v4gMdjEqw2GU/cJ3psQvE1FfxZywH4LzvZC1fLgRjH9PwCRxJAk17LyvVV11O7F1MLB2h7ZwYAS2grz/bsZYuykVtqqkR1LTg8wwlUqiRJoLwQApoYbM0AYEC+bApGoXx9+QTnTL35YrRWFWk1mnj8W0IZGgsnlCKF/jVWfBH1ppLuDvED0bxVBgTBjVLmDQT1RpXPkFwVzVQehLfcHmwXfe/tLn5OoUc2fmrr0t8rOFEojlPpwSArvWgzf8My19o6F/e/KROoKX5Devgr8n90aRnv3ntChnMB5OPiGb2xMcF+Cj5Arv0k3ULrN7i/nqjKUPMmAKJXGT7FgCZeZTz/IP030r4n39dmgG/XTsmVeXoWAlg0rJcaG9gtPew2u3wIG0sY9vvo39zlf74F/353xs74345/AIcIFhjG0UWtAAAAAElFTkSuQmCC"
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASlSURBVHgB7VdvaJVVGP8957z3bm3TnDaSktIV9UX6UlFoUX4IJZKkhgk1oaA+hcKaRmHjdbXVxA+yiBoqiZEkk6YEwYIwFCNNP4wxlAqCkiIo2rR113X3fXrO+++e97z3zkVfgjz3nnvOe95zzvN7/vyecy5wrfzfC8134tALXCiWoeectLzafdanGfxbAHu7eQUUOkTqE4pwkwIrs8D8kFQlfU3RJlpF4wYhhS39Iu1x1jiwrocm/jGAvdv4USIekgnLVCw0rXDaBIQzFvYVpoio90SAPb5PwbwA7N/OLzF4N9UQVLM/1/sIWCAgPv48wFMuCOUK37eNV4vwXYl5MxVWC2esRl/FfXGFGII71qrKc648VcMpXcadc2o5lzWMtHAbOoIKbZLH71NgSm31fVZ1ARzs5mYNXpdokVjBtoYLKO93jlqFT0o34KhHNG6BXPmYwr22TM9+YOA2mdhEuQAzH440i7T8TgQPc4CzRJWKJlohPn5a3t8TmTy0wkDrFJ6XdQ8kTAn38ip3Sfd0TQCzGguLNU3LSaQHYN65wKNda/I83/OFX9miSO0QK7TJ/KWydml2H6MGLalrAQ8WrynWurpBWTFtXt+nDh/32fushztJ4REPgQKpk2XGyMM+DZ7s5VMiaFRAL8m6i0JF5Iu6MVCA7feMcGPWQ+cKGH7f58ZygCOSIw7InE55I6bn95oVf3rilcttD/bQOUWBnwpNrWlcSLlUmmOBG90x5YSZ+MBw+BbCVq34cRVSK5OI7i42tQwa6zCrUVGi7CphQLgSlesCm2YJl0XSJQ6mJ0aFJRIDnW6OSOlHvGGBxq1BMy7K80Qtunq4GgBY9EqB0KUKN8/qIlokMm60qafT2AlZ0ig42lZ1UUnGp6KERFZyis1W1wWexWtUNZNva2MR11XK+EO0/NlNSpTGCS57BVz8dpAbZGiR8Xni+6hv5qmruyDRPkLOprZ4avbOtbtpWvz6rrI1Sl1FkKRzdKSEn2ZKaJfxO1S4luL9OHVHfQs4mqcMgLGt94wJsMWs9kueHrbzQ1zHSn/hRROomvGkCG3SGRYYBnDOBZmYKERmjLMdZ10B3uxp+mrlazTEPm8669GH4GC1EjQy9fzvZRxas5Nmzr/Fq0TQligbcsr/hJZuySUiTiO3upAimpkT7e2v3+D201fQd/8OOiavjiVrjXUu9EsmBL8uwhdmsyilfWKuD0BmTWcWIkejgjTbGxq4Y6yfPxIFxz1GRRewXPobRNB9AlwTVW9GtnDTelr9WhdAUMI3xRZMiqBFyeFhHyTRpmye26W+avxp0rUxWxrtVOcsiV1AsziT1dkqJsolskfc49e+YGQSVGYeZY/jEChZAW2ecKG1G+N1AZgi+uyTyTO1LyMU0iqJaF3NgNaNKEk8hpZZwPLcT5Q9jnIAHvLpS2lelheTKRVTX7JzM0qYEp90KYNQvTvErTj4zR9vxmFXXp4XcTnTyxs9hT4BfLvKMKOWj1GlHOzID9vfpDtw/STeIZ/+nDcAU8YGeBlfwUatsV42NkCMVcMfclwUZ8/wj4PIl1swfpB6SvoHF3fROK6V/2r5GyxrRKHz9J1YAAAAAElFTkSuQmCC"
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOWSURBVHgB7VY7b9RAEJ7ZtXPRRSGJFBICJQ0SDQJREkAiEpQ0+ROR0qQGWRQgEH8gUFHTUtAhpFAgkQqQEIgSlISHQh7kwtk7zK537bXPd7d0FNmTdd7H7Hz7zTezBjhqR63asGkwSUjM7MMlRTAnua8fYf91k9K+2/9ivDbv+sL2YwlbmxmsLSb4x/cXNYGY2YG7IGiFJyPBMM2jEdt/3TfvZN/tmL+2Mm4PQQqyOYGr/Lo0kImcBdplB+36pgJ6HYXOS0aNQLqfqgM8OX8Pvzmfog7iOLBzKAFI8Deqndibl95j+sK+F3Zk5zGKWjAxNBwy9JSDxqB5XjKYtBaAJiaaKQ0BIOAHRz7BDOcV4OkM8CwS3uT5bcHhcDoBOIThTNjFjlosTsEbcVzRhgGxpJzfd0jg5euJeO/v9SKhnyOIqQ5HAbYFw0E4p2U2WFHlwqpmCKCJNxI9WbhdBeDTLewBtF0GASBkTzhoQBjIsqWeOfs3qxSnm7DE87PsoS0VtXO20Ggig9ZwELkTNrDU+wD8DCnCBNABjLac/eGGWuYC89DYKh90fphWMBM16odlAFfXctNIzAqiPkJGiClAmGFpibvM7CvM13c574qdI5V9ApTPpa6oEo6xni7ymtixAeHh6APGhYXg85UEbzTZX7gVPeY//cDHB3QuzfA1Gl3lmgCC4SDKFC0VXUvH5puvoaUKTrF4R8rsYAlDAIjGrPAAWSCSa8CJMWOxz7+x71cTTHVv7T6NTx6AmYoQzmvIRZrynqp2hLBwNAiVaT0TS3wLZn6sM96FBZ76oO2nFKyIUU5R44taPqMaSBrEhHMmygyQPUVKC42mbap2MMZRZ89rx1iM06aQQZXBf0pRowmAIdd37kCvzzyxafB8Z9hwIvh60LZxCIi6E+GV57I2VEUb+yDAL2hkCxpaceuFIbdo8ZAXhj4ixfIzzt8UzYO28ub2jlkIucAkQsDXEhb3hh5XjUy6cDjgrmIGgPCduSu7XqqdbnzRFodwNtaxX19MxoQWq/4s1HVSzheH8LKqaV1WJa5XEy8BfvPiDadkUTmFp3JHtwMQ15iE5oOw6fbEDnwdyESSoLp2p7sYC/kIFUxqVZuUAz8r3Ndz4aSjqhTv8fiGWQflIRjzL8jSZUzijr+47xXwLqGRLn91N81N+h3+blaHQOvrsLf4FM1H05eE2u0JGPGX8e1NUx3YR1vaj9p/2/4CqyriHP+5rBkAAAAASUVORK5CYII="
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                        <a href="https://deploy-billioner.vercel.app/">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAhCAYAAAC4JqlRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARESURBVHgB7VZNiBxFFH6vqmbcmYTsLmQXRRAREQ9KgqAJETX+gQSEgGL24MUgBP+Q7IooAWmMB8lFVhEkiKAIipfAXrwkRC/xBxER8bR6EBE1Jqw/6yaZ6X5+3V1VXdXTO73eAkkNPfX36r3v/dR7RXS5XeqNmxaT3WJmb6XbM6GrNOb5p+xeMddlT/VxsNa1YxWsGabfPhH6NEk4c7LMiPBE1Na/6U0S2Y9NowCx+Cju2Y2tFp7OrpOlYfwUiwMyvE/xkYToENUA+ja7QtfiwH7lhFMgfCOfA+jPlcJ1uQedZP7UQemtawEsbMkYwi0jbZlFPZfmdn0onO0ZP6d4jn5CT9IkhmuNAKgzAFMDwsp0kQsa3NE4pvVpawqPtpJQ/odQgCXxY00SxwaRVyi3WDYOQIeCACsF/S4pz7Gh0x1Lg+WbIfB9mFaVAsSDYsrewPJRyXnhT8lwK2t9DMKnHJhsIxYI0M8qQwe/79Jed31OJrL8T8pLTLK3bhEIf/3uhJct3ZU9pd/G3lTolkjWqPhOFbX+kwe3nacDjgICzmlOj+p69BMfd8Lz1tP0kFa0Q9vA1IV70PqrYwDkQWgZagukiHidbRMRj3/Py+ZjMDzu9vMe5nktVmU0BvJ5nzatD6BL1fWrB9/SS7T9oxdlxtEyp4vQOrP7f20m+vqLRG7wzFVhldBC7S7oUHPE5+cmhK6e7tDDjra/RZ/A3rflvnyAmLtHdckDLHOEVLfKjscCKGIg8n9JVESrSYmVLCwl0s+nu+Z5DVH/Hmj+zXT6DoL1iYiVrs6HFm2xwIBCv7ovN6fGD0yug6kfcPRG1Lsqk2Nq2PkZVtgZXitDIR/2/aZWC9BosuECQIp7TWyUPOYCclfCZzNR831DB0BnOnUNi+BjWxs2EAPdyFzsLWAKjWCDIrDo3s8O03Z3Bv64ANJHcu3CVmov8UctAHIEleZiS2ruArUKndewlwJQD0CeDCTtxtqNTdqF0e94triguoYuFlCXfxhktHiH0En4+a2SqTz61atyDbKdUZqeKfO8ZCQDn2Vw/Exc1Ep30DgAeRA6/1tX/JFmNHd/wj8xUnE3Vc8b5hPYm8CleHymR7dAwE4ATYWyuZsOdb9xvK5/gT9kzhZggQvaFaO2apgHkRTvGHG1/OwVTPu+fEX2ec18jMjTnPFd0KIPIadhih0/HpHbvBUtPdz1J2hnCldQazHqRNUNHzKbPOfMVZXfop8G0DttokEC4gVP54FKLQY2Ug1VRaxzawRvg/JlJM4CIymb/RrbOdvawl6p4TgAeItJnIolLijeCoFmkZbc+oiJlG3QfgUBszKajDjI63Vw3Ji+m9bA5peZZTrj5DE1tM8PD/cY1ovY3FwUFCVVNgtyO0emL979wWu4YZ3pV5x5qv8snxoLIG/fJdIdFElutE2Fk8mWfdvkPMn0OVrFVR7S5XYxtf8A6uMB6JokmsgAAAAASUVORK5CYII="
+                                                alt="icon" class="hover:opacity-50">
+                                        </a>
+                                    </div>
+                                </div>
+                                <img src="assets/bg_shop.png" alt="shop" class="lg:flex hidden mx-auto w-9/12">
+                                <img src="assets/shape.png" alt="shop" class="lg:hidden block">
+                            </div>
+                        </div>
+                        <div class="lg:px-10 px-5 lg:py-20 py-6 container mx-auto"></div>
+                    </div>
+                </div>
+                <div class="bg-team">
+                    <div class="lg:px-10 px-5 lg:py-20 py-6 container mx-auto">
+                        <div
+                            class="flex flex-col mx-auto gap-y-8 rounded-t-2xl bg_gradient lg:p-10 p-6 lg:-mt-52 lg:w-9/12">
+                            <h3 class="lg:text-4xl text-2xl font-bold">Retik in detail</h3>
+                            <p>Below are several significant documents that provide an in-depth explanation of
+                                the Retik Ecosystem.</p>
+                            <div class="lg:flex block gap-x-12 items-center justify-center lg:space-y-0 space-y-5">
+                                <button class="py-3 rounded-2xl lg:text-lg font-semibold bg-pager w-full">Audit</button>
+                                <button class="py-3 rounded-2xl lg:text-lg font-semibold bg-token w-full">KYC</button>
+                                <button
+                                    class="py-3 rounded-2xl lg:text-lg font-semibold bg-whitepaper w-full">Whitepaper</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="bg_faq">
+                    <div class="lg:px-20 px-5 lg:py-20 py-20 container mx-auto">
+                        <div
+                            class="lg:flex items-center justify-between mx-auto bg-yellow-50 rounded-3xl lg:w-10/12 lg:-mt-52">
+                            <div class="space-y-6 lg:w-8/12 text-black-200 lg:p-20 p-6">
+                                <h3 class="lg:text-4xl text-3xl font-bold">$333k Giveaway!</h3>
+                                <p>The more $RETIK you purchase and the more you participate in Gleam, the more
+                                    tickets you
+                                    earn, and the higher your chances of walking away with these extraordinary prizes!
+                                </p>
+                                <button
+                                    class="lg:px-6 px-5 py-3 bg-black-200 text-white-100 lg:text-lg rounded-2xl">Join
+                                    the
+                                    giveaway</button>
+                            </div>
+                            <div>
+                                <img src="assets/giveaway.png" alt="car">
+                            </div>
+                        </div>
+                        <div data-aos="fade-right" id="animated-faq"
+                            class="flex flex-col items-center justify-center lg:pt-20 pt-8 aos-init">
+                            <div class="lg:w-7/12">
+                                <div class="text-center space-y-6">
+                                    <h3 class="lg:text-5xl text-3xl font-bold">FAQ</h3>
+                                    <p class="opacity-90">You may have questions, we have the answers.</p>
+                                </div>
+                                <div class="accordion lg:mt-6">
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">What is Retik Finance?</div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">Retik Finance is a DeFi ecosystem that provides a variety of financial tools and services, including DeFi debit cards, smart payment gateways, P2P lending, and a secure wallet. It aims to redefine how people conduct financial transactions in the digital age.
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">What is $RETIK Token?</div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">$RETIK is a community-driven governance token for the Retik Finance platform, allowing token holders to participate in decision-making processes and help shape the future of the ecosystem.s
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">How & Where can I buy $RETIK token?</div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">As of now, Retik Finance ($RETIK) is in its presale phase, which means it is not yet available on traditional cryptocurrency exchanges or DeFi platforms like Uniswap. Beware of potential scams using Retik's name. <br><br>
+                                            The only legitimate way to participate in the Retik presale is through our official website at <a href="https://retik.com">https://retik.com. </a> Please exercise caution and ensure you're on the official platform to avoid fraudulent schemes. <br><br>
+                                            For detailed instructions on how to buy $RETIK tokens, please consult our "How to Buy" guide at
+
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">When and where will I receive my $RETIK tokens?
+                                            </div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">You will be able to claim your $RETIK tokens after the presale concludes. This claiming process will take place on Retik's official website.
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">How many presale stages are there?
+                                            </div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">Retik Finance's presale consists of 10 stages. For additional details, please visit:
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">When and where will $RETIK launch?
+                                            </div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">Following the presale, $RETIK will launch on multiple centralized exchanges, including at least two top-tier exchanges.Stay tuned for official announcements about the specific launch date and trading platforms by following our social media channels.
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">When can I apply for my Retik DeFi Debit Card?
+                                            </div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">Retik's DeFi debit cards will be available for pre-order once our app is live on the App Store and Google Play Store. For more information download our
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div
+                                            class="accordion-title flex justify-between items-end cursor-pointer space-y-12 border-b-2 pb-3 border-white-50">
+                                            <div class="lg:text-2xl font-semibold">My wallet is compromised, what should I do?
+                                            </div>
+                                            <div class="text-2xl">+</div>
+                                        </div>
+                                        <div style="display: none;"
+                                            class="accordion-content font-poppins opacity-60 mt-5">If you suspect that your wallet has been compromised, it's essential to take immediate action to protect your assets. Please follow these steps: <br><br>
+                                            <strong>Never Share Your Seed Phrase or Private Key:</strong> Under no circumstances should you share your Seed Phrase or Private Key with anyone. These are sensitive and should be kept secure.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="container text-white-100 mx-auto lg:px-8 px-5 font-poppins">
+                    <hr class="hr">
+                    <div class="lg:flex justify-between items-center py-16 gap-6 lg:space-y-0 space-y-8"
+                       style="flex-direction: column;">
+                       <div>
+                          <img src="assets/logo.png" alt="logo" class="lg:block flex mx-auto">
+                       </div>
+                       <div class="lg:space-y-8 space-y-6">
+                          <div class="text-center opacity-60">
+                             <p>2023© Retik LLC | All Rights Reserved</p>
+                             <p>Beachmont, Kingstown, Reg no: 3178 , Saint Vincent and the Grenadines,
+                                support@retik.com
+                             </p>
+                          </div>
+                          <ul class="text-md flex flex-wrap justify-center lg:gap-8 gap-6 items-center">
+                             <li>
+                                <a href="index.html" class="font-semibold">Home</a>
+                             </li>
+                             <li>
+                                <a href="whitepaper.html"
+                                   class="font-semibold">Whitepaper</a>
+                             </li>
+                             <li>
+                                <a href="win-333k.html" class="font-semibold">Win
+                                $333K</a>
+                             </li>
+                             <li>
+                                <a href="stages.html" class="font-semibold">Stages</a>
+                             </li>
+                             <li>
+                                <a href="how-to-buy.html" class="font-semibold">How to
+                                buy</a>
+                             </li>
+                             <li>
+                                <a href="contact.html" class="font-semibold">Contact
+                                Us</a>
+                             </li>
+                             <li>
+                                <a href="privacy-policy.html" class="font-semibold">Privacy Policy
+                                </a>
+                             <li>
+                                <a href="terms.html" class="font-semibold">Terms & conditions
+                                </a>
+                             </li>
+                             </li>
+                             <li>
+                                <a href="cookies.html" class="font-semibold">Cookies
+                                </a>
+                             </li>
+                          </ul>
+                          <div class="text-center opacity-60">
+                             <p>Disclaimer: Cryptocurrency may be unregulated in your jurisdiction. The value of
+                                cryptocurrencies may
+                                fluctuate.
+                             </p>
+                             <p>Profits may be subject to capital gains or other taxes applicable in your
+                                jurisdiction
+                             </p>
+                          </div>
+                       </div>
+                       <div class="flex items-center justify-center gap-x-6">
+                          <a href="https://deploy-billioner.vercel.app/">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFCSURBVHgB7ZbhbYMwEIXPnaDdgA2aERiBDcII3SDZoOkEtBN0BHeDtBO4G5ANXs+yI5Br8Nmx8otPekKA7ec7HWeINjZuBEBjRSXwxEfKxM5hHVgjJox9FozrUwsNrD3lGZ+xjH336jc2pBa7LvQiNB8gQ7N2q9H7dF05JIwbofHo17VqpObw9/3C2A5yDFKFyAOOK5P7+QL+XkpPKeAKaEQ6Cs36hJxOYm4rc4//6b+VNvRSEXPDl4bq86SUuswfPEQGfVB9vkPjJfMT65cqm4tHwn2/BvXY5Zjbim/hqjlV+Sk05QL3KdVAHvXMvEbqT1SK34BGGQYFx3NsE/Y0yulmBqU/FIFxmxn9WWqsQiOautszq6O8bvfGOsYaigi4k8ogD41I706hVjbRkovcZqChKQMXry/WD+u9ONKNjXvyB43wWYEulqZ4AAAAAElFTkSuQmCC"
+                             alt="logo">
+                          </a>
+                          <a href="https://deploy-billioner.vercel.app/">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFjSURBVHgB7ZXhcYMwDIVFrwOwQRmBDcoGZQQ2aDaAEdggbNB0AroB3cDtBGQDVT7ExefGWDYhlx98d+8uwRbPkmUMsLOzAYhYkHrSSPqArSGTlHRgU5sX2AI2rTlLFyncEqO0PoY55hlWwBlUpDdScWXKmWRn+QtrTQWlbUnqyvMDxCAsrV5QRTo6xosQw6WutRlIGU5VceFvNpSV1qTluHphjvKZSrt2Ri+u5Nh3z9zTknGPYfSkjGNzwfzGZSwJNmmNWL3Pku0plzJvBS9QaHQsGyuUkYFnz3N0n9HefEGg8Qgh4NR8HRucrDF9GgaU00MMOH00RuvZEcNoIQbOUlPw/wzD+ddsTxLzJEn0BfEFl8ujhnB+IMac+SS98u8CwjhTAt8Qi1Hq0iqnQv8Zj2s2awG20XyR+I5cXLNZ5o1lnBpjuik7h3kFa8HL2e7QcTVaC5zJ4V7g9JVUbNzAziPxB7wS+4o5Kp2OAAAAAElFTkSuQmCC"
+                             alt="logo">
+                          </a>
+                          <a href="https://deploy-billioner.vercel.app/">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGcSURBVHgB7ZbRcYMwDEBFrwNkg3qEdINsUjJBsgFsEDYgG7QbwAZ0A7IBdAJVKspV5cDIOXzNR96dQs6SLVkIywD/SAIRQMQtPVh6kkuSJJ9Tdk+wIuT0QNLS3wOJkwAyHiNJIRa0eElSkGwmdI7kTHLS46ukXRb9ovTmM3oOiCUl6cmugEAHHD2nsMG/cErLmTk7kkrsChmrprLjc5yhn53epQqyk+CYo+iPJLnVcYnLbGSXJ3F4zchpHCAOGfywOM7QgNie1VAhwXTaRjmvlhw7tPOi5hTy7JS+UetyUD/v3/edZ2Bnzz9UxRd68IHC1a+LSh8ybyS1dzX8LRQLvEsn8/j9v8vuc9GnouOxFpbAcNprAKN1nHLcTNmMJ2zwNlocKnyr1uJ3nOHwfTvLrkOKzQfvtER1DmieISJUgK8+/apdLZS7dG4/+D3gQgOZc36AdQg5qMyNJARbAGSYYhx2U/7GaXcQBwcG5zXEoTZZ4dAMWlwHbjhHuEeCbq84NIZxr2b20svjgcMtZYocbiC0sfD1p58Zf2DmG3O084Y++QoWAAAAAElFTkSuQmCC"
+                             alt="logo">
+                          </a>
+                          <a href="https://deploy-billioner.vercel.app/">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGsSURBVHgB7VbRccIwDFV6/S8jpBM0nYCwQUZIJ4ANCBOUTgCdoGwAnYBskGxQOoH7RBRwjWO7cOkPvLuHk0iWbFmyILrh2hCFKiqlBhjS/aQoWnXoZBh2YAmdHV0CdghOwbVqsAXnDv2l6LS6ORh36UcOQ2MMhby+gUvspsb3BM/MGHwQ+TdYgjV0SnHIc4cgR2yO7zMKgeyW8SG7T8FX8Ev5UYELXoCwjcQkxHFsMXQuFmJDycIHPue56g+F7uvO4n9K/WHYKVHN2faNpPVn7jyj/pF1OX9yz6MNuHLIl6LjwmnoVVNSKiRZlD0pM00+d9g5zXrlP++BoV9psu0fN7I/dz3sCf0fTpzHngmHEpQQ6/oJR057H1OA83vtgy/ZJqq5s7lb5Rb5GnJOxkP3c+DBdB6C7EJ5i5h/9LCb9y53qWewpvOxERulTag7fzdkfC4pWuEjxhfy12+LneiOMHdETV2byfzJP7/6udSyebfXIPfilbYoWz9nvZKOu8ypSbzYsDfDogqyQS6QylWfLsh9Yev7W6MivEb0v0UFBUIdb7hKnlO64Yarxg+gcPe0drZTaAAAAABJRU5ErkJggg=="
+                             alt="logo">
+                          </a>
+                          <a href="https://deploy-billioner.vercel.app/">
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFvSURBVHgB7ZbtTcMwEIbPiAHCBGQENsAjdIRsgjcITBCYgBHcDVomcDZoNjjOqqMexbEvjaP2Rx/pVaTc2a+dnD8A7lwBlUtAxIoeDemZVIGMgfRD2iqlepiLNyV943I6Uj3HuCY5LIcTDwDLGo9YiXGDZXgnfZ692+TMLRaA9cf5M/vHiP8L5PHV/EXqWZtXUs0nMbtvwaT856wi7XyRmlzjJeaG5WlSG6TZe7OGuWU5sfXfsrgtbb4J8bdEjgk5TWnzKsRdIseFnFpirmLmsUHRHq1ScWneGPc8gBA8VXifSNuHXMlylZsT4+70kcgZYyLzf0z/TtyxnNhyMizuJP98jrmHLydfVE1Qxd63qQ6WmHs6jByPYTA215i3iVX7AWQ3li2ciq8maUGbgYr9aTKKhU61qa8GKfC4Z6+Fhhy4zuw7kIDHy+MOy2ExcgznBuHXs8PLOSBb/+dk7+1hEBrYLUVIT9pTdQ9w55b4BYApChIfShDdAAAAAElFTkSuQmCC"
+                             alt="logo">
+                          </a>
+                       </div>
+                    </div>
+                 </footer>
+            </div>
+        </div>
+        <script>
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (rect.top >= -100 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
+            }
+
+            function checkIfInViewport() {
+                const animatedTokonomics = document.getElementById("animated-section");
+                const animatedfaq = document.getElementById("animated-faq");
+
+                if (isInViewport(animatedTokonomics)) {
+                    animatedTokonomics.classList.add("aos-animate")
+                }
+                if (isInViewport(animatedfaq)) {
+                    animatedfaq.classList.add("aos-animate")
+                }
+            }
+
+            // Attach the event listener to the window's scroll event
+            window.addEventListener("scroll", checkIfInViewport);
+
+            // Initial check in case the element is in the viewport on page load
+            checkIfInViewport();
+        </script>
+        <script>
+            // mobile-menu
+            var sidebar = document.querySelector(".sidebar")
+            var toggle = document.querySelector(".toggle")
+
+            toggle.addEventListener("click", function () {
+                console.log("Toggle button clicked");
+                if (sidebar.classList.contains("close")) {
+                    sidebar.classList.remove("close");
+                } else {
+                    sidebar.classList.add("close");
+                }
+            })
+        </script>
+        <script>
+            // Get all elements with the "copy" class
+            const copyButton = document.querySelector("#copy");
+            const addressElement = copyButton.parentElement.querySelector("#address");
+            const copiedAlert = document.querySelector("#copied-msg");
+            // Add a click event listener to each "copy" element
+            copyButton.addEventListener("click", () => {
+                // show copy alert
+                setTimeout(addressCopied, 500);
+
+                if (addressElement) {
+                    // Create a temporary input element
+                    const tempInput = document.createElement("input");
+                    tempInput.value = addressElement.innerText;
+
+                    // Append the input to the document
+                    document.body.appendChild(tempInput);
+
+                    // Select the text in the input
+                    tempInput.select();
+
+                    // Copy the selected text to the clipboard
+                    document.execCommand("copy");
+
+                    // Remove the temporary input
+                    document.body.removeChild(tempInput);
+
+                    copiedAlert.classList.remove("hidden");
+                    setTimeout(() => {
+                        copiedAlert.classList.add("hidden");
+                    }, 2000);
+                }
+            });
+        </script>
+        <script>
+            function checkDeviceWidth() {
+    if (window.innerWidth < 1280) {
+        document.querySelector('.token-address-full').classList.add('hidden');
+        document.querySelector('.token-address-trimmed').classList.remove('hidden');
+    }
+}
+
+// Initial check when the page loads
+window.addEventListener('load', checkDeviceWidth);
+window.addEventListener('resize', checkDeviceWidth);
+        </script>
+         <script>
+// Get all FAQ items
+const faqItems = document.querySelectorAll('.accordion-item');
+
+// Loop through each FAQ item and attach a click event listener
+faqItems.forEach((item) => {
+    const title = item.querySelector('.accordion-title');
+    const content = item.querySelector('.accordion-content');
+
+    // Add a click event listener to the title
+    title.addEventListener('click', () => {
+        if (content.style.display === 'none' || content.style.display === '') {
+            // First, close all other FAQ sections
+            faqItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                    const otherContent = otherItem.querySelector('.accordion-content');
+                    otherContent.style.display = 'none';
+                }
+            });
+
+            // Then open the clicked FAQ section
+            content.style.display = 'block';
+            
+            
+        } else {
+            content.style.display = 'none';
+        }
+    });
+});
+
+        </script>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "languages": ["en", "fr", "de", "it", "es", "nl", "pt", "zh-CN", "tr", "ar", "ko", "zh-TW", "ja",
+                    "ru", "hi", "pl", "cs", "hu", "id", "bg", "th", "ro", "vi", "sk"
+                ],
+                "wrapper_selector": ".gtranslate_wrapper",
+                "flag_size": 24,
+                "switcher_horizontal_position": "inline",
+                "flag_style": "3d",
+                "alt_flags": {
+                    "en": "usa"
+                },
+                "switcher_text_color": "#f7f7f7",
+                "switcher_arrow_color": "#f2f2f2",
+                "switcher_border_color": "#161616",
+                "switcher_background_color": "#303030",
+                "switcher_background_shadow_color": "#474747",
+                "switcher_background_hover_color": "#3a3a3a",
+                "dropdown_text_color": "#eaeaea",
+                "dropdown_hover_color": "#748393",
+                "dropdown_background_color": "#474747"
+            }
+        </script>
+        <script>
+            let alertBox = document.querySelector(".alert")
+            function addressCopied() {
+                alertBox.classList.add("show")
+                document.querySelector(".alert>p").innerText="Contract address copied."
+                document.querySelector(".alert>p").style.color="rgb(30, 70, 32)"
+                document.querySelector(".alert>svg").style.stroke="rgb(30, 70, 32)"
+                document.querySelector(".alert-icon").src="assets/tick.svg"
+                alertBox.style.backgroundColor = "rgb(237, 247, 237)"
+                setTimeout(()=>{
+                    alertBox.classList.remove("show")
+                }, 4000);
+                }
+            function transactionSuccessfull() {
+                alertBox.classList.add("show")
+                document.querySelector(".alert>p").innerText="Transaction successful."
+                document.querySelector(".alert>p").style.color="rgb(30, 70, 32)"
+                document.querySelector(".alert>svg").style.stroke="rgb(30, 70, 32)"
+                document.querySelector(".alert-icon").src="assets/tick.svg"
+                alertBox.style.backgroundColor = "rgb(237, 247, 237)"
+                setTimeout(()=>{
+                    alertBox.classList.remove("show")
+                }, 4000);
+                }
+            function transactionDenied() {
+                alertBox.classList.add("show")
+                document.querySelector(".alert>p").innerText="User denied the transaction."
+                document.querySelector(".alert>p").style.color="rgb(95, 33, 32)"
+                document.querySelector(".alert>svg").style.stroke="rgb(95, 33, 32)"
+                document.querySelector(".alert-icon").src="assets/error.svg"
+                alertBox.style.backgroundColor = "rgb(253, 237, 237)"
+                setTimeout(()=>{
+                    alertBox.classList.remove("show")
+                }, 2000);
+                }
+            function insuficientFunds() {
+                alertBox.classList.add("show")
+                document.querySelector(".alert>p").innerText="Insufficient funds in wallet."
+                document.querySelector(".alert>p").style.color="rgb(95, 33, 32)"
+                document.querySelector(".alert>svg").style.stroke="rgb(95, 33, 32)"
+                document.querySelector(".alert-icon").src="assets/error.svg"
+                alertBox.style.backgroundColor = "rgb(253, 237, 237)"
+                setTimeout(()=>{
+                    alertBox.classList.remove("show")
+                }, 4000);
+                }
+                
+            document.querySelector(".close-alert").addEventListener("click", ()=>{
+                alertBox.classList.remove("show")
+            })
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+        <script type="module" src="index.js"></script>
+</body>
+
+</html>
